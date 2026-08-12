@@ -20,20 +20,20 @@ void main() async {
 
   runApp(
     ProviderScope(
-      child: CaughtApp(persistence: persistence),
+      child: VerifactApp(persistence: persistence),
     ),
   );
 }
 
-class CaughtApp extends ConsumerStatefulWidget {
+class VerifactApp extends ConsumerStatefulWidget {
   final PersistenceService persistence;
-  const CaughtApp({super.key, required this.persistence});
+  const VerifactApp({super.key, required this.persistence});
 
   @override
-  ConsumerState<CaughtApp> createState() => _CaughtAppState();
+  ConsumerState<VerifactApp> createState() => _VerifactAppState();
 }
 
-class _CaughtAppState extends ConsumerState<CaughtApp> {
+class _VerifactAppState extends ConsumerState<VerifactApp> {
   @override
   void initState() {
     super.initState();
@@ -49,7 +49,7 @@ class _CaughtAppState extends ConsumerState<CaughtApp> {
 
     return MaterialApp.router(
       routerConfig: router,
-      title: 'CAUGHT!',
+      title: 'VERIFACT',
       debugShowCheckedModeBanner: false,
       theme: _buildTheme(),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:caught/models/card_model.dart';
-import 'package:caught/models/player_model.dart';
-import 'package:caught/models/session_model.dart';
-import 'package:caught/services/score_calculator.dart';
+import 'package:verifact/models/card_model.dart';
+import 'package:verifact/models/player_model.dart';
+import 'package:verifact/models/session_model.dart';
+import 'package:verifact/services/score_calculator.dart';
 
 void main() {
   group('ScoreCalculator', () {

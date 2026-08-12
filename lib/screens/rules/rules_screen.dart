@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
 class RulesScreen extends StatefulWidget {
-  const RulesScreen({super.key});
+  final bool showBackButton;
+  const RulesScreen({super.key, this.showBackButton = false});
 
   @override
   State<RulesScreen> createState() => _RulesScreenState();
@@ -14,84 +16,81 @@ class _RulesScreenState extends State<RulesScreen> {
   final List<_RuleSection> _sections = const [
     _RuleSection(
       icon: Icons.info_outline,
-      title: 'Tentang CAUGHT!',
+      title: 'Tentang VERIFACT',
       content:
-          'CAUGHT! adalah permainan kartu fisik bertema literasi media sosial untuk 3–5 pemain. '
-          'Aplikasi ini berfungsi sebagai wasit digital: scan QR di kartu, hitung skor otomatis, dan lacak profil tiap pemain.',
+          'VERIFACT adalah permainan kartu bluffing fisik bertema ekosistem media sosial untuk 3–5 pemain. '
+          'Aplikasi ini bertindak sebagai wasit digital: memindai kode QR kartu, melacak Followers, dan mengelola reputasi Jejak Digital pemain.',
     ),
     _RuleSection(
       icon: Icons.people_outline,
-      title: 'Komponen & Peran',
+      title: 'Komponen Permainan',
       content:
-          '• 50 Kartu Konten (S01–S48) berisi berita Fakta, Hoaks, atau Opini\n'
-          '• Setiap pemain mulai dengan 200 Followers\n'
-          '• Uploader: memainkan kartu & mengklaim statusnya\n'
-          '• Penuduh: menyerukan "Fact-Check!" dalam 5 detik\n'
-          '• Echo Chamber: pemain lain pilih Repost atau Report',
+          '• 50 Kartu Informasi: 25 Fakta, 25 Hoaks (dilengkapi QR Code di belakang).\n'
+          '• Kartu Intervensi Netizen: REPOST (hijau) & REPORT (merah).\n'
+          '• Kartu Profil: Pelacak Followers (0-600) dengan klip.\n'
+          '• Shadowbanned: Status hukuman jika Followers mencapai 0.\n'
+          '• Papan Utama: Tempat menaruh kartu yang sedang diunggah.\n'
+          '• Aplikasi VERIFACT: Wasit pemindai QR & pengelola sesi.',
+    ),
+    _RuleSection(
+      icon: Icons.brightness_low_outlined,
+      title: 'Persiapan Bermain (Setup)',
+      content:
+          '1. Setiap pemain mengambil 1 Kartu Profil, set Followers ke 200 (modal awal).\n'
+          '2. Tulis nama akun/persona pada Kartu Profil.\n'
+          '3. Ambil sepasang Kartu Intervensi (REPOST & REPORT).\n'
+          '4. Kocok 50 Kartu Informasi, bagikan 5 kartu tertutup ke tiap pemain. Sisanya menjadi Deck.\n'
+          '5. Letakkan HP dengan aplikasi VERIFACT di tengah meja.',
     ),
     _RuleSection(
       icon: Icons.play_circle_outline,
       title: 'Alur Giliran',
       content:
-          '1. Uploader pilih klaim (Fakta/Hoaks) dan jumlah kartu (1–2)\n'
-          '2. Kartu ditaruh tertutup di meja\n'
-          '3. Timer 5 detik: Pemain lain bisa menyerukan "Fact-Check!"\n'
-          '4. Jika ada Fact-Check: pilih Penuduh, lalu Echo Chamber\n'
-          '5. Scan QR kartu untuk mengungkap kebenaran\n'
-          '6. Hitung skor otomatis\n'
-          '7. Giliran berpindah ke kiri',
+          '• Langkah 1: Unggah\n'
+          '  Uploader menaruh 1-2 kartu tertutup di meja & mengklaim statusnya (Fakta/Hoaks).\n\n'
+          '• Langkah 2: Fact-Check\n'
+          '  Pemain lain punya 5 detik untuk curiga. Jika ada yang curiga, ia menepuk meja & berteriak "Fact-Check!" untuk menjadi Penuduh.\n\n'
+          '• Langkah 3: Echo Chamber\n'
+          '  (Jika ada Fact-Check) Pemain lain ikut memilih membela Uploader (REPOST) atau Penuduh (REPORT).\n\n'
+          '• Langkah 4: Cek Fakta\n'
+          '  Pindai kode QR semua kartu di aplikasi. Jika semua kartu cocok dengan klaim, Uploader jujur. Jika ada 1 saja meleset, klaim dianggap bohong.\n\n'
+          '• Langkah 5: Ambil Kartu\n'
+          '  Uploader menarik kartu baru dari Deck hingga berjumlah 5 di tangan. Giliran berputar.',
     ),
     _RuleSection(
       icon: Icons.calculate_outlined,
-      title: 'Tabel Poin',
+      title: 'Perolehan Poin (Followers)',
       content:
-          'LOLOS (tidak ada Fact-Check):\n'
-          '• Uploader jujur (klaim cocok): +10/kartu\n'
-          '• Uploader bluff berhasil: +20/kartu\n\n'
-          'DITANTANG (ada Fact-Check):\n'
-          '• Uploader jujur: Uploader +20/kartu; Penuduh -10/kartu\n'
+          'LOLOS (Tanpa Fact-Check):\n'
+          '• Uploader Jujur: +10 / kartu\n'
+          '• Uploader Bluffing (Bohong) Lolos: +20 / kartu\n\n'
+          'DITANTANG (Ada Fact-Check):\n'
+          '• Uploader Terbukti Jujur:\n'
+          '  - Uploader: +20 / kartu\n'
+          '  - Penuduh: -10 / kartu\n'
           '  - Repost: +10 | Report: -10\n'
-          '• Uploader TERTANGKAP: Uploader -30/kartu; Penuduh +30/kartu +5\n'
-          '  - Repost: -10 | Report: +10',
+          '• Uploader Terbukti Bohong (Tertangkap):\n'
+          '  - Uploader: -30 / kartu\n'
+          '  - Penuduh: +30 / kartu & bonus +5\n'
+          '  - Report: +10 | Repost: -10',
     ),
     _RuleSection(
       icon: Icons.visibility_off_outlined,
-      title: 'Shadowban',
+      title: 'Status Shadowbanned',
       content:
-          'Jika Followers mencapai 0, pemain masuk status SHADOWBANNED:\n'
-          '• Semua poin gain dibagi 2 (dibulatkan ke bawah)\n'
-          '• Status hilang otomatis saat Followers kembali ke ≥50\n'
-          '• Poin negatif tetap berlaku penuh',
-    ),
-    _RuleSection(
-      icon: Icons.history_edu_outlined,
-      title: 'Jejak Digital',
-      content:
-          'Setiap kartu yang dimainkan Uploader dicatat di Jejak Digital:\n'
-          '• Kartu jujur → Jejak Jujur (✓)\n'
-          '• Kartu bohong → Jejak Bohong (✗)\n\n'
-          'Pemenang akhir ditentukan dari yang memiliki Jejak Digital paling bersih (lebih banyak ✓ vs ✗)',
+          '• Terjadi jika Followers pemain turun hingga 0.\n'
+          '• Pemain tetap dapat bermain normal.\n'
+          '• Efek: Semua penambahan Followers dari kemenangan klaim dipotong setengah (dibulatkan ke bawah).\n'
+          '• Status hilang otomatis setelah Followers mencapai ≥50 kembali.',
     ),
     _RuleSection(
       icon: Icons.flag_outlined,
-      title: 'Kondisi Menang',
+      title: 'Akhir Permainan & Pemenang',
       content:
-          'Permainan berakhir saat:\n'
-          '• Deck habis, ATAU\n'
-          '• Satu pemain tangannya kosong\n\n'
-          'Pemenang = pemain dengan Jejak Digital paling bersih.\n'
-          'Seri diselesaikan dengan Followers terbanyak.',
-    ),
-    _RuleSection(
-      icon: Icons.qr_code_outlined,
-      title: 'Cara Scan Kartu',
-      content:
-          '1. Buka tab "Permainan"\n'
-          '2. Setelah Echo Chamber, ketuk "BUKA KAMERA"\n'
-          '3. Arahkan kamera ke QR code di balik kartu\n'
-          '4. Scan semua kartu sesuai jumlah yang dimainkan\n'
-          '5. Artikel & sumber akan muncul otomatis\n\n'
-          'QR code berisi ID kartu (contoh: S01). Jika kamera bermasalah, gunakan entri manual.',
+          '• Permainan berakhir jika Deck habis DAN salah satu pemain kehabisan kartu di tangan.\n'
+          '• Pahlawan Literasi: Pemain dengan Jejak Digital terbersih (lebih banyak kartu jujur/kredibel vs bohong/pelanggaran).\n'
+          '• Raja Buzzer / Penguasa Algoritma: Pemain dengan Jejak Digital pelanggaran terbanyak.\n'
+          '• Jika terjadi seri pada Jejak Digital, pemenang ditentukan dari jumlah Followers terbanyak.',
     ),
   ];
 
@@ -108,6 +107,15 @@ class _RulesScreenState extends State<RulesScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (widget.showBackButton) ...[
+                      IconButton(
+                        alignment: Alignment.centerLeft,
+                        padding: EdgeInsets.zero,
+                        icon: const Icon(Icons.arrow_back, color: Color(0xFFABD2FB)),
+                        onPressed: () => context.go('/landing'),
+                      ),
+                      const SizedBox(height: 12),
+                    ],
                     Text(
                       'PANDUAN',
                       style: GoogleFonts.outfit(
@@ -128,7 +136,7 @@ class _RulesScreenState extends State<RulesScreen> {
                     ),
                     const SizedBox(height: 4),
                     const Text(
-                      'Semua aturan CAUGHT! dalam genggaman',
+                      'Semua aturan VERIFACT dalam genggaman',
                       style:
                           TextStyle(color: Colors.white38, fontSize: 13),
                     ),

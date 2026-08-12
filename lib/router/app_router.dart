@@ -10,10 +10,11 @@ import '../screens/scoring/scoring_screen.dart';
 import '../screens/scoreboard/scoreboard_screen.dart';
 import '../screens/end/end_game_screen.dart';
 import '../screens/rules/rules_screen.dart';
+import '../screens/landing/landing_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: '/setup',
+    initialLocation: '/landing',
     redirect: (context, state) {
       final sess = ref.read(sessionProvider);
       final location = state.matchedLocation;
@@ -21,12 +22,28 @@ final routerProvider = Provider<GoRouter>((ref) {
       if (sess.isFinished && !location.startsWith('/end')) {
         return '/end';
       }
-      if (!sess.isStarted && !location.startsWith('/setup')) {
-        return '/setup';
+      if (!sess.isStarted) {
+        if (location != '/landing' && location != '/rulebook' && location != '/setup') {
+          return '/landing';
+        }
+      } else {
+        if (location == '/landing' || location == '/setup' || location == '/rulebook') {
+          return '/table';
+        }
       }
       return null;
     },
     routes: [
+      GoRoute(
+        path: '/landing',
+        name: 'landing',
+        builder: (context, state) => const LandingScreen(),
+      ),
+      GoRoute(
+        path: '/rulebook',
+        name: 'rulebook',
+        builder: (context, state) => const RulesScreen(showBackButton: true),
+      ),
       GoRoute(
         path: '/setup',
         name: 'setup',
@@ -50,7 +67,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: '/rules',
             name: 'rules',
-            builder: (context, state) => const RulesScreen(),
+            builder: (context, state) => const RulesScreen(showBackButton: false),
           ),
         ],
       ),

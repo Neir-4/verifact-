@@ -44,7 +44,7 @@ class _TableScreenState extends ConsumerState<TableScreen> {
                         color: Color(0xFFABD2FB), size: 20),
                     const SizedBox(width: 8),
                     Text(
-                      'CAUGHT!',
+                      'VERIFACT',
                       style: GoogleFonts.outfit(
                         fontSize: 18,
                         fontWeight: FontWeight.w900,

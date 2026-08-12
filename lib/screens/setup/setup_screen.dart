@@ -87,7 +87,7 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'CAUGHT!',
+                              'VERIFACT',
                               style: GoogleFonts.outfit(
                                 fontSize: 32,
                                 fontWeight: FontWeight.w900,
