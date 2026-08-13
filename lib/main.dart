@@ -104,7 +104,7 @@ class _VerifactAppState extends ConsumerState<VerifactApp> {
           color: onSurface,
         ),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: surfaceColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
