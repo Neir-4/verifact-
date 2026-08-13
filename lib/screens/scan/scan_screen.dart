@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import '../../models/session_model.dart';
 import '../../providers/session_provider.dart';
 import '../../providers/card_database_provider.dart';
+import '../../theme/palette.dart';
+import '../../theme/app_theme.dart';
 
 class ScanScreen extends ConsumerStatefulWidget {
   const ScanScreen({super.key});
@@ -25,6 +28,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
 
   void _handleBarcode(BarcodeCapture capture) {
     if (!_scanning) return;
+    final p = context.palette;
 
     for (final barcode in capture.barcodes) {
       final raw = barcode.rawValue;
@@ -40,7 +44,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Kartu "$cardId" tidak ditemukan'),
-            backgroundColor: Colors.red.shade700,
+            backgroundColor: p.crimson,
             duration: const Duration(seconds: 2),
           ),
         );
@@ -51,7 +55,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
       ref.read(sessionProvider.notifier).addScannedCard(card);
 
       final session = ref.read(sessionProvider);
-      final needed = session.currentTurn.cardCount;
+      const needed = kCardsPerTurn;
       final scanned = session.currentTurn.scannedCards.length;
 
       if (scanned >= needed) {
@@ -64,7 +68,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
           SnackBar(
             content: Text(
                 '✓ ${card.id} discan. Scan ${needed - scanned} kartu lagi.'),
-            backgroundColor: Colors.green.shade700,
+            backgroundColor: p.success,
             duration: const Duration(seconds: 2),
           ),
         );
@@ -74,10 +78,11 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final p = context.palette;
     final session = ref.watch(sessionProvider);
     final turn = session.currentTurn;
     final scanned = turn.scannedCards.length;
-    final needed = turn.cardCount;
+    const needed = kCardsPerTurn;
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -105,18 +110,12 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
             controller: _controller,
             onDetect: _handleBarcode,
           ),
-          // Viewfinder overlay
+          // HUD corner-bracket viewfinder
           Center(
-            child: Container(
+            child: SizedBox(
               width: 240,
               height: 240,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: const Color(0xFFABD2FB),
-                  width: 2.5,
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
+              child: _ViewfinderBrackets(color: p.accent),
             ),
           ),
           // Bottom info
@@ -126,19 +125,15 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
               margin: const EdgeInsets.all(24),
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF080516).withValues(alpha: 0.9),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: const Color(0xFF162D93)),
+                color: p.bandDeep.withValues(alpha: 0.92),
+                border: Border.all(color: p.brand),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
+                  Text(
                     'Scan QR di balik kartu',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(color: Colors.white.withValues(alpha: 0.8), fontSize: 14),
                   ),
                   const SizedBox(height: 8),
                   Row(
@@ -146,34 +141,23 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                     children: List.generate(needed, (i) {
                       return Container(
                         margin: const EdgeInsets.symmetric(horizontal: 4),
-                        width: 12,
-                        height: 12,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: i < scanned
-                              ? Colors.green.shade400
-                              : Colors.white24,
-                        ),
+                        width: 10,
+                        height: 10,
+                        color: i < scanned ? p.success : Colors.white24,
                       );
                     }),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     '$scanned dari $needed kartu',
-                    style: const TextStyle(
-                      color: Color(0xFFABD2FB),
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: context.mono(fontSize: 13, color: p.accent),
                   ),
-                  // Manual entry fallback
                   const SizedBox(height: 12),
                   TextButton.icon(
                     onPressed: () => _showManualEntry(context),
-                    icon: const Icon(Icons.keyboard, color: Color(0xFFABD2FB)),
-                    label: const Text(
-                      'Masukkan ID Manual',
-                      style: TextStyle(color: Color(0xFFABD2FB)),
-                    ),
+                    icon: Icon(Icons.keyboard, color: p.accent, size: 18),
+                    label: Text('Masukkan ID Manual',
+                        style: TextStyle(color: p.accent)),
                   ),
                 ],
               ),
@@ -189,24 +173,17 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: const Color(0xFF1A1953),
-        title: const Text('Masukkan ID Kartu',
-            style: TextStyle(color: Color(0xFFFDF9F1))),
+        title: const Text('Masukkan ID Kartu'),
         content: TextField(
           controller: controller,
           autofocus: true,
           textCapitalization: TextCapitalization.characters,
-          style: const TextStyle(color: Color(0xFFFDF9F1)),
-          decoration: const InputDecoration(
-            hintText: 'contoh: S01',
-            hintStyle: TextStyle(color: Colors.white38),
-          ),
+          decoration: const InputDecoration(hintText: 'contoh: S01'),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child:
-                const Text('Batal', style: TextStyle(color: Colors.white60)),
+            child: const Text('Batal'),
           ),
           ElevatedButton(
             onPressed: () {
@@ -226,6 +203,56 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _ViewfinderBrackets extends StatelessWidget {
+  final Color color;
+  const _ViewfinderBrackets({required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    const len = 28.0;
+    const thick = 3.0;
+    Widget corner({required bool right, required bool bottom}) {
+      return Positioned(
+        left: right ? null : 0,
+        right: right ? 0 : null,
+        top: bottom ? null : 0,
+        bottom: bottom ? 0 : null,
+        child: SizedBox(
+          width: len,
+          height: len,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                right: 0,
+                top: bottom ? null : 0,
+                bottom: bottom ? 0 : null,
+                child: Container(height: thick, color: color),
+              ),
+              Positioned(
+                top: 0,
+                bottom: 0,
+                left: right ? null : 0,
+                right: right ? 0 : null,
+                child: Container(width: thick, color: color),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return Stack(
+      children: [
+        corner(right: false, bottom: false),
+        corner(right: true, bottom: false),
+        corner(right: false, bottom: true),
+        corner(right: true, bottom: true),
+      ],
     );
   }
 }

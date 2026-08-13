@@ -23,12 +23,14 @@ class PlayerScoreResult {
 class TurnScoreResult {
   final List<PlayerScoreResult> results;
   final bool uploaderWasHonest;
-  final bool factCheckWasCalled;
+  final EchoChoice? reactionPlayed; // the uploader's own optional bonus bet
+  final bool blendIsFact;
 
   const TurnScoreResult({
     required this.results,
     required this.uploaderWasHonest,
-    required this.factCheckWasCalled,
+    required this.reactionPlayed,
+    required this.blendIsFact,
   });
 }
 
@@ -60,29 +62,34 @@ class ScoreCalculator {
     return (newFollowers, newShadowbanned, wasHalved);
   }
 
+  /// Base score for the uploader's own claim vs the blend's actual truth.
+  static const int claimHonestBonus = 10;   // Claim matched the blend
+  static const int claimDishonestPenalty = -20; // Claim didn't match
+
+  /// The uploader may ALSO stake an optional Repost/Report bonus bet on top
+  /// of their claim - scored against the blend's own objective truth
+  /// (turn.blendIsFact), independent of whether their claim was honest.
+  /// Not betting scores 0, no risk.
+  static const int repostFactBonus = 15;   // Repost a real blend: correct amplification
+  static const int repostHoaxPenalty = -20; // Repost a fake blend: spread misinformation
+  static const int reportHoaxBonus = 30;    // Report a fake blend: correct catch
+  static const int reportFactPenalty = -30; // Report a real blend: wrongly censored truth
+
   /// Calculate all score changes for a completed turn.
   ///
-  /// Rules (from rulebook):
-  ///
-  /// UPLOADER KLAIM FAKTA:
-  /// - Lolos, jujur (cocok Fakta): Uploader +10/kartu
-  /// - Lolos, bohong (kartu aslinya Hoaks): Uploader +20/kartu
-  /// - Ditantang, jujur: Uploader +20/kartu; Penuduh -10/kartu; Repost +10; Report -10
-  /// - Ditantang, bohong: Uploader -30/kartu (dibayar ke Penuduh); Penuduh +30/kartu +5 bonus; Repost -10; Report +10
-  ///
-  /// UPLOADER KLAIM HOAKS: (same table, symmetric)
-  /// - Lolos, jujur (cocok Hoaks): Uploader +10/kartu
-  /// - Lolos, bohong: Uploader +20/kartu
-  /// - Ditantang, jujur: Uploader +20/kartu; Penuduh -10/kartu; Repost +10; Report -10
-  /// - Ditantang, bohong: Uploader -30/kartu → Penuduh; Penuduh +30/kartu +5 bonus; Repost -10; Report +10
+  /// Only the current uploader scores each turn - everyone else stays at 0
+  /// until it's their turn. Two independent components, both theirs:
+  /// 1. Base claim: +10/kartu if it matched the blend, -20/kartu if not.
+  /// 2. Optional Repost/Report bonus bet (see constants above).
   static TurnScoreResult calculate(
     GameSession session,
     TurnState turn,
   ) {
     final uploader = session.currentUploader;
-    final cardCount = turn.cardCount;
+    const cardCount = kCardsPerTurn;
     final isHonest = turn.uploaderIsHonest;
-    final hasReport = turn.echoChoices.values.contains(EchoChoice.report);
+    final blendIsFact = turn.blendIsFact;
+    final reaction = turn.uploaderReaction;
 
     final Map<String, int> deltas = {};
     final Map<String, int> credibleDeltas = {};
@@ -93,45 +100,18 @@ class ScoreCalculator {
       deltas[p.id] = 0;
     }
 
-    if (isHonest) {
-      // --- UPLOADER HONEST ---
-      if (hasReport) {
-        // Challenged (at least one player reported)
-        deltas[uploader.id] = 20 * cardCount;
-      } else {
-        // Unchallenged (no one reported)
-        deltas[uploader.id] = 10 * cardCount;
-      }
+    // --- Uploader's base score: claim vs blend truth ---
+    int uploaderDelta =
+        (isHonest ? claimHonestBonus : claimDishonestPenalty) * cardCount;
 
-      // Echo chamber choices
-      for (final entry in turn.echoChoices.entries) {
-        if (entry.key == uploader.id) continue;
-        if (entry.value == EchoChoice.repost) {
-          deltas[entry.key] = (deltas[entry.key] ?? 0) + 10; // Repost: +10
-        } else if (entry.value == EchoChoice.report) {
-          deltas[entry.key] = (deltas[entry.key] ?? 0) + (-10); // Report: -10
-        }
-      }
-    } else {
-      // --- UPLOADER LYING ---
-      if (hasReport) {
-        // Challenged (at least one player reported)
-        deltas[uploader.id] = -30 * cardCount;
-      } else {
-        // Unchallenged (bluff succeeded)
-        deltas[uploader.id] = 20 * cardCount;
-      }
-
-      // Echo chamber choices
-      for (final entry in turn.echoChoices.entries) {
-        if (entry.key == uploader.id) continue;
-        if (entry.value == EchoChoice.repost) {
-          deltas[entry.key] = (deltas[entry.key] ?? 0) + (-10); // Repost: -10
-        } else if (entry.value == EchoChoice.report) {
-          deltas[entry.key] = (deltas[entry.key] ?? 0) + 10; // Report: +10
-        }
-      }
+    // --- Uploader's optional Repost/Report bonus bet vs blend truth ---
+    if (reaction == EchoChoice.repost) {
+      uploaderDelta += blendIsFact ? repostFactBonus : repostHoaxPenalty;
+    } else if (reaction == EchoChoice.report) {
+      uploaderDelta += blendIsFact ? reportFactPenalty : reportHoaxBonus;
     }
+
+    deltas[uploader.id] = uploaderDelta;
 
     // Update Jejak Digital for Uploader
     if (isHonest) {
@@ -164,13 +144,22 @@ class ScoreCalculator {
     return TurnScoreResult(
       results: results,
       uploaderWasHonest: isHonest,
-      factCheckWasCalled: hasReport,
+      reactionPlayed: reaction,
+      blendIsFact: blendIsFact,
     );
   }
 
-  /// Determine the winner(s) by Jejak Digital (credibleCount vs violationCount)
-  static List<Player> getWinners(List<Player> players) {
-    int maxCredible = players
+  /// Determine the winner(s), by whichever metric the mode defines:
+  /// - Classic: highest Jejak Digital Jujur (credibleCount) - the race to
+  ///   kClassicWinThreshold.
+  /// - Handless: highest Followers - the deck ran out, most poin wins.
+  static List<Player> getWinners(List<Player> players, [GameMode mode = GameMode.classic]) {
+    if (mode == GameMode.handless) {
+      final maxFollowers =
+          players.map((p) => p.followers).reduce((a, b) => a > b ? a : b);
+      return players.where((p) => p.followers == maxFollowers).toList();
+    }
+    final maxCredible = players
         .map((p) => p.credibleCount)
         .reduce((a, b) => a > b ? a : b);
     return players.where((p) => p.credibleCount == maxCredible).toList();

@@ -35,9 +35,27 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_native_splash: ^2.4.3
+  flutter_launcher_icons: ^0.14.3
 
 flutter:
   uses-material-design: true
 
   assets:
     - assets/cards.json
+
+flutter_native_splash:
+  color: "#080516"
+  color_dark: "#080516"
+  image: assets/branding/verifact_logo.png
+  android_12:
+    color: "#080516"
+    color_dark: "#080516"
+    image: assets/branding/verifact_logo.png
+  fullscreen: true
+
+flutter_launcher_icons:
+  android: true
+  image_path: assets/branding/app_icon.png
+  adaptive_icon_background: "#080516"
+  adaptive_icon_foreground: assets/branding/app_icon_foreground.png

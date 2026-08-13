@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../models/session_model.dart';
 import '../../providers/session_provider.dart';
-import '../../widgets/countdown_timer.dart';
+import '../../theme/palette.dart';
+import '../../theme/app_theme.dart';
+import '../../widgets/broadcast/masthead.dart';
+import '../../widgets/broadcast/section_band.dart';
+import '../../widgets/broadcast/chamfered_panel.dart';
+import '../../widgets/broadcast/toggle_chip.dart';
 
 class TableScreen extends ConsumerStatefulWidget {
   const TableScreen({super.key});
@@ -16,162 +20,108 @@ class TableScreen extends ConsumerStatefulWidget {
 class _TableScreenState extends ConsumerState<TableScreen> {
   @override
   Widget build(BuildContext context) {
+    final p = context.palette;
     final session = ref.watch(sessionProvider);
     final notifier = ref.read(sessionProvider.notifier);
     final turn = session.currentTurn;
     final uploader = session.currentUploader;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF080516),
+      backgroundColor: p.canvas,
+      appBar: AppMasthead(
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'GILIRAN ${session.turnCount + 1}',
+              style: context.mono(fontSize: 11, color: p.accent),
+            ),
+            IconButton(
+              icon: Icon(Icons.menu, color: p.accent, size: 20),
+              onPressed: () => context.go('/landing'),
+              tooltip: 'Menu — permainan tetap tersimpan',
+            ),
+            IconButton(
+              icon: Icon(Icons.flag_outlined, color: p.crimsonAccent, size: 20),
+              onPressed: _confirmEndGame,
+              tooltip: 'Selesaikan Permainan',
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            // ── App Bar ─────────────────────────────────────────────────────
+            // ── Live turn panel — the current player, at display scale ──────
             SliverToBoxAdapter(
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 16),
-                decoration: const BoxDecoration(
-                  color: Color(0xFF1A1953),
-                  border: Border(
-                    bottom: BorderSide(color: Color(0xFF162D93), width: 2),
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    const Icon(Icons.wifi_tethering,
-                        color: Color(0xFFABD2FB), size: 20),
-                    const SizedBox(width: 8),
-                    Text(
-                      'VERIFACT',
-                      style: GoogleFonts.outfit(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w900,
-                        color: const Color(0xFFFDF9F1),
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    const Spacer(),
-                    // Turn counter
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.white10,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Text(
-                        'Giliran ${session.turnCount + 1}',
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Colors.white60,
-                          fontWeight: FontWeight.w500,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: ChamferedPanel(
+                  color: p.band,
+                  borderColor: p.brand,
+                  borderWidth: 2,
+                  padding: const EdgeInsets.fromLTRB(20, 18, 20, 18),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 56,
+                        height: 56,
+                        color: p.accent.withValues(alpha: 0.18),
+                        alignment: Alignment.center,
+                        child: Text(
+                          uploader.name.isNotEmpty
+                              ? uploader.name[0].toUpperCase()
+                              : '?',
+                          style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w900,
+                            color: p.accent,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    // End game button
-                    IconButton(
-                      icon: const Icon(Icons.flag_outlined,
-                          color: Colors.red),
-                      onPressed: _confirmEndGame,
-                      tooltip: 'Selesaikan Permainan',
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            // ── Uploader Banner ──────────────────────────────────────────────
-            SliverToBoxAdapter(
-              child: Container(
-                margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF162D93), Color(0xFF1A1953)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(
-                      color: const Color(0xFF162D93).withValues(alpha: 0.6)),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 52,
-                      height: 52,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFABD2FB).withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        uploader.name.isNotEmpty
-                            ? uploader.name[0].toUpperCase()
-                            : '?',
-                        style: const TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w900,
-                          color: Color(0xFFABD2FB),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 14),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'UPLOADER GILIRAN INI',
-                            style: GoogleFonts.outfit(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w700,
-                              color: const Color(0xFFABD2FB),
-                              letterSpacing: 2,
-                            ),
-                          ),
-                          Text(
-                            uploader.name,
-                            style: GoogleFonts.outfit(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFFFDF9F1),
-                            ),
-                          ),
-                          if (uploader.shadowbanned)
-                            const Text(
-                              '⚠ SHADOWBANNED — poin ÷2',
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('UPLOADER GILIRAN INI',
+                                style: context.eyebrowOnBand),
+                            const SizedBox(height: 2),
+                            Text(
+                              uploader.name,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.deepPurpleAccent,
+                                fontSize: 28,
+                                fontWeight: FontWeight.w900,
+                                color: p.bandInk,
+                                letterSpacing: -0.5,
                               ),
                             ),
-                        ],
+                            if (uploader.shadowbanned)
+                              Padding(
+                                padding: const EdgeInsets.only(top: 4),
+                                child: Text(
+                                  'SHADOWBANNED — POIN ÷2',
+                                  style: context.mono(
+                                    fontSize: 11,
+                                    color: p.crimsonAccent,
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
 
-            // ── Phase: Upload ─────────────────────────────────────────────
             if (turn.phase == TurnPhase.upload)
-              SliverToBoxAdapter(
-                child: _buildUploadPhase(session, notifier),
-              ),
-
-            // ── Phase: Echo Chamber ───────────────────────────────────────
-            if (turn.phase == TurnPhase.echoChamber)
-              SliverToBoxAdapter(
-                child: _buildEchoChamberPhase(session, notifier),
-              ),
-
-            // ── Phase: Ready to scan ──────────────────────────────────────
+              SliverToBoxAdapter(child: _buildClaimPhase(context, session, notifier)),
             if (turn.phase == TurnPhase.scanning)
-              SliverToBoxAdapter(
-                child: _buildScanPhase(context),
-              ),
+              SliverToBoxAdapter(child: _buildScanPhase(context)),
 
             const SliverPadding(padding: EdgeInsets.only(bottom: 32)),
           ],
@@ -180,212 +130,92 @@ class _TableScreenState extends ConsumerState<TableScreen> {
     );
   }
 
-  // ── Upload Phase ──────────────────────────────────────────────────────────
+  // ── Claim + optional Repost/Report bonus bet — one page, one player ─────
 
-  Widget _buildUploadPhase(GameSession session, SessionNotifier notifier) {
+  Widget _buildClaimPhase(
+      BuildContext context, GameSession session, SessionNotifier notifier) {
+    final p = context.palette;
     final turn = session.currentTurn;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _sectionLabel('LANGKAH 1 — KLAIM UPLOADER'),
+          const SectionBand(label: 'Langkah 1 — Klaim Uploader'),
           const SizedBox(height: 12),
-          // Claim buttons
           Row(
             children: [
               Expanded(
-                child: _claimButton(
-                  label: '📋 FAKTA',
+                child: ToggleChip(
+                  label: 'Fakta',
                   selected: turn.uploaderClaim == UploaderClaim.fact,
-                  color: const Color(0xFF162D93),
-                  onTap: () =>
-                      notifier.setUploaderClaim(UploaderClaim.fact),
+                  color: p.brand,
+                  onTap: () => notifier.setUploaderClaim(UploaderClaim.fact),
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 10),
               Expanded(
-                child: _claimButton(
-                  label: '❌ HOAKS',
+                child: ToggleChip(
+                  label: 'Hoaks',
                   selected: turn.uploaderClaim == UploaderClaim.hoax,
-                  color: const Color(0xFFC0392B),
-                  onTap: () =>
-                      notifier.setUploaderClaim(UploaderClaim.hoax),
+                  color: p.crimson,
+                  onTap: () => notifier.setUploaderClaim(UploaderClaim.hoax),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 20),
-          // Card count
-          _sectionLabel('JUMLAH KARTU DIUNGGAH'),
-          const SizedBox(height: 10),
+          const SizedBox(height: 26),
+
+          const SectionBand(label: 'Tambah Kartu — Repost / Report (opsional)'),
+          const SizedBox(height: 12),
           Row(
             children: [
               Expanded(
-                child: _countButton(
-                  count: 1,
-                  selected: turn.cardCount == 1,
-                  onTap: () => notifier.setCardCount(1),
+                child: ToggleChip(
+                  label: 'Repost',
+                  icon: Icons.repeat,
+                  color: p.success,
+                  selected: turn.uploaderReaction == EchoChoice.repost,
+                  onTap: () =>
+                      notifier.toggleUploaderReaction(EchoChoice.repost),
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 10),
               Expanded(
-                child: _countButton(
-                  count: 2,
-                  selected: turn.cardCount == 2,
-                  onTap: () => notifier.setCardCount(2),
+                child: ToggleChip(
+                  label: 'Report',
+                  icon: Icons.flag,
+                  color: p.crimson,
+                  selected: turn.uploaderReaction == EchoChoice.report,
+                  onTap: () =>
+                      notifier.toggleUploaderReaction(EchoChoice.report),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 28),
-          // Proceed button
+
+          const SizedBox(height: 26),
           SizedBox(
             width: double.infinity,
-            height: 52,
             child: ElevatedButton.icon(
               onPressed: turn.uploaderClaim != null
-                  ? () => notifier.advanceToEchoChamber()
+                  ? () => notifier.advanceToScanning()
                   : null,
-              icon: const Icon(Icons.repeat_on_outlined),
-              label: Text(
-                'MULAI REPOST / REPORT',
-                style: GoogleFonts.outfit(
-                    fontWeight: FontWeight.w800, letterSpacing: 1),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF162D93),
-                foregroundColor: Colors.white,
-                disabledBackgroundColor: Colors.white12,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                elevation: 0,
-              ),
+              icon: const Icon(Icons.qr_code_scanner, size: 19),
+              label: const Text('LANJUT — SCAN KARTU'),
             ),
           ),
-          const SizedBox(height: 20),
-        ],
-      ),
-    );
-  }
-
-  // ── Repost / Report Phase ─────────────────────────────────────────────────
-
-  Widget _buildEchoChamberPhase(
-      GameSession session, SessionNotifier notifier) {
-    final uploader = session.currentUploader;
-    final echoPlayers = session.players
-        .where((p) => p.id != uploader.id)
-        .toList();
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _sectionLabel('LANGKAH 2 — REPOST / REPORT'),
-          const SizedBox(height: 8),
-          const Text(
-            'Pemain lain pilih sikap: Repost (setuju klaim Uploader) atau Report (laporkan klaim Uploader salah)',
-            style: TextStyle(color: Colors.white60, fontSize: 13, height: 1.5),
-          ),
-          const SizedBox(height: 20),
-          if (echoPlayers.isEmpty)
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: const Color(0xFF1A1953),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Text(
-                'Tidak ada pemain lain untuk melakukan Repost / Report.',
-                style: TextStyle(color: Colors.white54),
-              ),
-            ),
-          ...echoPlayers.map((p) {
-            final choice = session.currentTurn.echoChoices[p.id];
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1A1953),
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.white12),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 36,
-                      height: 36,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF162D93),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        p.name.isNotEmpty ? p.name[0].toUpperCase() : '?',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w900,
-                          color: Color(0xFFABD2FB),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Text(
-                        p.name,
-                        style: const TextStyle(
-                            color: Color(0xFFFDF9F1),
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    // Repost button
-                    _echoButton(
-                      label: 'REPOST',
-                      icon: Icons.repeat,
-                      color: Colors.green.shade700,
-                      selected: choice == EchoChoice.repost,
-                      onTap: () => notifier.setEchoChoice(
-                          p.id, EchoChoice.repost),
-                    ),
-                    const SizedBox(width: 8),
-                    // Report button
-                    _echoButton(
-                      label: 'REPORT',
-                      icon: Icons.flag,
-                      color: Colors.red.shade700,
-                      selected: choice == EchoChoice.report,
-                      onTap: () => notifier.setEchoChoice(
-                          p.id, EchoChoice.report),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          }),
-          const SizedBox(height: 24),
+          const SizedBox(height: 10),
           SizedBox(
             width: double.infinity,
-            height: 52,
-            child: ElevatedButton.icon(
-              onPressed: () => notifier.advanceToScanning(),
-              icon: const Icon(Icons.qr_code_scanner),
-              label: Text(
-                'LANJUT — SCAN KARTU',
-                style: GoogleFonts.outfit(
-                    fontWeight: FontWeight.w800, letterSpacing: 1),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF162D93),
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                elevation: 0,
-              ),
+            child: OutlinedButton.icon(
+              onPressed: _confirmSkipTurn,
+              icon: const Icon(Icons.redo, size: 18),
+              label: const Text('LEWATI GILIRAN'),
             ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -394,48 +224,31 @@ class _TableScreenState extends ConsumerState<TableScreen> {
   // ── Scan Phase ────────────────────────────────────────────────────────────
 
   Widget _buildScanPhase(BuildContext context) {
+    final p = context.palette;
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          _sectionLabel('LANGKAH 4 — CEK FAKTA'),
+          const SectionBand(label: 'Langkah 2 — Cek Fakta'),
           const SizedBox(height: 16),
-          Container(
+          ChamferedPanel(
             padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              color: const Color(0xFF1A1953),
-              borderRadius: BorderRadius.circular(14),
-            ),
             child: Column(
               children: [
-                const Icon(Icons.qr_code_scanner,
-                    size: 60, color: Color(0xFFABD2FB)),
+                Icon(Icons.qr_code_scanner, size: 56, color: p.brand),
                 const SizedBox(height: 16),
-                const Text(
-                  'Scan QR di balik kartu untuk\nmengungkap kebenaran',
+                Text(
+                  'Scan QR di balik $kCardsPerTurn kartu untuk\nmengungkap kebenaran',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white70, fontSize: 15, height: 1.5),
+                  style: context.bodySoft.copyWith(fontSize: 15, height: 1.5),
                 ),
                 const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,
-                  height: 52,
                   child: ElevatedButton.icon(
                     onPressed: () => context.push('/scan'),
-                    icon: const Icon(Icons.camera_alt),
-                    label: Text(
-                      'BUKA KAMERA',
-                      style: GoogleFonts.outfit(
-                          fontWeight: FontWeight.w800, letterSpacing: 1.5),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF162D93),
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
-                      elevation: 0,
-                    ),
+                    icon: const Icon(Icons.camera_alt, size: 19),
+                    label: const Text('BUKA KAMERA'),
                   ),
                 ),
               ],
@@ -446,120 +259,27 @@ class _TableScreenState extends ConsumerState<TableScreen> {
     );
   }
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
-
-  Widget _sectionLabel(String text) => Text(
-        text,
-        style: GoogleFonts.outfit(
-          fontSize: 10,
-          fontWeight: FontWeight.w700,
-          color: const Color(0xFFABD2FB),
-          letterSpacing: 2.5,
+  void _confirmSkipTurn() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Lewati Giliran Ini?'),
+        content: const Text(
+          'Klaim dan taruhan giliran ini tidak akan dinilai. Giliran langsung pindah ke pemain berikutnya.',
         ),
-      );
-
-  Widget _claimButton({
-    required String label,
-    required bool selected,
-    required Color color,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(vertical: 18),
-        decoration: BoxDecoration(
-          color: selected ? color : color.withValues(alpha: 0.15),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-              color: selected ? color : color.withValues(alpha: 0.3), width: 1.5),
-        ),
-        child: Center(
-          child: Text(
-            label,
-            style: GoogleFonts.outfit(
-              fontSize: 15,
-              fontWeight: FontWeight.w800,
-              color: selected ? Colors.white : color,
-              letterSpacing: 1,
-            ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Batal'),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _countButton({
-    required int count,
-    required bool selected,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: BoxDecoration(
-          color: selected
-              ? const Color(0xFF162D93)
-              : const Color(0xFF1A1953),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: selected
-                ? const Color(0xFFABD2FB)
-                : Colors.white24,
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(ctx);
+              ref.read(sessionProvider.notifier).skipTurn();
+            },
+            child: const Text('Lewati'),
           ),
-        ),
-        child: Center(
-          child: Text(
-            '$count Kartu',
-            style: GoogleFonts.outfit(
-              fontSize: 15,
-              fontWeight: FontWeight.w800,
-              color: selected
-                  ? const Color(0xFFFDF9F1)
-                  : Colors.white54,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _echoButton({
-    required String label,
-    required IconData icon,
-    required Color color,
-    required bool selected,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 150),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-        decoration: BoxDecoration(
-          color: selected ? color : color.withValues(alpha: 0.15),
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: selected ? color : color.withValues(alpha: 0.4)),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon, size: 14, color: Colors.white),
-            const SizedBox(width: 4),
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w800,
-                color: Colors.white,
-                letterSpacing: 0.5,
-              ),
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }
@@ -568,29 +288,24 @@ class _TableScreenState extends ConsumerState<TableScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: const Color(0xFF1A1953),
-        title: const Text(
-          'Selesaikan Permainan?',
-          style: TextStyle(color: Color(0xFFFDF9F1)),
-        ),
+        title: const Text('Selesaikan Permainan?'),
         content: const Text(
           'Pastikan deck sudah habis dan ada pemain yang tangannya kosong. Ini tidak bisa di-undo.',
-          style: TextStyle(color: Colors.white70),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Batal',
-                style: TextStyle(color: Colors.white60)),
+            child: const Text('Batal'),
           ),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: context.palette.crimson,
+            ),
             onPressed: () {
               Navigator.pop(ctx);
               ref.read(sessionProvider.notifier).endGame();
               context.go('/end');
             },
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red.shade800),
             child: const Text('Selesaikan'),
           ),
         ],

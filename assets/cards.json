@@ -7,10 +7,21 @@
     "headline": "No, Cracking Your Knuckles Won't Give You Arthritis",
     "articleBody": "This one has actually been tested, including by a doctor who ran the experiment on himself. Donald Unger cracked the knuckles on his left hand at least twice a day for 50 years and left his right hand alone as a control. After five decades, neither hand showed signs of arthritis, and there was no difference between them. He published the results in a medical journal, partly as a joke, and later won an Ig Nobel Prize for it.\n\nLarger studies back him up. Researchers comparing habitual knuckle crackers to non-crackers have consistently found similar rates of arthritis in both groups. The pop you hear isn't bone grinding on bone. It's gas bubbles collapsing in the fluid that cushions your joints, similar to the sound a suction cup makes when you pull it off a wall. Osteoarthritis, the most common form of the disease, comes from years of wear and tear, injury, or genetics, not from a habit that takes half a second.\n\nNone of this means the habit is completely without downsides. A few studies have linked frequent, forceful cracking to slightly reduced grip strength over time, and doctors do warn against cracking your neck, which carries separate risks. But the specific claim that it causes arthritis has been checked directly and doesn't hold up.",
     "sources": [
-      {"label": "Harvard Health Publishing, 'Does cracking knuckles cause arthritis?'", "url": "https://www.health.harvard.edu/pain/does-cracking-knuckles-cause-arthritis"},
-      {"label": "Johns Hopkins Arthritis Center, 'Knuckle Cracking Q&A'", "url": "https://www.hopkinsarthritis.org/arthritis-news/knuckle-cracking-q-a-from/"},
-      {"label": "Tufts Medicine, 'Medical Myths: Cracking Your Knuckles Causes Arthritis'", "url": "https://www.tuftsmedicine.org/about-us/news/medical-myths-cracking-your-knuckles-causes-arthritis"}
-    ]
+      {
+        "label": "Harvard Health Publishing, 'Does cracking knuckles cause arthritis?'",
+        "url": "https://www.health.harvard.edu/pain/does-cracking-knuckles-cause-arthritis"
+      },
+      {
+        "label": "Johns Hopkins Arthritis Center, 'Knuckle Cracking Q&A'",
+        "url": "https://www.hopkinsarthritis.org/arthritis-news/knuckle-cracking-q-a-from/"
+      },
+      {
+        "label": "Tufts Medicine, 'Medical Myths: Cracking Your Knuckles Causes Arthritis'",
+        "url": "https://www.tuftsmedicine.org/about-us/news/medical-myths-cracking-your-knuckles-causes-arthritis"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S02",
@@ -20,10 +31,21 @@
     "headline": "Wet Hair Won't Make You Catch a Cold, a Virus Will",
     "articleBody": "Colds come from viruses, most often rhinoviruses, and you catch them by breathing in droplets from someone who's sick or touching a contaminated surface and then your face. Wet hair, cold air, and skipping a jacket don't put a virus in your body. If they did, competitive swimmers would be sick constantly, and people in freezing climates would never catch a break.\n\nThat said, this myth survives because winter really is when colds spread more. The reasons just have nothing to do with hair. Cold, dry air can help some viruses travel and survive longer outside the body, and people spend more time crowded indoors during winter, which makes it easier for germs to pass from person to person. Some research also suggests a chill can affect how well the immune system responds once a virus is already present, though this is a secondary effect, not a cause on its own.\n\nSo the correlation people notice, getting cold and then getting sick a few days later, is real, but the wet hair itself isn't the mechanism. The actual defense is the boring one: wash your hands, and keep some distance from people who are visibly ill. A hair dryer won't hurt, but it's not what's protecting you.",
     "sources": [
-      {"label": "Mayo Clinic Health System, 'Can wet hair make you sick?'", "url": "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/can-wet-hair-make-you-sick"},
-      {"label": "Cleveland Clinic, 'Can Wet Hair Actually Make You Sick?'", "url": "https://health.clevelandclinic.org/can-wet-hair-make-you-sick"},
-      {"label": "Mayo Clinic News Network, 'Mayo Clinic Q&A: Myths about catching a cold'", "url": "https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-q-and-a-myths-about-catching-a-cold/"}
-    ]
+      {
+        "label": "Mayo Clinic Health System, 'Can wet hair make you sick?'",
+        "url": "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/can-wet-hair-make-you-sick"
+      },
+      {
+        "label": "Cleveland Clinic, 'Can Wet Hair Actually Make You Sick?'",
+        "url": "https://health.clevelandclinic.org/can-wet-hair-make-you-sick"
+      },
+      {
+        "label": "Mayo Clinic News Network, 'Mayo Clinic Q&A: Myths about catching a cold'",
+        "url": "https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-q-and-a-myths-about-catching-a-cold/"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S03",
@@ -33,10 +55,21 @@
     "headline": "Cold Water Doesn't Make You Gain Weight, Because It Has No Calories",
     "articleBody": "This is true, and the reasoning is straightforward. Weight gain happens when you consistently take in more calories than your body burns. Plain water, cold or otherwise, has zero calories, so it can't directly contribute to that equation no matter what temperature it's served at.\n\nIf anything, drinking cold water asks your body to spend a small amount of energy warming it up to core temperature, which burns a handful of extra calories, though not enough to be a meaningful weight-loss strategy on its own. The idea that cold water \"shocks\" the body into storing fat doesn't match how digestion or metabolism actually works. There's no known mechanism by which water temperature alone changes how your body stores energy.\n\nWhere the myth gets its staying power is confusion with sugary cold drinks. Iced sodas, milkshakes, and juices do contribute to weight gain, but that's because of their sugar and calorie content, not their temperature. Swap those for plain cold water and you'd expect the opposite effect, since you're cutting calories rather than adding them. The temperature is a red herring; what actually matters is what's dissolved in the water, not how cold it is.",
     "sources": [
-      {"label": "National Center for Biotechnology Information (NIH), 'Water intake and obesity'", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11045127/"},
-      {"label": "The Week, 'Does drinking cold water REALLY make you gain weight?'", "url": "https://www.theweek.in/news/health/2025/11/14/does-drinking-cold-water-really-make-you-gain-weight.html"},
-      {"label": "Have A Plant, 'Does ice water make you gain weight?'", "url": "https://fruitsandveggies.org/blog/ice-water-make-gain-weight/"}
-    ]
+      {
+        "label": "National Center for Biotechnology Information (NIH), 'Water intake and obesity'",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11045127/"
+      },
+      {
+        "label": "The Week, 'Does drinking cold water REALLY make you gain weight?'",
+        "url": "https://www.theweek.in/news/health/2025/11/14/does-drinking-cold-water-really-make-you-gain-weight.html"
+      },
+      {
+        "label": "Have A Plant, 'Does ice water make you gain weight?'",
+        "url": "https://fruitsandveggies.org/blog/ice-water-make-gain-weight/"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S04",
@@ -46,10 +79,21 @@
     "headline": "Sugar Doesn't Actually Make Kids Hyperactive, Studies Show",
     "articleBody": "This is true, and it's one of the more thoroughly tested claims in nutrition science. The sugar-hyperactivity idea traces back to a single doctor's hypothesis in the 1970s. Since then, dozens of controlled trials, including studies where kids were given sugar or a sugar-free placebo without anyone, including the parents, knowing which was which, have failed to find a real effect. A widely cited pooled analysis of these trials concluded sugar does not meaningfully affect children's behaviour, a finding later research has continued to support, including in kids diagnosed with ADHD.\n\nSo why does the belief persist? Timing and expectation seem to be doing the work sugar gets blamed for. Kids tend to eat sweets at birthday parties, holidays, and other high-energy social events where excitement is already running high for reasons that have nothing to do with cake. There's also a documented expectancy effect: in one study, mothers who believed their child was sugar-sensitive rated the child as more hyperactive after being told, falsely, that the child had eaten sugar, even when no sugar was given.\n\nOne genuine nuance worth keeping: some artificial food dyes and preservatives, separate from sugar itself, have been linked to increased hyperactivity in a well-designed 2007 randomised controlled trial. That's a different additive with different evidence behind it, and it shouldn't be confused with sugar.",
     "sources": [
-      {"label": "Wolraich et al. (1995), 'The effect of sugar on behavior or cognition in children', JAMA", "url": "https://jamanetwork.com/journals/jama/article-abstract/391511"},
-      {"label": "Academy of Nutrition and Dietetics, 'Sugar: Does it Really Cause Hyperactivity?'", "url": "https://www.eatright.org/health/wellness/healthful-habits/sugar-does-it-really-cause-hyperactivity"},
-      {"label": "World Sugar Research Organisation, 'Hyperactivity and dietary sugars'", "url": "https://wsro.org/sugars-health/brain-health/hyperactivity-and-dietary-sugars"}
-    ]
+      {
+        "label": "Wolraich et al. (1995), 'The effect of sugar on behavior or cognition in children', JAMA",
+        "url": "https://jamanetwork.com/journals/jama/article-abstract/391511"
+      },
+      {
+        "label": "Academy of Nutrition and Dietetics, 'Sugar: Does it Really Cause Hyperactivity?'",
+        "url": "https://www.eatright.org/health/wellness/healthful-habits/sugar-does-it-really-cause-hyperactivity"
+      },
+      {
+        "label": "World Sugar Research Organisation, 'Hyperactivity and dietary sugars'",
+        "url": "https://wsro.org/sugars-health/brain-health/hyperactivity-and-dietary-sugars"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S05",
@@ -59,10 +103,21 @@
     "headline": "An Anonymous \"Nurse\" Isn't a Verifiable Source",
     "articleBody": "The problem here isn't just the claim, it's that there's nothing behind it that can actually be checked. No name, no hospital, no documentation, just an unnamed person who \"reached out directly\" to an account. That structure shows up constantly in health misinformation because it borrows the credibility of a medical professional without giving anyone a way to confirm the person exists, let alone worked where they claim to.\n\nHospital funding and mortality reporting in most countries run through public, auditable systems: government health agencies, insurers, and independent statisticians all cross-check death data using standardized coding rules. A coordinated scheme to inflate counts across an entire hospital system would require the cooperation of doctors, coroners, records staff, and regulators, all staying silent, which is not how large institutions with competing incentives tend to behave. No credible investigation or leaked documentation has ever substantiated a claim like this.\n\nThis doesn't mean hospital funding and pandemic-era policy are beyond scrutiny. Journalists and researchers have raised legitimate, well-documented questions about how emergency funding was allocated in various countries. The difference is that legitimate reporting comes with names, sources, and evidence that others can independently verify. An anonymous account with no institution attached is not that, regardless of how specific or urgent the claim sounds.",
     "sources": [
-      {"label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources Of Health Information Online'", "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"},
-      {"label": "UCSF Health, 'Evaluating Health Information'", "url": "https://www.ucsfhealth.org/health-articles/evaluating-health-information"},
-      {"label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist", "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"}
-    ]
+      {
+        "label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources Of Health Information Online'",
+        "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"
+      },
+      {
+        "label": "UCSF Health, 'Evaluating Health Information'",
+        "url": "https://www.ucsfhealth.org/health-articles/evaluating-health-information"
+      },
+      {
+        "label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist",
+        "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Source"
   },
   {
     "id": "S06",
@@ -72,10 +127,21 @@
     "headline": "Store Brand Painkillers Aren't Weakened on Purpose",
     "articleBody": "This claim fails on two fronts. First, the source: a \"friend of a friend\" who supposedly works in pharmacy isn't someone you or anyone else can verify, which is exactly the kind of secondhand, unnamed sourcing that makes a claim impossible to check rather than more credible.\n\nSecond, and more importantly, the underlying claim is false. In the United States, generic and store brand over-the-counter painkillers like ibuprofen or acetaminophen are regulated by the FDA and must contain the same active ingredient at the same dose as the brand name version to be sold as an equivalent product. A store brand 200 mg ibuprofen tablet has to deliver 200 mg of ibuprofen, full stop. Manufacturers can't legally sell a weaker product and label it as equivalent. Similar rules apply in most countries with a functioning drug regulator.\n\nWhat differs between store brand and name brand versions is usually the inactive ingredients, packaging, and price, not the active dose. Store brands are typically cheaper because the manufacturer doesn't spend money on marketing or brand development, not because the medicine inside is inferior. If you're ever unsure whether a specific product matches its brand name equivalent, the dosage is printed clearly on the label and can be compared directly, no inside information required.",
     "sources": [
-      {"label": "U.S. Food and Drug Administration, 'Generic Drugs: Questions & Answers'", "url": "https://www.fda.gov/drugs/frequently-asked-questions-popular-topics/generic-drugs-questions-answers"},
-      {"label": "LBBC, 'Fact or fake news: How to find reliable health information online'", "url": "https://www.lbbc.org/news/fact-or-fake-news-how-to-find-reliable-health-information-online"},
-      {"label": "Healthline, 'How to Spot Health Misinformation on Social Media'", "url": "https://www.healthline.com/health/medical-misinformation-social-media"}
-    ]
+      {
+        "label": "U.S. Food and Drug Administration, 'Generic Drugs: Questions & Answers'",
+        "url": "https://www.fda.gov/drugs/frequently-asked-questions-popular-topics/generic-drugs-questions-answers"
+      },
+      {
+        "label": "LBBC, 'Fact or fake news: How to find reliable health information online'",
+        "url": "https://www.lbbc.org/news/fact-or-fake-news-how-to-find-reliable-health-information-online"
+      },
+      {
+        "label": "Healthline, 'How to Spot Health Misinformation on Social Media'",
+        "url": "https://www.healthline.com/health/medical-misinformation-social-media"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Source"
   },
   {
     "id": "S07",
@@ -85,10 +151,21 @@
     "headline": "WHO: Flu Shots Remain Older Adults' Best Defense Against Severe Illness",
     "articleBody": "This is true and reflects the WHO's official position. In its position paper on influenza vaccines, the WHO recommends annual seasonal flu vaccination for high-risk groups, with older adults specifically named as a priority population because they face a much higher risk of hospitalization and death from flu complications.\n\nThe reasoning is grounded in a large body of evidence. A pooled analysis across eight countries found flu vaccination reduced the odds of hospitalization by roughly half, and cut ICU admissions by well over 60 percent in some countries studied. Because the immune system weakens with age, a phenomenon researchers call immunosenescence, older adults don't always mount as strong a response to standard vaccines. That's why several countries specifically offer higher-dose or adjuvanted flu vaccines to people 65 and older, designed to produce a stronger immune response than the standard shot.\n\nThe nuance worth knowing: flu vaccine effectiveness varies year to year, generally landing somewhere between 20 and 60 percent depending on how well that season's vaccine matches the circulating strains. It's not a perfect shield, and older adults can still catch the flu even after vaccination. But the evidence consistently shows vaccinated people, especially older adults, are significantly less likely to end up hospitalized or in intensive care if they do get infected.",
     "sources": [
-      {"label": "WHO (2022), 'Vaccines against influenza: WHO position paper'", "url": "https://iris.who.int/bitstream/handle/10665/354264/WER9719-eng-fre.pdf"},
-      {"label": "PMC / The Lancet Regional Health, pooled 8-country influenza vaccine effectiveness study", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11783037/"},
-      {"label": "U.S. CDC, 'Flu & People 65 Years and Older'", "url": "https://www.cdc.gov/flu/highrisk/65over.htm"}
-    ]
+      {
+        "label": "WHO (2022), 'Vaccines against influenza: WHO position paper'",
+        "url": "https://iris.who.int/bitstream/handle/10665/354264/WER9719-eng-fre.pdf"
+      },
+      {
+        "label": "PMC / The Lancet Regional Health, pooled 8-country influenza vaccine effectiveness study",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11783037/"
+      },
+      {
+        "label": "U.S. CDC, 'Flu & People 65 Years and Older'",
+        "url": "https://www.cdc.gov/flu/highrisk/65over.htm"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Source"
   },
   {
     "id": "S08",
@@ -98,10 +175,21 @@
     "headline": "Cooked Leftovers Are Safe for Up to Four Days in the Fridge",
     "articleBody": "This is true. The idea that any cooked food left overnight has to be thrown out is overly cautious. Major food safety agencies, including the USDA and the FDA in the United States, consistently advise that properly refrigerated cooked leftovers stay safe to eat for three to four days. Bacteria that cause food poisoning grow slowly at refrigerator temperatures, around 4°C or below, so a night or two in the fridge doesn't put leftovers at meaningful risk on its own.\n\nThe mechanism is simple: harmful bacteria multiply fastest in what food safety agencies call the \"danger zone,\" roughly 4°C to 60°C. Refrigeration slows that growth dramatically, though it doesn't stop it completely, which is why there's still a limit. Past about four days, the bacterial count can climb high enough to cause illness, even though the food may still look, smell, and taste normal. That's also why food should go into the fridge within two hours of cooking, since letting it sit out at room temperature first eats into that safe window.\n\nOne nuance worth flagging: the specific \"four days\" figure is most precisely documented by national food safety agencies like the USDA and FDA. The WHO's own global guidance establishes the same underlying principle without publishing an identical universal day count. The core claim checks out either way: overnight refrigeration alone does not make cooked food unsafe.",
     "sources": [
-      {"label": "World Health Organization, 'Five Keys to Safer Food'", "url": "https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food"},
-      {"label": "U.S. Department of Agriculture, 'Leftovers and Food Safety'", "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"},
-      {"label": "Mayo Clinic, 'Food poisoning: How long can you safely keep leftovers?'", "url": "https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/food-safety/faq-20058500"}
-    ]
+      {
+        "label": "World Health Organization, 'Five Keys to Safer Food'",
+        "url": "https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food"
+      },
+      {
+        "label": "U.S. Department of Agriculture, 'Leftovers and Food Safety'",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+      },
+      {
+        "label": "Mayo Clinic, 'Food poisoning: How long can you safely keep leftovers?'",
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/food-safety/faq-20058500"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Source"
   },
   {
     "id": "S09",
@@ -111,10 +199,21 @@
     "headline": "No Study Backs the \"9 Out of 10\" Tap Water Vitamin Claim",
     "articleBody": "This statistic doesn't trace back to any published study, government health survey, or research institution, and a claim this specific and this alarming would normally be easy to find if it were real. National nutrition surveys do track vitamin deficiencies in detail, broken down by age, region, and specific nutrient, and none of them report anything close to 90 percent of the general population being deficient because of their drinking water.\n\nThe claim also misunderstands how tap water and nutrition actually relate. Tap water isn't a meaningful source of vitamins in most diets to begin with, so it can't be the cause of a vitamin deficiency the way a poor diet or an absorption disorder can. Some places do fortify water with specific minerals like fluoride for dental health, but that's a deliberate, well-documented public health measure, not evidence of hidden deficiency.\n\nThe framing itself is also a giveaway. \"Share before this gets taken down\" is a pressure tactic designed to get you to spread a claim before you have time to check it, not a marker of urgent, suppressed information. Legitimate health findings, including inconvenient ones, get published through channels anyone can look up rather than disappearing if not shared fast enough.",
     "sources": [
-      {"label": "World Health Organization, 'Drinking-water' fact sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/drinking-water"},
-      {"label": "U.S. CDC, National Health and Nutrition Examination Survey (NHANES)", "url": "https://www.cdc.gov/nchs/nhanes/index.htm"},
-      {"label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist", "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"}
-    ]
+      {
+        "label": "World Health Organization, 'Drinking-water' fact sheet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/drinking-water"
+      },
+      {
+        "label": "U.S. CDC, National Health and Nutrition Examination Survey (NHANES)",
+        "url": "https://www.cdc.gov/nchs/nhanes/index.htm"
+      },
+      {
+        "label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist",
+        "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Data"
   },
   {
     "id": "S10",
@@ -124,10 +223,21 @@
     "headline": "No, 2 Million People Didn't Die From Headache Pills Last Year",
     "articleBody": "A death toll of that size, in the range of some of the world's leading causes of death, would be tracked and reported by national health statistics offices and the WHO as a matter of course, not hidden. Adverse drug event data, including deaths linked to common over-the-counter painkillers like ibuprofen, acetaminophen, and aspirin, is collected through pharmacovigilance systems in most countries specifically because regulators need to catch safety problems early. That data is public.\n\nThe real numbers look nothing like this claim. Overdose or misuse of acetaminophen is a documented cause of acute liver failure and does cause deaths, but the toll is measured in the thousands per year in large countries, not millions globally. Ibuprofen and similar drugs carry real risks with long-term heavy use, including stomach bleeding and kidney strain, which is exactly why the packaging carries dosage warnings.\n\nClaims like this tend to spread because they're frightening and because \"the truth is being hidden\" is a hard framing to fact-check on its face. But a number this large would be one of the most significant public health stories of the year if true, and no credible health authority has reported anything resembling it.",
     "sources": [
-      {"label": "World Health Organization, Global Health Estimates: Leading Causes of Death", "url": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates"},
-      {"label": "U.S. FDA, Adverse Event Reporting System (FAERS)", "url": "https://www.fda.gov/drugs/surveillance/fda-adverse-event-reporting-system-faers"},
-      {"label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'", "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"}
-    ]
+      {
+        "label": "World Health Organization, Global Health Estimates: Leading Causes of Death",
+        "url": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates"
+      },
+      {
+        "label": "U.S. FDA, Adverse Event Reporting System (FAERS)",
+        "url": "https://www.fda.gov/drugs/surveillance/fda-adverse-event-reporting-system-faers"
+      },
+      {
+        "label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'",
+        "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Data"
   },
   {
     "id": "S11",
@@ -137,10 +247,21 @@
     "headline": "Childhood Vaccination Is Recovering Globally, Though Unevenly",
     "articleBody": "This is true at the global level, though the recovery is modest and incomplete rather than a clean bounce-back. According to the WHO and UNICEF's joint immunization tracking, global coverage for the standard three-dose childhood vaccine series rose for two consecutive years running, reaching 85 percent in 2025, up from the pandemic-era low. That's real progress after the sharp drop the pandemic caused in health systems worldwide.\n\nThe nuance matters here. Even with two years of gains, global coverage still sits below the 2019, pre-pandemic level, and around 13.5 million children worldwide still received zero vaccines in their first year of life. Recovery also isn't even: some regions, like parts of the Middle East and North Africa, saw notable jumps, while others are recovering more slowly, and a small number of countries, including the United States, have actually continued to see kindergarten vaccination rates decline in the most recent school year data, driven mainly by a rise in non-medical exemptions rather than access problems.\n\nSo the honest picture is a genuine but partial recovery: real, measured, worldwide progress on paper, sitting alongside pockets of continued decline in specific countries. Whether \"recovered\" describes your own country depends heavily on where you look, which is exactly why checking the primary data source, rather than a headline, matters.",
     "sources": [
-      {"label": "WHO and UNICEF, Estimates of National Immunization Coverage (WUENIC), 2025", "url": "https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who"},
-      {"label": "UNICEF Data, 'Vaccination and Immunization Statistics'", "url": "https://data.unicef.org/topic/child-health/immunization/"},
-      {"label": "U.S. CDC, SchoolVaxView kindergarten vaccination coverage data", "url": "https://www.cdc.gov/schoolvaxview/data/index.html"}
-    ]
+      {
+        "label": "WHO and UNICEF, Estimates of National Immunization Coverage (WUENIC), 2025",
+        "url": "https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who"
+      },
+      {
+        "label": "UNICEF Data, 'Vaccination and Immunization Statistics'",
+        "url": "https://data.unicef.org/topic/child-health/immunization/"
+      },
+      {
+        "label": "U.S. CDC, SchoolVaxView kindergarten vaccination coverage data",
+        "url": "https://www.cdc.gov/schoolvaxview/data/index.html"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Data"
   },
   {
     "id": "S12",
@@ -150,10 +271,21 @@
     "headline": "Youth Smoking Has Fallen to Its Lowest Level in 25 Years",
     "articleBody": "This is true and backed by strong, recent data. The most recent U.S. National Youth Tobacco Survey found cigarette smoking among middle and high school students at 1.4 percent, the lowest rate recorded since the survey began in 1999. That's a steep decline from a decade earlier, when youth smoking was several times higher, and it continues a long downward trend rather than a one-year blip.\n\nSome of this progress connects to a broader shift in what \"tobacco use\" even looks like for teenagers now. E-cigarette use among youth also declined substantially in the same survey, down to its lowest level in a decade, following years of regulatory action targeting flavored vaping products marketed to minors. Public health officials point to a mix of factors behind the overall trend: stronger age-verification enforcement, sustained anti-tobacco education campaigns, and higher prices on tobacco products all appear to play a role.\n\nThe one caveat worth flagging: while cigarette and e-cigarette use are both down, nicotine pouches are a newer product category that's been climbing, becoming the second most commonly used tobacco product among youth in the latest survey. So \"youth tobacco use\" and \"youth smoking\" aren't quite the same story. The claim as written, about smoking specifically, holds up cleanly.",
     "sources": [
-      {"label": "U.S. CDC Newsroom, 'Youth Tobacco Product Use at a 25-Year Low'", "url": "https://www.cdc.gov/media/releases/2024/p1017-youth-tobacco-use.html"},
-      {"label": "Campaign for Tobacco-Free Kids, 'Youth Cigarette Smoking Rate Hits 25-Year Low'", "url": "https://www.tobaccofreekids.org/press-releases/2024_10_17_youth-cigarette-smoking-rate-hits-25-year-low-but-2-25-million-youth-still-use-tobacco-products"},
-      {"label": "U.S. CDC Newsroom, 'Youth E-Cigarette Use Drops to Lowest Level in a Decade'", "url": "https://www.cdc.gov/media/releases/2024/p0905-youth-ecigarette.html"}
-    ]
+      {
+        "label": "U.S. CDC Newsroom, 'Youth Tobacco Product Use at a 25-Year Low'",
+        "url": "https://www.cdc.gov/media/releases/2024/p1017-youth-tobacco-use.html"
+      },
+      {
+        "label": "Campaign for Tobacco-Free Kids, 'Youth Cigarette Smoking Rate Hits 25-Year Low'",
+        "url": "https://www.tobaccofreekids.org/press-releases/2024_10_17_youth-cigarette-smoking-rate-hits-25-year-low-but-2-25-million-youth-still-use-tobacco-products"
+      },
+      {
+        "label": "U.S. CDC Newsroom, 'Youth E-Cigarette Use Drops to Lowest Level in a Decade'",
+        "url": "https://www.cdc.gov/media/releases/2024/p0905-youth-ecigarette.html"
+      }
+    ],
+    "topic": "Health",
+    "claimType": "Data"
   },
   {
     "id": "S13",
@@ -163,10 +295,21 @@
     "headline": "No Solid Evidence Links 5G Towers to Fatigue or Brain Fog",
     "articleBody": "The World Health Organization, the International Telecommunication Union, and independent engineering bodies have all reviewed the evidence on 5G and health, and none have found that radiofrequency exposure from towers at normal, regulated levels causes fatigue, brain fog, or similar symptoms. 5G uses non-ionizing radiation, the same broad category as radio and Wi-Fi signals, which doesn't carry enough energy to damage cells the way X-rays or UV radiation can. The main scientifically established effect at high exposure is mild tissue heating, and towers are required to operate far below the levels where that would occur.\n\nThe reports linking symptoms to nearby towers do exist, but they share a common weakness: they're typically self-reported case studies without control groups, meaning there's no comparison to a similar person not near a tower to see if the symptom rate actually differs. Fatigue and difficulty concentrating are also extremely common complaints with dozens of everyday causes, from poor sleep to stress to underlying health conditions, which makes it easy to mistakenly attribute them to a nearby tower once someone starts looking for one.\n\nThe nuance worth noting: scientific reviews describe the evidence as reassuring rather than absolutely final, since higher-frequency 5G bands are newer and long-term, large-scale population studies are still ongoing. Major health authorities continue to monitor new research, but as of now, no confirmed mechanism or consistent evidence supports the claim that living near a 5G tower causes these symptoms.",
     "sources": [
-      {"label": "World Health Organization, 'Radiation: 5G mobile networks and health'", "url": "https://www.who.int/news-room/questions-and-answers/item/radiation-5g-mobile-networks-and-health"},
-      {"label": "International Telecommunication Union, '5G, human exposure to EMF and health'", "url": "https://www.itu.int/en/mediacentre/backgrounders/Pages/5G-EMF-health.aspx"},
-      {"label": "NIH, '5G mobile networks and health — a state-of-the-science review'", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8263336/"}
-    ]
+      {
+        "label": "World Health Organization, 'Radiation: 5G mobile networks and health'",
+        "url": "https://www.who.int/news-room/questions-and-answers/item/radiation-5g-mobile-networks-and-health"
+      },
+      {
+        "label": "International Telecommunication Union, '5G, human exposure to EMF and health'",
+        "url": "https://www.itu.int/en/mediacentre/backgrounders/Pages/5G-EMF-health.aspx"
+      },
+      {
+        "label": "NIH, '5G mobile networks and health — a state-of-the-science review'",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8263336/"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S14",
@@ -176,10 +319,21 @@
     "headline": "Overnight Charging Isn't Why Phone Batteries Explode",
     "articleBody": "Modern smartphones are built with charging circuitry that stops the flow of power once the battery hits 100 percent, then only trickles in small top-up charges to maintain that level overnight. This is standard across current iPhone and Android devices and has been for years, so the classic \"overcharging\" mechanism that could genuinely stress older batteries isn't really in play anymore. Manufacturers like Samsung and Apple state plainly that leaving a phone plugged in overnight will not put a healthy battery at meaningful risk.\n\nBattery fires and explosions do happen, but they're rare, and when they occur the cause usually traces back to something else: physical damage to the battery, a manufacturing defect, exposure to extreme heat, or a low-quality, uncertified charger or cable that lacks proper safety circuitry. Counterfeit chargers in particular have been linked to real incidents, including documented cases of overheating and fires, because they can deliver unstable voltage that a genuine or certified charger would regulate.\n\nThere's a smaller, real effect worth mentioning: keeping a lithium-ion battery at 100 percent for long stretches can very gradually accelerate normal chemical wear over months and years, which is why some phones offer optional charge-limiting features. But that's a slow capacity-loss issue, not an explosion risk, and it's a different claim from the one being made here.",
     "sources": [
-      {"label": "Samsung Support, 'Will charging your Galaxy phone overnight damage the battery?'", "url": "https://www.samsung.com/ca/support/mobile-devices/will-the-battery-be-damaged-if-i-leave-the-phone-charging-overnight"},
-      {"label": "The Conversation, 'Common battery myths debunked'", "url": "https://theconversation.com/should-you-charge-your-phone-overnight-will-overcharging-make-it-explode-common-battery-myths-debunked-214956"},
-      {"label": "ScienceAlert, 'Here's What Actually Happens if You Charge Your Phone Overnight'", "url": "https://www.sciencealert.com/heres-what-actually-happens-if-you-charge-your-phone-overnight"}
-    ]
+      {
+        "label": "Samsung Support, 'Will charging your Galaxy phone overnight damage the battery?'",
+        "url": "https://www.samsung.com/ca/support/mobile-devices/will-the-battery-be-damaged-if-i-leave-the-phone-charging-overnight"
+      },
+      {
+        "label": "The Conversation, 'Common battery myths debunked'",
+        "url": "https://theconversation.com/should-you-charge-your-phone-overnight-will-overcharging-make-it-explode-common-battery-myths-debunked-214956"
+      },
+      {
+        "label": "ScienceAlert, 'Here's What Actually Happens if You Charge Your Phone Overnight'",
+        "url": "https://www.sciencealert.com/heres-what-actually-happens-if-you-charge-your-phone-overnight"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S15",
@@ -189,10 +343,21 @@
     "headline": "Yes, Modern Phones Stop Drawing Power at Full Charge",
     "articleBody": "This is true and reflects how lithium-ion battery management has evolved. Once a modern smartphone reaches 100 percent, its internal charging controller cuts the main current and switches to what's called trickle charging, delivering only small bursts of power as needed to offset the battery's slow natural drain. This prevents the classic overcharging damage that was a genuine concern with older, less sophisticated battery technology decades ago.\n\nManufacturers have also added features specifically aimed at long-term battery health, not just overnight safety. Apple's Optimized Battery Charging and Samsung's charge-limiting options learn a user's typical schedule and can delay the final stretch of charging until shortly before the phone is expected to be unplugged, reducing the total time spent sitting at 100 percent.\n\nSo the claim holds up on both counts it makes: overnight charging is safe for a healthy modern battery, because the phone genuinely does stop drawing power at full charge. Whether it's the single best habit for maximizing battery lifespan over years of use is a separate, more minor question, and one manufacturers have already built settings to address for anyone who wants to optimize further.",
     "sources": [
-      {"label": "Gadget Hacks, 'Does Charging Phone Overnight Damage Battery Life?'", "url": "https://smartphones.gadgethacks.com/news/does-charging-phone-overnight-damage-battery-life/"},
-      {"label": "Samsung Support, 'Will charging your Galaxy phone overnight damage the battery?'", "url": "https://www.samsung.com/ca/support/mobile-devices/will-charging-your-galaxy-phone-overnight-damage-the-battery/"},
-      {"label": "ScienceAlert, 'Here's What Actually Happens if You Charge Your Phone Overnight'", "url": "https://www.sciencealert.com/heres-what-actually-happens-if-you-charge-your-phone-overnight"}
-    ]
+      {
+        "label": "Gadget Hacks, 'Does Charging Phone Overnight Damage Battery Life?'",
+        "url": "https://smartphones.gadgethacks.com/news/does-charging-phone-overnight-damage-battery-life/"
+      },
+      {
+        "label": "Samsung Support, 'Will charging your Galaxy phone overnight damage the battery?'",
+        "url": "https://www.samsung.com/ca/support/mobile-devices/will-charging-your-galaxy-phone-overnight-damage-the-battery/"
+      },
+      {
+        "label": "ScienceAlert, 'Here's What Actually Happens if You Charge Your Phone Overnight'",
+        "url": "https://www.sciencealert.com/heres-what-actually-happens-if-you-charge-your-phone-overnight"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S16",
@@ -202,10 +367,21 @@
     "headline": "Macs and iPhones Can Be Hacked Too, Security Researchers Confirm",
     "articleBody": "This is true. Apple's devices have a strong security reputation, and it's earned: iOS's closed app ecosystem and macOS's built-in protections like Gatekeeper and XProtect do meaningfully raise the bar for attackers compared to more open platforms. But \"harder to attack\" is not the same as \"impossible to attack,\" and security researchers have documented real cases proving the difference.\n\nApple disclosed multiple actively exploited zero-day vulnerabilities in iOS in recent years, some serious enough to require emergency security patches outside the normal update cycle. Malicious apps have also occasionally slipped through Apple's App Store review process by hiding harmful functionality that only activates after approval. And phishing, which relies on tricking a person rather than exploiting a technical flaw, works identically regardless of what device or operating system the victim is using.\n\nThe practical takeaway from security researchers is consistent: Apple's ecosystem does reduce risk, particularly from mass-market malware, but good personal security habits, keeping software updated, being cautious with links and downloads, using strong authentication, still matter on every platform. No operating system removes the need for that.",
     "sources": [
-      {"label": "Norton, 'Yes, an iPhone can be hacked: Here's how'", "url": "https://uk.norton.com/blog/hacking/can-iphones-get-hacked"},
-      {"label": "Intego, 'Can Macs Get Viruses? Common Mac Security Myths'", "url": "https://www.intego.com/mac-security-blog/can-macs-get-viruses/"},
-      {"label": "Security.org, 'Can an iPhone Be Hacked?'", "url": "https://www.security.org/antivirus/iphone-hack/"}
-    ]
+      {
+        "label": "Norton, 'Yes, an iPhone can be hacked: Here's how'",
+        "url": "https://uk.norton.com/blog/hacking/can-iphones-get-hacked"
+      },
+      {
+        "label": "Intego, 'Can Macs Get Viruses? Common Mac Security Myths'",
+        "url": "https://www.intego.com/mac-security-blog/can-macs-get-viruses/"
+      },
+      {
+        "label": "Security.org, 'Can an iPhone Be Hacked?'",
+        "url": "https://www.security.org/antivirus/iphone-hack/"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S17",
@@ -215,10 +391,21 @@
     "headline": "An Unnamed \"Former Employee\" Isn't Proof Your Powered-Off Camera Is Recording",
     "articleBody": "The claim doesn't hold up technically, and the source doesn't hold up either. When a modern smartphone is fully powered off, its camera, along with the processor and sensors needed to capture and store video, has no power supply to operate. A camera cannot record without electricity flowing to it, and a phone that's genuinely off is not drawing power to those components. This isn't a policy or a promise, it's basic hardware.\n\nThere's a related but different phenomenon that sometimes gets confused with this: some phones retain limited functionality in a very low-power state, such as \"Find My\" location features that use Bluetooth even when a device appears off, which manufacturers disclose openly in their documentation. That's a far cry from secret, unpowered video recording, and it doesn't extend to cameras.\n\nAs for the source: an anonymous \"former employee\" with no name, role, or company confirmed is not verifiable information. Legitimate security researchers who do find real camera or microphone vulnerabilities publish their findings with technical detail, their names attached, and often coordinate disclosure with the manufacturer. That evidence trail is what separates a credible security finding from an unverifiable claim.",
     "sources": [
-      {"label": "Kaspersky, 'MacBook Hacking: How to know if your Mac has been hacked'", "url": "https://www.kaspersky.com/resource-center/preemptive-safety/macbook-hacking"},
-      {"label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'", "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"},
-      {"label": "Apple Support, 'Use Find My after you turn off or erase your device'", "url": "https://support.apple.com/en-us/102668"}
-    ]
+      {
+        "label": "Kaspersky, 'MacBook Hacking: How to know if your Mac has been hacked'",
+        "url": "https://www.kaspersky.com/resource-center/preemptive-safety/macbook-hacking"
+      },
+      {
+        "label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'",
+        "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"
+      },
+      {
+        "label": "Apple Support, 'Use Find My after you turn off or erase your device'",
+        "url": "https://support.apple.com/en-us/102668"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Source"
   },
   {
     "id": "S18",
@@ -228,10 +415,21 @@
     "headline": "An Unverified \"Telecom Insider\" Tip Doesn't Prove Carriers Sabotage Your Data",
     "articleBody": "The specific claim, that carriers deliberately slow down data speeds after you've already paid, to pressure you into upgrading, isn't something a vague, unnamed source can establish, and it also runs into a real regulatory problem. In many countries, including the United States and the European Union, deliberately throttling a customer's data without disclosure is either restricted or requires clear notice in the service contract.\n\nWhat does happen, and is openly disclosed rather than secret, is data speed reduction tied to specific, named policies: many prepaid and some postpaid plans include a data cap after which speeds are reduced for the rest of the billing cycle, a practice carriers describe clearly in their terms of service. Network congestion can also slow speeds during high-traffic periods in a given area, affecting all users on that tower rather than targeting individuals to push upgrades.\n\nThe tell here is the sourcing: \"someone who works at a telecom company,\" forwarded through a neighborhood group with no name or role attached, is not a source that can be checked. If a carrier were engaged in deceptive throttling, the more credible path to finding out would be through a telecom regulator's investigation or documented, methodical network testing, not an anonymous tip.",
     "sources": [
-      {"label": "Federal Communications Commission, 'Open Internet'", "url": "https://www.fcc.gov/general/open-internet"},
-      {"label": "European Commission, 'Open Internet' (EU net neutrality regulation)", "url": "https://digital-strategy.ec.europa.eu/en/policies/open-internet"},
-      {"label": "LBBC, 'Fact or fake news: How to find reliable health information online'", "url": "https://www.lbbc.org/news/fact-or-fake-news-how-to-find-reliable-health-information-online"}
-    ]
+      {
+        "label": "Federal Communications Commission, 'Open Internet'",
+        "url": "https://www.fcc.gov/general/open-internet"
+      },
+      {
+        "label": "European Commission, 'Open Internet' (EU net neutrality regulation)",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/open-internet"
+      },
+      {
+        "label": "LBBC, 'Fact or fake news: How to find reliable health information online'",
+        "url": "https://www.lbbc.org/news/fact-or-fake-news-how-to-find-reliable-health-information-online"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Source"
   },
   {
     "id": "S19",
@@ -241,10 +439,21 @@
     "headline": "Official Security Bulletins Are a Verifiable Way to Confirm Why a Patch Was Released",
     "articleBody": "This card is marked FACT because it describes a genuinely verifiable type of claim. Major software and hardware companies, including Apple, Google, Microsoft, and others, routinely publish official security bulletins or advisories that document exactly what a given update fixes, including the specific vulnerability, how it was discovered, and often a tracking number known as a CVE that any security researcher can independently look up.\n\n\"Red team\" refers to an internal group whose job is to try to break their own company's products before external attackers do, a standard and widely used practice in the software industry.\n\nWhat makes this kind of claim trustworthy isn't the news outlet reporting it, it's that the underlying bulletin is published directly by the company and is publicly checkable. A journalist covering it accurately is passing along information anyone can verify at the source, rather than relaying an unconfirmed rumor or an anonymous tip. The general lesson extends beyond any single patch: when evaluating a technology claim, checking whether it traces back to an official company bulletin, a CVE listing, or a named security researcher's published report is one of the more reliable ways to separate documented fact from speculation.",
     "sources": [
-      {"label": "CVE Program (MITRE), Common Vulnerabilities and Exposures database", "url": "https://www.cve.org/"},
-      {"label": "Apple Support, 'About the security content of Apple software updates'", "url": "https://support.apple.com/en-us/100100"},
-      {"label": "Google Security Blog, security research and disclosure practices", "url": "https://security.googleblog.com/"}
-    ]
+      {
+        "label": "CVE Program (MITRE), Common Vulnerabilities and Exposures database",
+        "url": "https://www.cve.org/"
+      },
+      {
+        "label": "Apple Support, 'About the security content of Apple software updates'",
+        "url": "https://support.apple.com/en-us/100100"
+      },
+      {
+        "label": "Google Security Blog, security research and disclosure practices",
+        "url": "https://security.googleblog.com/"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Source"
   },
   {
     "id": "S20",
@@ -254,10 +463,21 @@
     "headline": "Bank Impersonation Text Scams Are a Real, Ongoing FTC Concern",
     "articleBody": "This is true and matches the Federal Trade Commission's own published consumer data. The FTC has repeatedly identified fake bank fraud alerts as one of the most commonly reported types of text message scam, with reports of texts impersonating banks rising sharply over recent years. These messages typically claim there's suspicious activity on your account and ask you to reply or click a link to \"verify\" or \"protect\" your funds, then connect victims to a fake representative who talks them into transferring money directly to the scammer.\n\nThe mechanism relies on urgency and familiarity: a text that looks like it's from a bank you actually use, combined with a warning that something is wrong with your money, is designed to make people act before they stop to check whether the message is legitimate. The FTC has also documented scammers going further, impersonating the FTC itself in some cases, using spoofed phone numbers and even fake employee names or badge photos to seem credible.\n\nThe FTC's consistent guidance is straightforward: legitimate banks and government agencies don't ask you to move your money to \"protect\" it, and they don't verify identity through links in unexpected texts. If you get a message like this, the safer step is to contact your bank directly using the number on your card or their official app, not any number or link provided in the text itself.",
     "sources": [
-      {"label": "U.S. Federal Trade Commission, 'Is that unexpected text a scam?'", "url": "https://consumer.ftc.gov/consumer-alerts/2025/04/unexpected-text-scam"},
-      {"label": "U.S. Federal Trade Commission, Data Spotlight on text message scams impersonating banks", "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/texts-spotlight-final.pdf"},
-      {"label": "WISH-TV, 'FTC issues warning over scam impersonating agency officials'", "url": "https://www.wishtv.com/news/i-team/ftc-issues-warning-over-scam-impersonating-agency-officials-via-phone-and-text/"}
-    ]
+      {
+        "label": "U.S. Federal Trade Commission, 'Is that unexpected text a scam?'",
+        "url": "https://consumer.ftc.gov/consumer-alerts/2025/04/unexpected-text-scam"
+      },
+      {
+        "label": "U.S. Federal Trade Commission, Data Spotlight on text message scams impersonating banks",
+        "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/texts-spotlight-final.pdf"
+      },
+      {
+        "label": "WISH-TV, 'FTC issues warning over scam impersonating agency officials'",
+        "url": "https://www.wishtv.com/news/i-team/ftc-issues-warning-over-scam-impersonating-agency-officials-via-phone-and-text/"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Source"
   },
   {
     "id": "S21",
@@ -267,10 +487,21 @@
     "headline": "No, 9 Out of 10 Android Phones Aren't \"Secretly\" Monitored",
     "articleBody": "There's real, documented research on Android data collection, which is exactly why this exaggerated version is misleading. Academic researchers have found that Android manufacturers and pre-installed apps do collect device identifiers, app lists, and other technical data, and that this practice is more extensive than many users realize.\n\nBut this is meaningfully different from the claim being made here. What's documented is disclosed, if often buried, in privacy policies and terms of service, not a secret 90 percent-wide surveillance scheme, and no leaked report supporting that specific \"9 out of 10\" figure has been published or verified by any credible source. Data collection practices also vary significantly by manufacturer, region, and specific device, so a single uniform statistic covering nearly all Android phones globally doesn't match how the actual research is structured or what it found.\n\nThe honest picture is that real privacy concerns around Android data collection exist and are worth taking seriously, but they look like disclosed telemetry, ad identifiers, and analytics with genuine transparency gaps, not the secret covert monitoring implied by \"leaked report\" framing with a suspiciously round, alarming statistic attached and no traceable source.",
     "sources": [
-      {"label": "RT / Trinity College Dublin & University of Edinburgh research on Android data", "url": "https://www.rt.com/news/537346-android-phones-user-data-big-tech/amp/"},
-      {"label": "Cybernews, 'Android phone chip provider was secretly collecting user data'", "url": "https://cybernews.com/news/android-phone-chip-collecting-user-data/"},
-      {"label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist", "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"}
-    ]
+      {
+        "label": "RT / Trinity College Dublin & University of Edinburgh research on Android data",
+        "url": "https://www.rt.com/news/537346-android-phones-user-data-big-tech/amp/"
+      },
+      {
+        "label": "Cybernews, 'Android phone chip provider was secretly collecting user data'",
+        "url": "https://cybernews.com/news/android-phone-chip-collecting-user-data/"
+      },
+      {
+        "label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist",
+        "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Data"
   },
   {
     "id": "S22",
@@ -280,10 +511,21 @@
     "headline": "\"Social Media Addiction\" Isn't a Formal Diagnosis, and Nowhere Near Half of Users Meet Any Definition",
     "articleBody": "The \"more than half\" figure isn't supported by the research, and there's a deeper problem underneath it: \"social media addiction\" is not a recognized clinical diagnosis in the DSM-5, the standard reference manual mental health professionals use. There's no single, agreed-upon clinical threshold for it the way there is for, say, alcohol use disorder, which is exactly why research estimates on prevalence vary so widely.\n\nDepending on the study, the country, the age group, and the specific screening criteria used, published estimates for problematic or excessive social media use range from roughly 5 percent up to around 17 percent of the population, occasionally higher in specific subgroups like teenagers. None of the credible academic literature puts the figure anywhere close to a majority of all users.\n\nThis doesn't mean concerns about heavy or compulsive social media use are baseless. Researchers do study problematic use patterns, and some people genuinely struggle to control their usage in ways that affect sleep, mood, or daily functioning. But the science describes a real, more modest, and unevenly measured phenomenon, not a majority-of-users clinical epidemic requiring formal treatment.",
     "sources": [
-      {"label": "Growth Navigate, 'Social Media Addiction Statistics: What the Data Actually Shows'", "url": "https://www.growthnavigate.com/social-media-addiction-statistics"},
-      {"label": "NIH, 'Heterogeneity of Prevalence of Social Media Addiction Across Multiple Classification Schemes'", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8787656/"},
-      {"label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'", "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"}
-    ]
+      {
+        "label": "Growth Navigate, 'Social Media Addiction Statistics: What the Data Actually Shows'",
+        "url": "https://www.growthnavigate.com/social-media-addiction-statistics"
+      },
+      {
+        "label": "NIH, 'Heterogeneity of Prevalence of Social Media Addiction Across Multiple Classification Schemes'",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8787656/"
+      },
+      {
+        "label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'",
+        "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Data"
   },
   {
     "id": "S23",
@@ -293,10 +535,21 @@
     "headline": "Most Battery Problems Trace to Bad Chargers, Not Overnight Charging Itself",
     "articleBody": "This lines up with how battery safety actually works. Modern phones regulate their own charging through a \"handshake\" process between the device and the charger, where the two negotiate a safe voltage and current. Genuine and properly certified third-party chargers participate in that handshake correctly and pose minimal risk. The problem comes from cheap, uncertified, or counterfeit chargers that skip the safety circuitry needed to manage that negotiation properly.\n\nInvestigations into battery-related incidents, including work by consumer safety agencies and product testing organizations, have repeatedly found that a large share of documented overheating and fire cases trace back to counterfeit or substandard chargers and cables rather than genuine manufacturer equipment or the simple habit of leaving a phone plugged in.\n\nThe nuance: this doesn't mean every off-brand charger is dangerous. Reputable third-party manufacturers that meet certification standards are generally considered safe, and \"overnight\" by itself isn't the risk factor, an uncertified charger is just as risky whether it's used for ten minutes or ten hours. The meaningful variable is the quality and certification of the charging hardware, not the time of day or duration of use.",
     "sources": [
-      {"label": "FBI Internet Crime Complaint Center (IC3), Public Service Announcement on counterfeit battery scams", "url": "https://www.ic3.gov/PSA/2022/PSA220930"},
-      {"label": "Powertron Battery, 'How to Tell If a Battery Charger Is Damaging Your Battery'", "url": "https://powertronbatteryco.com/blog/battery-charger-damaging-battery-signs-2/"},
-      {"label": "Electrical Faults Fixed, 'Are fake phone chargers dangerous?'", "url": "https://www.electricalfaultsfixed.com/blog/are-fake-phone-chargers-dangerous-can-cheap-be-real"}
-    ]
+      {
+        "label": "FBI Internet Crime Complaint Center (IC3), Public Service Announcement on counterfeit battery scams",
+        "url": "https://www.ic3.gov/PSA/2022/PSA220930"
+      },
+      {
+        "label": "Powertron Battery, 'How to Tell If a Battery Charger Is Damaging Your Battery'",
+        "url": "https://powertronbatteryco.com/blog/battery-charger-damaging-battery-signs-2/"
+      },
+      {
+        "label": "Electrical Faults Fixed, 'Are fake phone chargers dangerous?'",
+        "url": "https://www.electricalfaultsfixed.com/blog/are-fake-phone-chargers-dangerous-can-cheap-be-real"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Data"
   },
   {
     "id": "S24",
@@ -306,10 +559,21 @@
     "headline": "Global Internet Access Keeps Growing, Mostly Through Mobile Networks",
     "articleBody": "This is broadly true, though \"steadily\" undersells how much the pace of growth has slowed compared to a decade ago. Global internet adoption has continued to rise nearly every year, and multiple independent tracking sources agree that mobile broadband has been the primary driver, since it's often cheaper and faster to deploy than fixed-line infrastructure.\n\nThe scale of remaining growth has narrowed as adoption approaches saturation in many wealthy countries. Recent global tracking estimated around 97 million people came online for the first time in a single recent year, a growth rate of under 2 percent, compared to the much faster expansion seen in the 2000s and early 2010s. GSMA Intelligence data found only about 5 percent of the world's population now sits entirely outside mobile broadband network coverage, though coverage existing doesn't always mean it's affordable or actually used.\n\nThe honest caveat: growth continuing is well documented, but it hasn't reached everyone, and it isn't even. As of recent estimates, over 2 billion people worldwide still don't use the internet, concentrated heavily in lower-income regions where affordability and infrastructure gaps remain the primary barriers.",
     "sources": [
-      {"label": "DataReportal, 'Digital 2024: The State of Internet Adoption'", "url": "https://datareportal.com/reports/digital-2024-deep-dive-the-state-of-internet-adoption"},
-      {"label": "Pew Research Center, 'Demographics of Internet and Home Broadband Usage in the United States'", "url": "https://www.pewresearch.org/internet/fact-sheet/internet-broadband/"},
-      {"label": "Home Fi, '20 Internet Access Statistics for 2026'", "url": "https://homefi.info/blogs/homefi-blog/internet-access-statistics"}
-    ]
+      {
+        "label": "DataReportal, 'Digital 2024: The State of Internet Adoption'",
+        "url": "https://datareportal.com/reports/digital-2024-deep-dive-the-state-of-internet-adoption"
+      },
+      {
+        "label": "Pew Research Center, 'Demographics of Internet and Home Broadband Usage in the United States'",
+        "url": "https://www.pewresearch.org/internet/fact-sheet/internet-broadband/"
+      },
+      {
+        "label": "Home Fi, '20 Internet Access Statistics for 2026'",
+        "url": "https://homefi.info/blogs/homefi-blog/internet-access-statistics"
+      }
+    ],
+    "topic": "Technology",
+    "claimType": "Data"
   },
   {
     "id": "S25",
@@ -319,10 +583,21 @@
     "headline": "Social Media Isn't the Sole Cause of Rising Divorce Rates",
     "articleBody": "Research does find a real link between heavy social media use and marital problems, but \"entirely\" is where this claim breaks down. A widely cited 2014 study published in Computers in Human Behavior found that a 20 percent annual rise in Facebook use in a U.S. state was associated with a modest 2 to 4 percent increase in divorce rates, and heavier personal use was linked to lower reported marriage quality. That's a real, measurable association, not nothing.\n\nBut an association isn't the same as a sole cause, and researchers studying this area are consistent on that point: social media tends to interact with problems that already exist, jealousy, insecurity, poor communication, opportunities for emotional or physical infidelity, rather than manufacturing marital conflict out of nothing. Divorce researchers point to a wide range of established contributing factors, including financial stress, incompatibility, domestic conflict, and life transitions, that predate social media by decades.\n\nThe claim that removing apps would make marriages \"suddenly last\" also doesn't hold up logically. Couples who are already struggling tend to be more vulnerable to how they use social media, but taking away the platform doesn't resolve the underlying relationship problems those studies actually describe. Social media is one contributing factor among several, not the whole story.",
     "sources": [
-      {"label": "Psychology Today, 'Marriage, Divorce, and Social Media: A Recipe for Disaster'", "url": "https://www.psychologytoday.com/us/blog/a-better-divorce/202111/marriage-divorce-and-social-media-a-recipe-for-disaster"},
-      {"label": "Worthy, 'Can Social Media Cause Divorce?'", "url": "https://blog.worthy.com/divorce/relationships/can-social-media-cause-divorce/"},
-      {"label": "McKinley Irvin, 'How Social Media Affects Marriage'", "url": "https://www.mckinleyirvin.com/resources/digital-divorce-a-guide-for-social-media-digital/how-social-media-affects-marriage/"}
-    ]
+      {
+        "label": "Psychology Today, 'Marriage, Divorce, and Social Media: A Recipe for Disaster'",
+        "url": "https://www.psychologytoday.com/us/blog/a-better-divorce/202111/marriage-divorce-and-social-media-a-recipe-for-disaster"
+      },
+      {
+        "label": "Worthy, 'Can Social Media Cause Divorce?'",
+        "url": "https://blog.worthy.com/divorce/relationships/can-social-media-cause-divorce/"
+      },
+      {
+        "label": "McKinley Irvin, 'How Social Media Affects Marriage'",
+        "url": "https://www.mckinleyirvin.com/resources/digital-divorce-a-guide-for-social-media-digital/how-social-media-affects-marriage/"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S26",
@@ -332,10 +607,21 @@
     "headline": "Screen Time and Social Skills: No Guaranteed Outcome, Research Shows",
     "articleBody": "The claim of a guaranteed, universal outcome doesn't match what the research actually finds. A large 2020 study from Ohio State University, comparing kindergarteners who started school in 1998 to those who started in 2010, right around when tablets and smartphones became widespread, found virtually no meaningful difference in social skills between the two groups. Teachers rated both cohorts similarly on forming friendships, getting along with others, and self-control.\n\nA broader 2025 meta-analysis pooling many studies on screen time and children's social-emotional development did find a statistically significant negative association, but described it as small, not the deterministic, universal effect the claim describes. The size of the effect also depends heavily on factors the claim ignores entirely: how much screen time, what kind of content, whether a parent is engaged alongside the child, and the child's age.\n\nClaiming \"zero exceptions\" for something this variable is itself a red flag. Human development doesn't work in absolutes, and researchers in this field consistently describe screen time as one factor among many, alongside parenting style, in-person opportunities for play, and individual temperament, that shape how a child's social skills develop.",
     "sources": [
-      {"label": "ScienceDaily, 'Time on screens has little impact on kids' social skills, study suggests'", "url": "https://www.sciencedaily.com/releases/2020/04/200413103532.htm"},
-      {"label": "ScienceDirect, 'The association between screen exposure and social-emotional development in children'", "url": "https://www.sciencedirect.com/science/article/pii/S000169182501131X"},
-      {"label": "ScienceDirect, 'The Relationship Between Screen Use and preschoolers' Social-Emotional Problems'", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0891524524003833"}
-    ]
+      {
+        "label": "ScienceDaily, 'Time on screens has little impact on kids' social skills, study suggests'",
+        "url": "https://www.sciencedaily.com/releases/2020/04/200413103532.htm"
+      },
+      {
+        "label": "ScienceDirect, 'The association between screen exposure and social-emotional development in children'",
+        "url": "https://www.sciencedirect.com/science/article/pii/S000169182501131X"
+      },
+      {
+        "label": "ScienceDirect, 'The Relationship Between Screen Use and preschoolers' Social-Emotional Problems'",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0891524524003833"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S27",
@@ -345,10 +631,21 @@
     "headline": "Fewer Shared Public Spaces Is a Real, Documented Factor in Declining Neighborly Interaction",
     "articleBody": "This is true and reflects a well-established line of urban sociology research. Sociologist Ray Oldenburg coined the term \"third places\" in his 1989 book The Great Good Place to describe informal, low-cost gathering spots, coffee shops, parks, libraries, bars, that sit outside home and work and let neighbors interact casually and repeatedly over time. Oldenburg and later researchers argue these spaces are what actually build the everyday familiarity that makes a neighborhood feel connected.\n\nMultiple sources document a real decline in these spaces: rising costs of living have pushed many people out of walkable urban centers, disinvestment and privatization have reduced free public gathering spots in many U.S. cities, and sociologist Robert Putnam's influential research in Bowling Alone documented a broader decades-long decline in civic participation and informal socializing.\n\nThe important nuance, which the statement itself reflects accurately, is that this is described as \"one factor,\" not the sole cause. Researchers in this area consistently point to several contributing forces working together, remote work, suburban design, economic pressure, and the shift of social time toward digital spaces, rather than any single explanation for why neighbors interact less than they used to.",
     "sources": [
-      {"label": "Urban Institute, 'How Third Places Contribute to Thriving Communities'", "url": "https://www.urban.org/urban-wire/how-third-places-contribute-thriving-communities"},
-      {"label": "The DO (Journal of the American Osteopathic Association), 'The lost third space'", "url": "https://thedo.osteopathic.org/columns/the-lost-third-space-rediscovering-community-and-connection-in-modern-society/"},
-      {"label": "Montreal Institute, 'Where Have All the Great, Good Places Gone?'", "url": "https://www.mironline.ca/where-have-all-the-great-good-places-gone-the-decline-of-the-third-place/"}
-    ]
+      {
+        "label": "Urban Institute, 'How Third Places Contribute to Thriving Communities'",
+        "url": "https://www.urban.org/urban-wire/how-third-places-contribute-thriving-communities"
+      },
+      {
+        "label": "The DO (Journal of the American Osteopathic Association), 'The lost third space'",
+        "url": "https://thedo.osteopathic.org/columns/the-lost-third-space-rediscovering-community-and-connection-in-modern-society/"
+      },
+      {
+        "label": "Montreal Institute, 'Where Have All the Great, Good Places Gone?'",
+        "url": "https://www.mironline.ca/where-have-all-the-great-good-places-gone-the-decline-of-the-third-place/"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S28",
@@ -358,10 +655,21 @@
     "headline": "Longer Commutes Are Linked to Less Community Participation, Research Confirms",
     "articleBody": "This is true and backed by both classic and more recent research on social capital. Political scientist Robert Putnam's influential research found that every additional ten minutes of daily commuting was associated with roughly a 10 percent decline in measures of civic and community participation, one of the most cited findings connecting commute length to social disengagement.\n\nA study published in the peer-reviewed journal Transportation Research using U.S. National Household Travel Survey data tested this directly, tracking \"socially-oriented trips\" against commute time. It found that people with commutes over 20 minutes were significantly more likely to make zero social trips, and the effect grew stronger the longer the commute, reaching its highest point among people commuting 90 minutes or more.\n\nThe mechanism makes intuitive sense: commuting consumes time and energy that would otherwise go toward local involvement, and it can also physically separate where someone works from where they live and might otherwise socialize. As the statement accurately frames it, this is one factor among several. Researchers also point to suburban design, generational shifts in civic habits, and how people spend leisure time as contributing causes working alongside commute length.",
     "sources": [
-      {"label": "ScienceDirect / Transportation Research, 'Commute Time and Social Capital in the U.S.'", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0749379707007453"},
-      {"label": "Shortform, 'The Decline of Social Capital & What's to Blame'", "url": "https://www.shortform.com/blog/decline-of-social-capital/"},
-      {"label": "ReviseSociology, 'Social Capital Theory: Robert Putnam'", "url": "https://revisesociology.com/2025/08/14/social-capital-theory-robert-putnam-bonds-bridges-and-civic-engagement/"}
-    ]
+      {
+        "label": "ScienceDirect / Transportation Research, 'Commute Time and Social Capital in the U.S.'",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0749379707007453"
+      },
+      {
+        "label": "Shortform, 'The Decline of Social Capital & What's to Blame'",
+        "url": "https://www.shortform.com/blog/decline-of-social-capital/"
+      },
+      {
+        "label": "ReviseSociology, 'Social Capital Theory: Robert Putnam'",
+        "url": "https://revisesociology.com/2025/08/14/social-capital-theory-robert-putnam-bonds-bridges-and-civic-engagement/"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S29",
@@ -371,10 +679,21 @@
     "headline": "An Unnamed \"Folklorist\" Isn't a Source, Even Though the Underlying Idea Has Real Scholarship Behind It",
     "articleBody": "This claim mixes something real with something unverifiable, which is what makes it worth unpacking carefully. There genuinely is a well-established academic concept, called \"invented tradition,\" introduced by historian Eric Hobsbawm and Terence Ranger in their 1983 book The Invention of Tradition. It documents real cases where practices presented as ancient, like certain Scottish clan tartans or British royal ceremonial customs, were actually created much more recently.\n\nBut that scholarship makes careful, specific, well-documented claims about particular traditions, backed by named historians, archival research, and identifiable dates. It never claims that \"most\" festivals worldwide have no real history, and Hobsbawm's own work distinguishes invented traditions from the many customs that do have long, continuous, well-documented histories.\n\nThe claim here strips away all of that specificity: no folklorist's name, no named festival, no citation, just \"a well known folklorist, name forgotten.\" That framing makes the claim impossible to check, which is the actual problem, not the idea that some traditions are younger than they appear. Legitimate claims about a specific festival's origins can be verified against archival and heritage records.",
     "sources": [
-      {"label": "Wikipedia, 'Invented tradition' (overview of Hobsbawm and Ranger's scholarship)", "url": "https://en.wikipedia.org/wiki/Invented_tradition"},
-      {"label": "Oxford Reference, 'Invented tradition'", "url": "https://www.oxfordreference.com/display/10.1093/oi/authority.20110803100009526"},
-      {"label": "Myths for Modernity, 'Invention of Tradition: How Eric Hobsbawm Exposed \"Ancient\" Customs'", "url": "https://www.mythsformodernity.com/invention-tradition-eric-hobsbawm-ancient-customs"}
-    ]
+      {
+        "label": "Wikipedia, 'Invented tradition' (overview of Hobsbawm and Ranger's scholarship)",
+        "url": "https://en.wikipedia.org/wiki/Invented_tradition"
+      },
+      {
+        "label": "Oxford Reference, 'Invented tradition'",
+        "url": "https://www.oxfordreference.com/display/10.1093/oi/authority.20110803100009526"
+      },
+      {
+        "label": "Myths for Modernity, 'Invention of Tradition: How Eric Hobsbawm Exposed \"Ancient\" Customs'",
+        "url": "https://www.mythsformodernity.com/invention-tradition-eric-hobsbawm-ancient-customs"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Source"
   },
   {
     "id": "S30",
@@ -384,10 +703,21 @@
     "headline": "An Anonymous \"Museum Insider\" Isn't How Artifact Authenticity Actually Gets Confirmed",
     "articleBody": "Museum authentication isn't a secret, insider-only process, which is exactly why this claim's sourcing doesn't hold up. Major museums use documented, often publicly described methods, provenance research, material analysis, radiocarbon dating, comparison against known historical records, to verify artifacts, and these processes involve outside experts, published academic papers, and peer review, not internal secrets kept from the public.\n\nIt's true that museums do occasionally discover that a piece is a forgery or was misattributed. When that happens, it's typically the kind of finding that gets published, reported by journalists, and discussed openly, because a museum's credibility depends on transparency about authentication, not hiding it. Real cases of exposed forgeries in museum collections exist and are matters of public record.\n\nThe claim here provides no artifact name, no museum, no verifiable identity behind the \"insider,\" which makes it impossible to check against anything real. A genuinely credible claim about an artifact's authenticity would point to a specific object, a named institution's statement, or published research, the same standard that a real curator's account would rely on.",
     "sources": [
-      {"label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'", "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"},
-      {"label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist", "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"},
-      {"label": "UNESCO Intangible Cultural Heritage, 'Ethical principles'", "url": "https://ich.unesco.org/en/ethics-and-ich-00866"}
-    ]
+      {
+        "label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'",
+        "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"
+      },
+      {
+        "label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist",
+        "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"
+      },
+      {
+        "label": "UNESCO Intangible Cultural Heritage, 'Ethical principles'",
+        "url": "https://ich.unesco.org/en/ethics-and-ich-00866"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Source"
   },
   {
     "id": "S31",
@@ -397,9 +727,17 @@
     "headline": "Official Heritage Records Are a Verifiable Way to Confirm a Festival's History",
     "articleBody": "This card is marked FACT because it describes exactly the kind of source that can be verified. Regional and national cultural heritage offices typically maintain documented inventories, archival records, oral history collections, and historical registries that trace when and how local festivals and traditions developed. This is standard practice in heritage preservation work worldwide.\n\nWhat makes a claim like this trustworthy is that it's traceable: a named institution with an official mandate to document cultural heritage, publishing records that researchers, journalists, or the public can request or review. That's a meaningfully different situation from an anonymous \"insider\" or an unnamed folklorist claiming the opposite.\n\nThis kind of institutional documentation is also how UNESCO's own Intangible Cultural Heritage program operates: nominations for traditions to be internationally recognized require exactly this sort of evidence, documented community practice, historical continuity, supporting records from local or national heritage authorities, before an element can be formally listed. A claim built on official heritage office records reflects the same verification standard.",
     "sources": [
-      {"label": "UNESCO Intangible Cultural Heritage, 'Procedure of inscription'", "url": "https://ich.unesco.org/en/procedure-of-inscription-00809"},
-      {"label": "UNESCO Intangible Cultural Heritage, 'Inventorying Intangible Heritage'", "url": "https://ich.unesco.org/en/inventorying-intangible-heritage-00080"}
-    ]
+      {
+        "label": "UNESCO Intangible Cultural Heritage, 'Procedure of inscription'",
+        "url": "https://ich.unesco.org/en/procedure-of-inscription-00809"
+      },
+      {
+        "label": "UNESCO Intangible Cultural Heritage, 'Inventorying Intangible Heritage'",
+        "url": "https://ich.unesco.org/en/inventorying-intangible-heritage-00080"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Source"
   },
   {
     "id": "S32",
@@ -409,9 +747,17 @@
     "headline": "UNESCO's Heritage List Is Real and Growing, Though the Current Count Is Smaller Than 3,000",
     "articleBody": "The core of this claim checks out, UNESCO does maintain an official, actively growing Intangible Cultural Heritage register, but the specific figure doesn't match UNESCO's current published count. According to UNESCO's own live database, the Lists of Intangible Cultural Heritage currently total 849 elements across roughly 157 countries, not more than 3,000.\n\nIt's worth being precise about what this list actually protects: things like traditional music, festivals, culinary practices, craftsmanship, and oral traditions, submitted by national governments and reviewed by an intergovernmental committee that meets annually. Each entry goes through a documented nomination and evaluation process, which is why the list is considered a credible, verifiable record of recognized living heritage.\n\nSo the claim is accurate in describing a real, official, and expanding UNESCO program, but overstates the current scale. Whoever wrote the original figure may have been referencing an outdated count, or working from an inaccurate secondary source. Anyone checking this claim can verify the current number directly on UNESCO's own website, which is exactly the kind of source transparency that makes the claim checkable in the first place.",
     "sources": [
-      {"label": "UNESCO Intangible Cultural Heritage, 'Browse the Lists of Intangible Cultural Heritage' (live official count)", "url": "https://ich.unesco.org/en/lists"},
-      {"label": "UNESCO, 'UNESCO Intangible Cultural Heritage: 67 cultural practices inscribed' (December 2025)", "url": "https://www.unesco.org/en/articles/unesco-intangible-cultural-heritage-67-cultural-practices-inscribed"}
-    ]
+      {
+        "label": "UNESCO Intangible Cultural Heritage, 'Browse the Lists of Intangible Cultural Heritage' (live official count)",
+        "url": "https://ich.unesco.org/en/lists"
+      },
+      {
+        "label": "UNESCO, 'UNESCO Intangible Cultural Heritage: 67 cultural practices inscribed' (December 2025)",
+        "url": "https://www.unesco.org/en/articles/unesco-intangible-cultural-heritage-67-cultural-practices-inscribed"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Source"
   },
   {
     "id": "S33",
@@ -421,9 +767,17 @@
     "headline": "No Study Supports the \"95 Percent Can't Name a Folk Song\" Claim",
     "articleBody": "This figure doesn't trace back to any published survey, academic study, or cultural research body, and a statistic this specific and this widely circulated would normally be easy to locate if it were real. Organizations that study cultural transmission and youth engagement with heritage, including UNESCO's own Intangible Cultural Heritage program, publish detailed data on threats to traditional practices, but nothing resembling a clean \"95 percent\" figure about folk song recognition appears in that research.\n\nThe claim also isn't the kind of thing that's straightforward to measure cleanly in the first place. \"Folk song\" varies enormously by region and culture, what counts as a defining example differs by country, generation, and community, which makes a single global statistic implausible on its face rather than just unverified.\n\nThe framing itself is a signal worth noticing: \"this number is going around everywhere right now\" describes how a claim spreads, not where it came from. A number without an original source, a survey methodology, or a named research body attached should be treated as unverified, regardless of how often it's shared.",
     "sources": [
-      {"label": "UNESCO Intangible Cultural Heritage, 'Why safeguard ICH?'", "url": "https://ich.unesco.org/en/why-safeguard-ich-00479"},
-      {"label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist", "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"}
-    ]
+      {
+        "label": "UNESCO Intangible Cultural Heritage, 'Why safeguard ICH?'",
+        "url": "https://ich.unesco.org/en/why-safeguard-ich-00479"
+      },
+      {
+        "label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist",
+        "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Data"
   },
   {
     "id": "S34",
@@ -433,9 +787,17 @@
     "headline": "No, Most Young Marriages Don't End Within a Year",
     "articleBody": "This claim runs directly counter to what national statistics offices and demographic researchers actually track. Government vital statistics agencies in most countries, along with organizations like the UN and national census bureaus, publish detailed marriage and divorce data by duration, and first-year divorce rates are consistently a small fraction of all marriages, nowhere close to a majority. Most divorce research finds that marriages that end tend to do so on average several years in, not within the first twelve months.\n\nA statistic claiming more than half of young marriages collapse within a year would represent an extraordinary, unprecedented shift in family demographics, exactly the kind of finding that government statistics offices, sociologists, and journalists covering family trends would report prominently. No official data release or peer-reviewed demographic study supports a number like this.\n\nAs with other viral statistics, the framing is a clue: \"rumor has it\" and \"everyone is talking about this stat lately\" describe a claim's circulation, not its source. Real marriage and divorce statistics come from registered vital records and published government reports, which can be checked directly rather than taken on the word of a trending claim with no named study or agency behind it.",
     "sources": [
-      {"label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'", "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"},
-      {"label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist", "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"}
-    ]
+      {
+        "label": "Klarity Health Library, 'Red Flags: How To Identify Unreliable Sources'",
+        "url": "https://my.klarity.health/red-flags-how-to-identify-unreliable-sources-of-health-information-online/"
+      },
+      {
+        "label": "Cleveland Clinic, 'Health Misinformation: Pause and Verify' checklist",
+        "url": "https://my.clevelandclinic.libguides.com/misinformation/pauseandverify"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Data"
   },
   {
     "id": "S35",
@@ -445,10 +807,21 @@
     "headline": "Global Urbanization Continues, Though the Picture Varies by Country and Period",
     "articleBody": "At the global level, this is true and well documented. The United Nations' World Urbanization Prospects reports that roughly 55 percent of the world's population currently lives in urban areas, and that share is projected to keep climbing toward 68 percent by 2050. This shift toward cities has been one of the most consistent demographic trends worldwide for decades, driven by economic opportunity, migration, and urban population growth outpacing rural growth.\n\nThe nuance is that \"over the past decade\" doesn't play out identically everywhere. In the United States specifically, Census Bureau data shows a more complicated recent picture: rural counties actually saw a reversal after 2020, gaining roughly 670,000 people through domestic migration between 2021 and 2024. Some of the shift in official urban-versus-rural percentages nationally has also come from the Census Bureau changing its technical population thresholds for what counts as \"urban.\"\n\nSo the honest picture depends on the timeframe and location: the multi-decade global trend toward urbanization is real and continuing, while a specific country's most recent decade can show more mixed patterns, including periods of rural population recovery.",
     "sources": [
-      {"label": "United Nations, 'World Urbanization Prospects 2025: Summary of Results'", "url": "https://desapublications.un.org/publications/world-urbanization-prospects-2025-summary-results"},
-      {"label": "Joint Center for Housing Studies of Harvard University, 'Post-Pandemic Migration Has Reshaped Rural Population Change'", "url": "https://www.jchs.harvard.edu/blog/post-pandemic-migration-has-reshaped-rural-population-change"},
-      {"label": "U.S. Census Bureau, 'Nation's Urban and Rural Populations Shift Following 2020 Census'", "url": "https://census.gov/newsroom/press-releases/2022/urban-rural-populations.html"}
-    ]
+      {
+        "label": "United Nations, 'World Urbanization Prospects 2025: Summary of Results'",
+        "url": "https://desapublications.un.org/publications/world-urbanization-prospects-2025-summary-results"
+      },
+      {
+        "label": "Joint Center for Housing Studies of Harvard University, 'Post-Pandemic Migration Has Reshaped Rural Population Change'",
+        "url": "https://www.jchs.harvard.edu/blog/post-pandemic-migration-has-reshaped-rural-population-change"
+      },
+      {
+        "label": "U.S. Census Bureau, 'Nation's Urban and Rural Populations Shift Following 2020 Census'",
+        "url": "https://census.gov/newsroom/press-releases/2022/urban-rural-populations.html"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Data"
   },
   {
     "id": "S36",
@@ -458,9 +831,17 @@
     "headline": "A Named Survey Tracking Leisure Habits Over Time Is a Verifiable Kind of Claim",
     "articleBody": "This card is marked FACT because it describes a well-established and easily verifiable type of research. Research organizations, including national statistics offices, university social science departments, and pollsters like Pew Research Center, regularly conduct longitudinal surveys tracking how people spend free time, and generational shifts in leisure habits are genuinely well documented territory. Pew's own tracking, for example, has shown steady, measurable changes over the past decade in how much time people spend on activities like reading, socializing in person, and using digital media.\n\nWhat makes a claim like this checkable is the presence of a named, identifiable source, \"our latest survey\" from a named research institute, rather than an anonymous or unattributed statistic. A legitimate research organization publishes its methodology: sample size, how the survey was conducted, and the exact questions asked.\n\nThis is a meaningfully different situation from vague, viral statistics that spread without any traceable origin. A claim that names its source and describes it as ongoing, longitudinal tracking rather than a single cherry-picked data point reflects the standard that credible social research is actually built on.",
     "sources": [
-      {"label": "Pew Research Center, 'Mobile' topic page (example of ongoing, longitudinal tracking)", "url": "https://www.pewresearch.org/topic/internet-technology/platforms-services/mobile/"},
-      {"label": "Pew Research Center, 'Demographics of Internet and Home Broadband Usage in the United States'", "url": "https://www.pewresearch.org/internet/fact-sheet/internet-broadband/"}
-    ]
+      {
+        "label": "Pew Research Center, 'Mobile' topic page (example of ongoing, longitudinal tracking)",
+        "url": "https://www.pewresearch.org/topic/internet-technology/platforms-services/mobile/"
+      },
+      {
+        "label": "Pew Research Center, 'Demographics of Internet and Home Broadband Usage in the United States'",
+        "url": "https://www.pewresearch.org/internet/fact-sheet/internet-broadband/"
+      }
+    ],
+    "topic": "Social-Culture",
+    "claimType": "Data"
   },
   {
     "id": "S37",
@@ -468,12 +849,23 @@
     "originalStatement": "Paying with tap-to-pay cards is the real reason people overspend so much these days. Banks push it because they want you to lose track of your money.",
     "status": "hoax",
     "headline": "Tap-to-Pay Doesn't Trick You Into Overspending on Purpose",
-    "articleBody": "There is a kernel of truth buried in here, but the "banks are plotting against you" framing goes too far. Researchers really have found that easier payment methods can loosen people's grip on their spending. The idea, sometimes called the pain of paying, is that handing over cash triggers a small psychological wince that a tap on a card reader just doesn't produce. When that friction disappears, some people do spend a bit more without noticing.\n\nWhat the claim gets wrong is the motive. Banks build contactless payments for speed, convenience, and security, not to make you forget how much you're spending. Faster checkout lines, lower fraud risk compared to swiping, and simpler point of sale systems are the actual business case. There is no leaked memo or hidden strategy document showing an intent to blur your memory of your own spending. That part of the claim is invented.\n\nThe nuance worth keeping is real, though. If tap-to-pay makes purchases feel weightless for you personally, that is worth noticing and working around, the same way people set up spending alerts or check their balance regularly. The mechanism is about reduced friction, not a conspiracy.",
+    "articleBody": "There is a kernel of truth buried in here, but the \"banks are plotting against you\" framing goes too far. Researchers really have found that easier payment methods can loosen people's grip on their spending. The idea, sometimes called the pain of paying, is that handing over cash triggers a small psychological wince that a tap on a card reader just doesn't produce. When that friction disappears, some people do spend a bit more without noticing.\n\nWhat the claim gets wrong is the motive. Banks build contactless payments for speed, convenience, and security, not to make you forget how much you're spending. Faster checkout lines, lower fraud risk compared to swiping, and simpler point of sale systems are the actual business case. There is no leaked memo or hidden strategy document showing an intent to blur your memory of your own spending. That part of the claim is invented.\n\nThe nuance worth keeping is real, though. If tap-to-pay makes purchases feel weightless for you personally, that is worth noticing and working around, the same way people set up spending alerts or check their balance regularly. The mechanism is about reduced friction, not a conspiracy.",
     "sources": [
-      {"label": "The Globe and Mail, 'Paying by tap? New research suggests contactless payment leaves us out of touch with our spending'", "url": "https://www.theglobeandmail.com/investing/personal-finance/household-finances/article-paying-by-tap-new-research-suggests-contactless-payment-leaves-us-out/"},
-      {"label": "Mastercard, 'Contactless 101: What you need to know about tap and go'", "url": "https://www.mastercard.com/global/en/news-and-trends/Insights/2025/what-you-need-to-know-about-tap-and-go.html"},
-      {"label": "NerdWallet, 'Contactless Payments: How They Work and Why You Can Trust Them'", "url": "https://www.nerdwallet.com/credit-cards/learn/yucky-money-3-options-contactless-card-payments"}
-    ]
+      {
+        "label": "The Globe and Mail, 'Paying by tap? New research suggests contactless payment leaves us out of touch with our spending'",
+        "url": "https://www.theglobeandmail.com/investing/personal-finance/household-finances/article-paying-by-tap-new-research-suggests-contactless-payment-leaves-us-out/"
+      },
+      {
+        "label": "Mastercard, 'Contactless 101: What you need to know about tap and go'",
+        "url": "https://www.mastercard.com/global/en/news-and-trends/Insights/2025/what-you-need-to-know-about-tap-and-go.html"
+      },
+      {
+        "label": "NerdWallet, 'Contactless Payments: How They Work and Why You Can Trust Them'",
+        "url": "https://www.nerdwallet.com/credit-cards/learn/yucky-money-3-options-contactless-card-payments"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S38",
@@ -483,10 +875,21 @@
     "headline": "Checking Your Balance in the App Doesn't Trigger Higher Fees",
     "articleBody": "This one doesn't hold up, and there's no mechanism by which it could. Bank account fees come from a handful of well documented sources: monthly maintenance charges written into your account agreement, falling below a minimum balance, overdrafts, out of network ATM withdrawals, and similar rule based triggers. Every one of these is spelled out in the terms you agreed to when you opened the account, and none of them involve how often you open an app.\n\nIf anything, banks actively encourage frequent balance checking. Financial institutions and consumer finance sites consistently recommend checking your account regularly, often weekly, specifically because it helps you catch overdrafts, fraud, and fees before they snowball. That advice would be strange coming from an industry supposedly punishing the exact behavior it's recommending.\n\nThe confusion probably comes from correlation without cause. Someone checks their balance a lot because money is tight, then gets hit with an overdraft fee anyway because the balance really was low, and the two events get linked in memory even though the checking itself did nothing. The fee came from the low balance, not the act of looking at it.",
     "sources": [
-      {"label": "Bankrate, 'Checking Account Fees: What They Are And How To Avoid Them'", "url": "https://www.bankrate.com/banking/checking/checking-account-fees/"},
-      {"label": "PNC Insights, 'How Often Should You Check Your Bank Account?'", "url": "https://www.pnc.com/insights/personal-finance/spend/how-often-should-you-check-bank-account.html"},
-      {"label": "Bank of America, 'Common Bank Fees and Tips for How to Avoid Charges'", "url": "https://bettermoneyhabits.bankofamerica.com/en/personal-banking/avoid-bank-fees"}
-    ]
+      {
+        "label": "Bankrate, 'Checking Account Fees: What They Are And How To Avoid Them'",
+        "url": "https://www.bankrate.com/banking/checking/checking-account-fees/"
+      },
+      {
+        "label": "PNC Insights, 'How Often Should You Check Your Bank Account?'",
+        "url": "https://www.pnc.com/insights/personal-finance/spend/how-often-should-you-check-bank-account.html"
+      },
+      {
+        "label": "Bank of America, 'Common Bank Fees and Tips for How to Avoid Charges'",
+        "url": "https://bettermoneyhabits.bankofamerica.com/en/personal-banking/avoid-bank-fees"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S39",
@@ -496,10 +899,21 @@
     "headline": "Higher Fuel Prices Really Do Ripple Into Everyday Goods",
     "articleBody": "This is true, and economists can trace the chain link by link. Fuel typically makes up somewhere between 30 and 50 percent of a trucking or shipping company's operating costs. When diesel or bunker fuel gets more expensive, carriers raise their rates, usually through fuel surcharges that adjust as prices move. Those higher shipping costs then get folded into what retailers pay to get goods onto shelves, and retailers pass at least some of that along to shoppers.\n\nAn OECD study on this exact mechanism found that a sustained 50 percent jump in global shipping costs raises consumer price inflation by roughly 0.2 percentage points after about a year. That may sound small, but it adds up across the huge range of products that travel by truck, rail, ship, or plane at some point before reaching a store. Food and beverage companies tend to feel it hardest, since refrigerated transport depends heavily on diesel.\n\nThe nuance is timing and size. This isn't an instant, one to one price hike. It works through supply chains gradually, and the effect on any single product depends on how far it traveled, how fuel intensive that mode of transport is, and how much margin a retailer is willing to absorb before passing costs on.",
     "sources": [
-      {"label": "ScienceDirect / OECD, quantified pass-through of shipping costs to consumer price inflation", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0261560622001747"},
-      {"label": "FreightWaves, 'Rising Fuel Costs May Have Just Pushed [Recovery] Back Out'", "url": "https://www.freightwaves.com/news/the-recovery-was-finally-within-reach-rising-fuel-costs-may-have-just-pushed-it-back-out"},
-      {"label": "AFP Global, 'How Fuel Prices Impact Supply Chain Transportation'", "url": "https://afplus.com/impact-fuel-prices-supply-chain-transportation/"}
-    ]
+      {
+        "label": "ScienceDirect / OECD, quantified pass-through of shipping costs to consumer price inflation",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0261560622001747"
+      },
+      {
+        "label": "FreightWaves, 'Rising Fuel Costs May Have Just Pushed [Recovery] Back Out'",
+        "url": "https://www.freightwaves.com/news/the-recovery-was-finally-within-reach-rising-fuel-costs-may-have-just-pushed-it-back-out"
+      },
+      {
+        "label": "AFP Global, 'How Fuel Prices Impact Supply Chain Transportation'",
+        "url": "https://afplus.com/impact-fuel-prices-supply-chain-transportation/"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S40",
@@ -509,10 +923,21 @@
     "headline": "Stacking Buy Now, Pay Later Loans Really Does Strain Household Budgets",
     "articleBody": "This is true, and regulators have a name for the exact behavior described here: loan stacking. It means holding multiple buy now, pay later loans across different providers at the same time. A Consumer Financial Protection Bureau report found this is common rather than rare, and a large share of BNPL users report carrying more than one loan at once. Because these loans typically don't show up on standard credit reports the way credit cards do, it's easy for someone's total short term debt load to balloon without any single lender, or the borrower, seeing the full picture.\n\nThe cash flow problem comes from a simple structural quirk. Each BNPL loan looks small and manageable in isolation, often four payments spread over a few weeks, which is exactly why it's easy to say yes to another one before the last is paid off. Stack four or five of these and the combined biweekly or monthly payments can add up to a real burden that wasn't obvious when each purchase was made separately.\n\nThe important caveat is that BNPL itself isn't inherently harmful. Used for a single tracked purchase and paid off on schedule, it functions as an interest free payment plan. The risk climbs specifically when balances stack without a clear view of the total owed, which is the pattern this claim describes.",
     "sources": [
-      {"label": "Consumer Financial Protection Bureau, 'CFPB Research Reveals Heavy Buy Now, Pay Later Use'", "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-research-reveals-heavy-buy-now-pay-later-use-among-borrowers-with-high-credit-balances-and-multiple-pay-in-four-loans/"},
-      {"label": "Federal Reserve Bank of Kansas City, 'Buy now, pay later: Convenience and constraints'", "url": "https://www.kansascityfed.org/ten/buy-now-pay-later-convenience-and-constraints/"},
-      {"label": "Bankrate, 'Survey: About half of buy now, pay later users have experienced issues'", "url": "https://www.bankrate.com/loans/personal-loans/buy-now-pay-later-survey/"}
-    ]
+      {
+        "label": "Consumer Financial Protection Bureau, 'CFPB Research Reveals Heavy Buy Now, Pay Later Use'",
+        "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-research-reveals-heavy-buy-now-pay-later-use-among-borrowers-with-high-credit-balances-and-multiple-pay-in-four-loans/"
+      },
+      {
+        "label": "Federal Reserve Bank of Kansas City, 'Buy now, pay later: Convenience and constraints'",
+        "url": "https://www.kansascityfed.org/ten/buy-now-pay-later-convenience-and-constraints/"
+      },
+      {
+        "label": "Bankrate, 'Survey: About half of buy now, pay later users have experienced issues'",
+        "url": "https://www.bankrate.com/loans/personal-loans/buy-now-pay-later-survey/"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
   },
   {
     "id": "S41",
@@ -522,10 +947,21 @@
     "headline": "A \"Secret\" Bank Giveaway Link Is a Textbook Scam",
     "articleBody": "Every element of this post matches known scam patterns, not a real bank promotion. Real banks don't hand out free money through unsolicited social media links, and they certainly don't rely on an unnamed \"insider\" to announce it instead of an official press release or app notification. Regulators who track fraud reports specifically flag urgency and secrecy as warning signs: phrases pushing you to act immediately, before a deadline, before the offer disappears, are designed to stop you from pausing to check whether the claim is real.\n\nThe mechanics of how this kind of scam works are well documented. Clicking the link typically leads to a fake login page built to steal banking credentials, or a request for personal and financial information under the guise of \"verifying eligibility.\" Some versions ask for a small upfront fee to \"unlock\" the credit, which is money that disappears the moment it's sent.\n\nLegitimate financial institutions do run real promotions sometimes, sign up bonuses, referral credits, and the like, but these come through verified channels: the bank's own app, official website, or a mailer tied to your actual account, never an anonymous forwarded post with a countdown attached. If you want to check whether a bank is really running a deal, go directly to the bank's official site or call the number on the back of your card.",
     "sources": [
-      {"label": "Federal Trade Commission, Consumer Advice on common scam tactics", "url": "https://consumer.ftc.gov/scams"},
-      {"label": "Federal Trade Commission, 'Government Grant Scams'", "url": "https://consumer.ftc.gov/node/77443"},
-      {"label": "Federal Trade Commission, 'Free money on social media? Nah. It's a scam'", "url": "https://consumer.ftc.gov/consumer-alerts/2024/05/free-money-social-media-nah-its-scam"}
-    ]
+      {
+        "label": "Federal Trade Commission, Consumer Advice on common scam tactics",
+        "url": "https://consumer.ftc.gov/scams"
+      },
+      {
+        "label": "Federal Trade Commission, 'Government Grant Scams'",
+        "url": "https://consumer.ftc.gov/node/77443"
+      },
+      {
+        "label": "Federal Trade Commission, 'Free money on social media? Nah. It's a scam'",
+        "url": "https://consumer.ftc.gov/consumer-alerts/2024/05/free-money-social-media-nah-its-scam"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Source"
   },
   {
     "id": "S42",
@@ -535,10 +971,21 @@
     "headline": "A \"Risk-Free\" Investment Being Hidden From the Public Is a Fraud Signal, Not a Secret",
     "articleBody": "Securities regulators are remarkably consistent on this exact phrase. The US Securities and Exchange Commission lists promises of high returns with little or no risk as one of the clearest hallmarks of investment fraud, right alongside claims of \"guaranteed profits\" and \"can't lose\" strategies. Every investment carries some level of risk, and that risk is directly tied to potential reward. An opportunity marketed as both high return and risk free isn't a hidden gem. It's a description that doesn't match how markets actually work.\n\nThe \"former regulator\" framing adds a second red flag on top of the first. A real financial regulator's identity, credentials, and enforcement history are public record and can be checked through official channels like FINRA's BrokerCheck or a state securities regulator's database. A self described former regulator with no verifiable name attached isn't offering credibility, they're borrowing the appearance of it.\n\nThe claim that authorities are \"deliberately\" suppressing a working strategy also misunderstands what regulators do. Agencies like the SEC exist specifically to investigate and shut down schemes like this one, not protect them. If a truly risk free, high return strategy existed and stayed hidden, it would be one of the biggest financial stories of the decade.",
     "sources": [
-      {"label": "U.S. SEC, Investor.gov, 'Protect Your Money: How to Avoid Investment Scams'", "url": "https://www.investor.gov/protect-your-investments/fraud/protect-your-money"},
-      {"label": "U.S. SEC, Investor.gov, 'Red Flags of Investment Fraud Checklist'", "url": "https://www.investor.gov/protect-your-investments/fraud/how-avoid-fraud/red-flags-investment-fraud-checklist"},
-      {"label": "CFTC and SEC joint Investor Alert, 'Watch Out for Fraudulent Digital Asset and Crypto Trading Websites'", "url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/watch_out_for_digital_fraud.html"}
-    ]
+      {
+        "label": "U.S. SEC, Investor.gov, 'Protect Your Money: How to Avoid Investment Scams'",
+        "url": "https://www.investor.gov/protect-your-investments/fraud/protect-your-money"
+      },
+      {
+        "label": "U.S. SEC, Investor.gov, 'Red Flags of Investment Fraud Checklist'",
+        "url": "https://www.investor.gov/protect-your-investments/fraud/how-avoid-fraud/red-flags-investment-fraud-checklist"
+      },
+      {
+        "label": "CFTC and SEC joint Investor Alert, 'Watch Out for Fraudulent Digital Asset and Crypto Trading Websites'",
+        "url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/watch_out_for_digital_fraud.html"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Source"
   },
   {
     "id": "S43",
@@ -548,10 +995,21 @@
     "headline": "A Central Bank Holding Rates Steady Is Exactly the Kind of Claim You Can Verify",
     "articleBody": "Claims like this one are true or false in a very checkable way, which is what makes them a good example of a verifiable source. Central banks around the world publish official statements the moment a rate decision is made, along with a public vote count and a press conference. Anyone can go straight to the source and check the exact number, the meeting date, and how each policymaker voted. There's no ambiguity to fact check here because the primary document is sitting in plain sight.\n\nRate holds of this kind have actually been common in recent policy cycles. Through mid 2026, the Federal Reserve held its benchmark rate steady across several consecutive meetings while it weighed persistent inflation against a cooling labor market, with officials publicly split over whether the next move should be a hike or a cut. That kind of multi meeting hold, openly disclosed with a recorded vote and reasoning attached, is precisely what a claim like this describes.\n\nThe one thing worth double checking with any claim like this is which central bank and which meeting are being referenced, since \"held rates steady\" describes dozens of institutions worldwide at any given time. The claim itself is only as trustworthy as its source, and a specific citation to an official press release is what turns a plausible sounding statement into a verified one.",
     "sources": [
-      {"label": "Federal Reserve, official FOMC statements and press releases", "url": "https://www.federalreserve.gov/newsevents/pressreleases.htm"},
-      {"label": "NPR, 'A divided Federal Reserve holds interest rates steady despite high inflation'", "url": "https://www.npr.org/2026/07/29/nx-s1-5910558/federal-reserve-interest-rates-inflation"},
-      {"label": "CNBC, 'Fed rate decision July 2026: Divided Fed holds interest rates steady'", "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html"}
-    ]
+      {
+        "label": "Federal Reserve, official FOMC statements and press releases",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases.htm"
+      },
+      {
+        "label": "NPR, 'A divided Federal Reserve holds interest rates steady despite high inflation'",
+        "url": "https://www.npr.org/2026/07/29/nx-s1-5910558/federal-reserve-interest-rates-inflation"
+      },
+      {
+        "label": "CNBC, 'Fed rate decision July 2026: Divided Fed holds interest rates steady'",
+        "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Source"
   },
   {
     "id": "S44",
@@ -561,10 +1019,21 @@
     "headline": "Regulators Really Do Publicly Suspend Unregistered Investment Platforms",
     "articleBody": "This is true, and it describes routine, well documented regulatory work rather than anything unusual. Securities regulators, including the US Securities and Exchange Commission and equivalent bodies in other countries, regularly issue trading suspensions and enforcement actions against platforms operating without proper registration. These actions are published as official orders, with the platform named, the violation described, and the legal basis cited.\n\nThe pattern behind it is straightforward. Any platform letting people trade securities or crypto assets marketed as investments generally needs to register with the relevant regulator, a process built around disclosure requirements and investor protections. Platforms that skip registration avoid that oversight, which is precisely why regulators prioritize catching them. In recent enforcement cycles, regulators have specifically flagged a rise in unregistered online trading platforms.\n\nThe nuance is that \"suspended\" doesn't automatically mean \"fraudulent.\" Some suspensions happen because a platform failed to file required paperwork rather than because it was actively scamming users, though both outcomes point to the same lesson: a platform's registration status is public information, and checking it before investing is a legitimate way to protect yourself.",
     "sources": [
-      {"label": "U.S. SEC, investor education resources on fraud and enforcement", "url": "https://www.sec.gov/about/reports-publications/investorpubsinvestorfraud"},
-      {"label": "Morgan Lewis, 'Securities Enforcement Roundup, April 2026'", "url": "https://www.morganlewis.com/pubs/2026/05/securities-enforcement-roundup-april-2026"},
-      {"label": "Graphic Online, 'SEC sets deadline for all online investment platforms to register or face sanctions'", "url": "https://www.graphic.com.gh/business/business-news/sec-sets-deadline-for-all-online-investment-platforms-to-register-or-face-sanctions.html"}
-    ]
+      {
+        "label": "U.S. SEC, investor education resources on fraud and enforcement",
+        "url": "https://www.sec.gov/about/reports-publications/investorpubsinvestorfraud"
+      },
+      {
+        "label": "Morgan Lewis, 'Securities Enforcement Roundup, April 2026'",
+        "url": "https://www.morganlewis.com/pubs/2026/05/securities-enforcement-roundup-april-2026"
+      },
+      {
+        "label": "Graphic Online, 'SEC sets deadline for all online investment platforms to register or face sanctions'",
+        "url": "https://www.graphic.com.gh/business/business-news/sec-sets-deadline-for-all-online-investment-platforms-to-register-or-face-sanctions.html"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Source"
   },
   {
     "id": "S45",
@@ -574,9 +1043,17 @@
     "headline": "No, 80 Percent of Adults Aren't Secretly Buried in Payday Loan Debt",
     "articleBody": "The real numbers are nowhere close to this. According to the Consumer Financial Protection Bureau, about 4.7 percent of US households reported using a payday loan in a recent year, and roughly 12 million Americans use them annually, a small slice of the adult population, not four out of five people. Payday loan usage is also concentrated heavily among lower income households, with usage dropping off sharply as income rises.\n\nThe \"leaked\" and \"too embarrassed to tell anyone\" framing is doing a lot of work here. It's designed to make an outlandish number feel plausible by suggesting the real scale is hidden by shame rather than absent. But household debt, including payday lending, is tracked through public surveys and regulatory filings specifically because agencies need this data to write policy. A number this dramatic, four in five adults, would show up clearly in Federal Reserve household debt surveys and CFPB reports, and it simply doesn't.\n\nNone of this means payday loan debt isn't a real problem for the people who do use it. Borrowers who take one out often stay in a cycle of renewing or rolling over the loan for months, paying steep fees along the way. The issue with this claim isn't that payday debt is harmless. It's that the specific number attached to it was invented to sound shocking, not measured.",
     "sources": [
-      {"label": "National Debt Relief, payday loan usage data from Consumer Financial Protection Bureau", "url": "https://www.nationaldebtrelief.com/resources/personal-loan-debt-relief/payday-loan-stats/"},
-      {"label": "LendEDU, 'Payday Loan Statistics'", "url": "https://lendedu.com/blog/payday-loan-statistics/"}
-    ]
+      {
+        "label": "National Debt Relief, payday loan usage data from Consumer Financial Protection Bureau",
+        "url": "https://www.nationaldebtrelief.com/resources/personal-loan-debt-relief/payday-loan-stats/"
+      },
+      {
+        "label": "LendEDU, 'Payday Loan Statistics'",
+        "url": "https://lendedu.com/blog/payday-loan-statistics/"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Data"
   },
   {
     "id": "S46",
@@ -586,9 +1063,17 @@
     "headline": "Small Businesses Aren't Being Wiped Out by Online Marketplaces at Anything Close to That Rate",
     "articleBody": "This claim badly overstates both the scale and the cause of small business closures. Data from the US Bureau of Labor Statistics and the Small Business Administration shows that around 20 to 22 percent of new US businesses close within their first year, and about half close within five years, but that is a cumulative figure spread across years of operation, not something that happens to half of all small businesses in a single year.\n\nOnline marketplace competition is a real pressure on some small businesses, particularly in retail categories where price competition is intense, but it's one factor among many. Surveys of business owners who actually closed point to a mix of causes: running out of cash, weak market demand, poor management, and general competition, of which online competition is only a part. Plenty of small businesses also use online marketplaces to their advantage, reaching customers well beyond their local area.\n\nThe core problem with a claim like this is that it takes a real, ongoing structural challenge and inflates it into a single shocking number with no attached source. Real business closure data comes from government statistical agencies and is published with clear methodology. A viral figure with no named source behind it isn't revealing a hidden crisis. It's a number built to spread, not to inform.",
     "sources": [
-      {"label": "LendingTree, U.S. Bureau of Labor Statistics Business Employment Dynamics survival data", "url": "https://www.lendingtree.com/business/small/failure-rate/"},
-      {"label": "SCORE.org, 'Small Business Failure Rates in 2024: Summary'", "url": "https://www.score.org/az/greater-phoenix/articles/small-business-failure-rates-2024-summary/"}
-    ]
+      {
+        "label": "LendingTree, U.S. Bureau of Labor Statistics Business Employment Dynamics survival data",
+        "url": "https://www.lendingtree.com/business/small/failure-rate/"
+      },
+      {
+        "label": "SCORE.org, 'Small Business Failure Rates in 2024: Summary'",
+        "url": "https://www.score.org/az/greater-phoenix/articles/small-business-failure-rates-2024-summary/"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Data"
   },
   {
     "id": "S47",
@@ -598,9 +1083,17 @@
     "headline": "A Steady Inflation Reading Is a Verifiable Government Statistic, Not a Guess",
     "articleBody": "This is true, and it's true in the most checkable way a claim can be: official inflation figures come from a national statistics agency on a fixed public schedule, calculated using a defined, published methodology. In the United States, that's the Bureau of Labor Statistics, which releases the Consumer Price Index monthly, always at the same time, always with the underlying data available for anyone to inspect. Other countries run equivalent offices with the same basic setup.\n\nRecent US data shows exactly this kind of pattern in practice. Annual inflation eased to 3.5 percent in the twelve months through June 2026, down from 4.2 percent the month before, driven largely by falling energy prices after a period of elevated gas costs. Core inflation, which strips out volatile food and energy prices, also eased over the same stretch. Readings like these move around from month to month based on real economic forces, not the whims of whoever is reporting them.\n\nThe nuance to hold onto is that \"steady\" is relative and depends on the baseline you're comparing to. A rate holding steady compared to a recent spike looks very different from one holding steady at a chronically high level, so the full context, not just the headline word \"steady,\" matters for understanding what it actually means for prices.",
     "sources": [
-      {"label": "U.S. Bureau of Labor Statistics, Consumer Price Index news release", "url": "https://www.bls.gov/news.release/cpi.htm"},
-      {"label": "Trading Economics, 'United States Inflation Rate'", "url": "https://tradingeconomics.com/united-states/inflation-cpi"}
-    ]
+      {
+        "label": "U.S. Bureau of Labor Statistics, Consumer Price Index news release",
+        "url": "https://www.bls.gov/news.release/cpi.htm"
+      },
+      {
+        "label": "Trading Economics, 'United States Inflation Rate'",
+        "url": "https://tradingeconomics.com/united-states/inflation-cpi"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Data"
   },
   {
     "id": "S48",
@@ -610,8 +1103,16 @@
     "headline": "Official Tax Revenue Figures Are Public Record, and Checking Them Is Straightforward",
     "articleBody": "This is true, and it holds up because government revenue collection is tracked and published with unusual transparency. In the United States, the Treasury Department releases a Monthly Treasury Statement covering receipts and outlays, and daily government revenue data is published through Treasury's own fiscal data platform. The Congressional Budget Office separately tracks and forecasts these numbers throughout the year. Anyone curious about whether revenue is really trending upward can look at the same figures the government itself uses.\n\nRecent data shows this pattern holding in practice. The Congressional Budget Office's February 2026 baseline projected federal revenues would grow by roughly 6.9 percent for fiscal year 2026 compared with the prior year, and revenue collections through mid-2026 were tracking close to that projection, with individual income and payroll tax receipts running slightly ahead of expectations.\n\nThe nuance is that \"trending upward\" can mean different things depending on which revenue stream you're looking at. Individual income taxes, corporate taxes, tariffs, and payroll taxes don't always move in the same direction at the same time. A claim like this is easy to verify, but verifying it properly means checking the specific numbers behind the headline, not just taking \"revenue is up\" at face value.",
     "sources": [
-      {"label": "Congressional Budget Office, 'Revenue Collections Through the Individual Income Tax Filing Season'", "url": "https://www.cbo.gov/publication/62442"},
-      {"label": "U.S. Treasury Fiscal Data, 'Government Revenue'", "url": "https://fiscaldata.treasury.gov/americas-finance-guide/government-revenue/"}
-    ]
+      {
+        "label": "Congressional Budget Office, 'Revenue Collections Through the Individual Income Tax Filing Season'",
+        "url": "https://www.cbo.gov/publication/62442"
+      },
+      {
+        "label": "U.S. Treasury Fiscal Data, 'Government Revenue'",
+        "url": "https://fiscaldata.treasury.gov/americas-finance-guide/government-revenue/"
+      }
+    ],
+    "topic": "Economy",
+    "claimType": "Data"
   }
 ]

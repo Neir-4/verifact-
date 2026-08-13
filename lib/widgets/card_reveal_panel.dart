@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/card_model.dart';
+import '../theme/palette.dart';
+import '../theme/app_theme.dart';
 
 class CardRevealPanel extends StatelessWidget {
   final GameCard card;
@@ -14,100 +16,65 @@ class CardRevealPanel extends StatelessWidget {
     this.expanded = false,
   });
 
-  Color _statusColor(CardStatus status) {
+  Color _statusColor(BuildContext context, CardStatus status) {
+    final p = context.palette;
     switch (status) {
       case CardStatus.fact:
-        return const Color(0xFF162D93);
+        return p.brand;
       case CardStatus.hoax:
-        return const Color(0xFFC0392B);
+        return p.crimson;
       case CardStatus.opinion:
-        return const Color(0xFFF39C12);
+        return p.warning;
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final p = context.palette;
+    final statusColor = _statusColor(context, card.status);
+
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1953),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: _statusColor(card.status).withValues(alpha: 0.6),
-          width: 1.5,
-        ),
+        color: p.surface,
+        border: Border.all(color: statusColor, width: 1.6),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Header: card ID + status + match badge
+          // Header band: card ID + status + match badge
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            decoration: BoxDecoration(
-              color: _statusColor(card.status).withValues(alpha: 0.15),
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(11)),
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            color: statusColor.withValues(alpha: 0.14),
             child: Row(
               children: [
-                // Card ID pill
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                  decoration: BoxDecoration(
-                    color: Colors.white12,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text(
-                    card.id,
-                    style: const TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFFABD2FB),
-                      letterSpacing: 1.2,
-                    ),
-                  ),
-                ),
+                Text(card.id, style: context.mono(fontSize: 11, color: statusColor)),
                 const SizedBox(width: 10),
-                // Status badge
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: _statusColor(card.status),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
+                  color: statusColor,
                   child: Text(
                     card.status.displayName,
-                    style: const TextStyle(
-                      fontSize: 12,
+                    style: TextStyle(
+                      fontSize: 11.5,
                       fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 1.5,
+                      color: p.bandInk,
+                      letterSpacing: 1.4,
                     ),
                   ),
                 ),
                 const Spacer(),
-                // Match badge
                 if (isMatch != null)
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: isMatch! ? Colors.green.shade700 : Colors.red.shade800,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
+                    color: isMatch! ? p.success : p.crimson,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(
-                          isMatch! ? Icons.check : Icons.close,
-                          size: 13,
-                          color: Colors.white,
-                        ),
+                        Icon(isMatch! ? Icons.check : Icons.close, size: 13, color: p.bandInk),
                         const SizedBox(width: 4),
                         Text(
                           isMatch! ? 'Cocok' : 'Tidak Cocok',
-                          style: const TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                          style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: p.bandInk),
                         ),
                       ],
                     ),
@@ -115,83 +82,45 @@ class CardRevealPanel extends StatelessWidget {
               ],
             ),
           ),
-          // Platform
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+            padding: const EdgeInsets.fromLTRB(14, 12, 14, 4),
             child: Text(
               card.platform,
-              style: const TextStyle(
-                fontSize: 11,
-                color: Color(0xFFABD2FB),
-                letterSpacing: 0.5,
-                fontWeight: FontWeight.w500,
-              ),
+              style: context.mono(fontSize: 11, color: statusColor),
             ),
           ),
-          // Headline
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+            padding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
             child: Text(
               card.headline,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w800,
-                color: Color(0xFFFDF9F1),
-                height: 1.3,
-              ),
+              style: context.body.copyWith(fontSize: 18, fontWeight: FontWeight.w800, height: 1.3),
             ),
           ),
-          // Original statement
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+            padding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(8),
-                border: Border(
-                  left: BorderSide(
-                    color: _statusColor(card.status).withValues(alpha: 0.7),
-                    width: 3,
-                  ),
-                ),
+                color: p.canvas,
+                border: Border(left: BorderSide(color: statusColor, width: 3)),
               ),
               child: Text(
                 '"${card.originalStatement}"',
-                style: const TextStyle(
-                  fontSize: 13,
-                  color: Colors.white70,
-                  fontStyle: FontStyle.italic,
-                  height: 1.5,
-                ),
+                style: context.bodySoft.copyWith(fontSize: 13, fontStyle: FontStyle.italic, height: 1.5),
               ),
             ),
           ),
-          // Article body
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+            padding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
             child: Text(
               card.articleBody,
-              style: const TextStyle(
-                fontSize: 14,
-                color: Color(0xFFFDF9F1),
-                height: 1.7,
-              ),
+              style: context.body.copyWith(fontSize: 14, height: 1.7),
             ),
           ),
-          // Sources
           if (card.sources.isNotEmpty) ...[
-            const Padding(
-              padding: EdgeInsets.fromLTRB(16, 0, 16, 4),
-              child: Text(
-                'SUMBER',
-                style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xFFABD2FB),
-                  letterSpacing: 1.8,
-                ),
-              ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14, 0, 14, 4),
+              child: Text('SUMBER', style: context.label.copyWith(fontSize: 10, letterSpacing: 1.8)),
             ),
             ...card.sources.asMap().entries.map((entry) {
               final idx = entry.key + 1;
@@ -204,26 +133,19 @@ class CardRevealPanel extends StatelessWidget {
                   }
                 },
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+                  padding: const EdgeInsets.fromLTRB(14, 4, 14, 4),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '$idx. ',
-                        style: const TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFFABD2FB),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      Text('$idx. ', style: context.mono(fontSize: 13, color: p.brand)),
                       Expanded(
                         child: Text(
                           source.label,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 13,
-                            color: Color(0xFFABD2FB),
+                            color: p.brand,
                             decoration: TextDecoration.underline,
-                            decorationColor: Color(0xFFABD2FB),
+                            decorationColor: p.brand,
                           ),
                         ),
                       ),

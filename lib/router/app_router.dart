@@ -11,13 +11,17 @@ import '../screens/scoreboard/scoreboard_screen.dart';
 import '../screens/end/end_game_screen.dart';
 import '../screens/rules/rules_screen.dart';
 import '../screens/landing/landing_screen.dart';
+import '../screens/splash/splash_screen.dart';
+import '../widgets/broadcast/tab_strip.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: '/landing',
+    initialLocation: '/splash',
     redirect: (context, state) {
-      final sess = ref.read(sessionProvider);
       final location = state.matchedLocation;
+      if (location == '/splash') return null;
+
+      final sess = ref.read(sessionProvider);
 
       if (sess.isFinished && !location.startsWith('/end')) {
         return '/end';
@@ -27,13 +31,22 @@ final routerProvider = Provider<GoRouter>((ref) {
           return '/landing';
         }
       } else {
-        if (location == '/landing' || location == '/setup' || location == '/rulebook') {
+        // A game in progress still leaves '/landing' reachable on purpose -
+        // that's where the "Lanjutkan Permainan" panel and mode picker
+        // live. Only '/setup' (which would silently start a fresh session)
+        // stays guarded.
+        if (location == '/setup') {
           return '/table';
         }
       }
       return null;
     },
     routes: [
+      GoRoute(
+        path: '/splash',
+        name: 'splash',
+        builder: (context, state) => const SplashScreen(),
+      ),
       GoRoute(
         path: '/landing',
         name: 'landing',
@@ -101,6 +114,12 @@ class _AppShell extends StatelessWidget {
   final Widget child;
   const _AppShell({required this.location, required this.child});
 
+  static const _items = [
+    TabStripItem(label: 'Permainan', icon: Icons.grid_view_rounded),
+    TabStripItem(label: 'Skor', icon: Icons.leaderboard_outlined),
+    TabStripItem(label: 'Aturan', icon: Icons.menu_book_outlined),
+  ];
+
   @override
   Widget build(BuildContext context) {
     int currentIndex = 0;
@@ -110,9 +129,10 @@ class _AppShell extends StatelessWidget {
 
     return Scaffold(
       body: child,
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: currentIndex,
-        onDestinationSelected: (index) {
+      bottomNavigationBar: BroadcastTabStrip(
+        items: _items,
+        currentIndex: currentIndex,
+        onSelect: (index) {
           switch (index) {
             case 0:
               context.go('/table');
@@ -125,23 +145,6 @@ class _AppShell extends StatelessWidget {
               break;
           }
         },
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.play_circle_outline),
-            selectedIcon: Icon(Icons.play_circle),
-            label: 'Permainan',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.leaderboard_outlined),
-            selectedIcon: Icon(Icons.leaderboard),
-            label: 'Skor',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.menu_book_outlined),
-            selectedIcon: Icon(Icons.menu_book),
-            label: 'Aturan',
-          ),
-        ],
       ),
     );
   }

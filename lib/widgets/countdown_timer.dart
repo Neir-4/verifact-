@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../theme/palette.dart';
+import '../theme/app_theme.dart';
 
 class CountdownTimer extends StatefulWidget {
   final int seconds;
@@ -58,8 +60,9 @@ class _CountdownTimerState extends State<CountdownTimer>
 
   @override
   Widget build(BuildContext context) {
+    final p = context.palette;
     final isUrgent = _remaining <= 2;
-    final color = isUrgent ? Colors.red.shade400 : const Color(0xFFABD2FB);
+    final color = isUrgent ? p.crimson : p.accent;
     final progress = _remaining / widget.seconds;
 
     return AnimatedBuilder(
@@ -79,18 +82,13 @@ class _CountdownTimerState extends State<CountdownTimer>
                   child: CircularProgressIndicator(
                     value: progress.clamp(0.0, 1.0),
                     strokeWidth: 6,
-                    backgroundColor: Colors.white12,
+                    backgroundColor: p.line,
                     valueColor: AlwaysStoppedAnimation<Color>(color),
                   ),
                 ),
                 Text(
                   '$_remaining',
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w900,
-                    color: color,
-                    letterSpacing: -2,
-                  ),
+                  style: context.mono(fontSize: 36, color: color, letterSpacing: -2),
                 ),
               ],
             ),

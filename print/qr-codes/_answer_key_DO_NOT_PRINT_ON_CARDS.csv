@@ -1,0 +1,49 @@
+id,status,headline
+S01,hoax,No; Cracking Your Knuckles Won't Give You Arthritis
+S02,hoax,Wet Hair Won't Make You Catch a Cold; a Virus Will
+S03,fact,Cold Water Doesn't Make You Gain Weight; Because It Has No Calories
+S04,fact,Sugar Doesn't Actually Make Kids Hyperactive; Studies Show
+S05,hoax,An Anonymous "Nurse" Isn't a Verifiable Source
+S06,hoax,Store Brand Painkillers Aren't Weakened on Purpose
+S07,fact,WHO: Flu Shots Remain Older Adults' Best Defense Against Severe Illness
+S08,fact,Cooked Leftovers Are Safe for Up to Four Days in the Fridge
+S09,hoax,No Study Backs the "9 Out of 10" Tap Water Vitamin Claim
+S10,hoax,No; 2 Million People Didn't Die From Headache Pills Last Year
+S11,fact,Childhood Vaccination Is Recovering Globally; Though Unevenly
+S12,fact,Youth Smoking Has Fallen to Its Lowest Level in 25 Years
+S13,hoax,No Solid Evidence Links 5G Towers to Fatigue or Brain Fog
+S14,hoax,Overnight Charging Isn't Why Phone Batteries Explode
+S15,fact,Yes; Modern Phones Stop Drawing Power at Full Charge
+S16,fact,Macs and iPhones Can Be Hacked Too; Security Researchers Confirm
+S17,hoax,An Unnamed "Former Employee" Isn't Proof Your Powered-Off Camera Is Recording
+S18,hoax,An Unverified "Telecom Insider" Tip Doesn't Prove Carriers Sabotage Your Data
+S19,fact,Official Security Bulletins Are a Verifiable Way to Confirm Why a Patch Was Released
+S20,fact,Bank Impersonation Text Scams Are a Real; Ongoing FTC Concern
+S21,hoax,No; 9 Out of 10 Android Phones Aren't "Secretly" Monitored
+S22,hoax,"Social Media Addiction" Isn't a Formal Diagnosis; and Nowhere Near Half of Users Meet Any Definition
+S23,fact,Most Battery Problems Trace to Bad Chargers; Not Overnight Charging Itself
+S24,fact,Global Internet Access Keeps Growing; Mostly Through Mobile Networks
+S25,hoax,Social Media Isn't the Sole Cause of Rising Divorce Rates
+S26,hoax,Screen Time and Social Skills: No Guaranteed Outcome; Research Shows
+S27,fact,Fewer Shared Public Spaces Is a Real; Documented Factor in Declining Neighborly Interaction
+S28,fact,Longer Commutes Are Linked to Less Community Participation; Research Confirms
+S29,hoax,An Unnamed "Folklorist" Isn't a Source; Even Though the Underlying Idea Has Real Scholarship Behind It
+S30,hoax,An Anonymous "Museum Insider" Isn't How Artifact Authenticity Actually Gets Confirmed
+S31,fact,Official Heritage Records Are a Verifiable Way to Confirm a Festival's History
+S32,fact,UNESCO's Heritage List Is Real and Growing; Though the Current Count Is Smaller Than 3;000
+S33,hoax,No Study Supports the "95 Percent Can't Name a Folk Song" Claim
+S34,hoax,No; Most Young Marriages Don't End Within a Year
+S35,fact,Global Urbanization Continues; Though the Picture Varies by Country and Period
+S36,fact,A Named Survey Tracking Leisure Habits Over Time Is a Verifiable Kind of Claim
+S37,hoax,Tap-to-Pay Doesn't Trick You Into Overspending on Purpose
+S38,hoax,Checking Your Balance in the App Doesn't Trigger Higher Fees
+S39,fact,Higher Fuel Prices Really Do Ripple Into Everyday Goods
+S40,fact,Stacking Buy Now; Pay Later Loans Really Does Strain Household Budgets
+S41,hoax,A "Secret" Bank Giveaway Link Is a Textbook Scam
+S42,hoax,A "Risk-Free" Investment Being Hidden From the Public Is a Fraud Signal; Not a Secret
+S43,fact,A Central Bank Holding Rates Steady Is Exactly the Kind of Claim You Can Verify
+S44,fact,Regulators Really Do Publicly Suspend Unregistered Investment Platforms
+S45,hoax,No; 80 Percent of Adults Aren't Secretly Buried in Payday Loan Debt
+S46,hoax,Small Businesses Aren't Being Wiped Out by Online Marketplaces at Anything Close to That Rate
+S47,fact,A Steady Inflation Reading Is a Verifiable Government Statistic; Not a Guess
+S48,fact,Official Tax Revenue Figures Are Public Record; and Checking Them Is Straightforward

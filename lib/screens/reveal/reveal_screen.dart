@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../models/session_model.dart';
 import '../../providers/session_provider.dart';
+import '../../theme/palette.dart';
+import '../../widgets/broadcast/masthead.dart';
 import '../../widgets/card_reveal_panel.dart';
 
 class RevealScreen extends ConsumerWidget {
@@ -11,53 +12,36 @@ class RevealScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final p = context.palette;
     final session = ref.watch(sessionProvider);
     final turn = session.currentTurn;
     final cards = turn.scannedCards;
     final claim = turn.uploaderClaim;
+    final honest = turn.uploaderIsHonest;
+    final verdictColor = honest ? p.success : p.crimson;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF080516),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: const Color(0xFF1A1953),
-        title: Text(
-          'KEBENARAN TERUNGKAP',
-          style: GoogleFonts.outfit(
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFFFDF9F1),
-            letterSpacing: 1.5,
-            fontSize: 16,
-          ),
-        ),
-      ),
+      backgroundColor: p.canvas,
+      appBar: const AppMasthead(sectionTitle: 'Kebenaran Terungkap'),
       body: SafeArea(
         child: Column(
           children: [
-            // Summary banner
             if (cards.isNotEmpty)
               Container(
-                margin: const EdgeInsets.all(16),
+                width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: turn.uploaderIsHonest
-                      ? Colors.green.shade900.withValues(alpha: 0.4)
-                      : Colors.red.shade900.withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: turn.uploaderIsHonest
-                        ? Colors.green.shade700
-                        : Colors.red.shade700,
+                  color: verdictColor,
+                  border: Border(
+                    bottom: BorderSide(color: p.line, width: 1),
                   ),
                 ),
                 child: Row(
                   children: [
                     Icon(
-                      turn.uploaderIsHonest ? Icons.verified : Icons.gpp_bad,
-                      color: turn.uploaderIsHonest
-                          ? Colors.green.shade400
-                          : Colors.red.shade400,
-                      size: 36,
+                      honest ? Icons.verified : Icons.gpp_bad,
+                      color: p.bandInk,
+                      size: 32,
                     ),
                     const SizedBox(width: 14),
                     Expanded(
@@ -65,23 +49,21 @@ class RevealScreen extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            turn.uploaderIsHonest
-                                ? 'UPLOADER JUJUR!'
-                                : 'UPLOADER TERTANGKAP!',
-                            style: GoogleFonts.outfit(
+                            honest ? 'UPLOADER JUJUR!' : 'UPLOADER TERTANGKAP!',
+                            style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w900,
-                              color: turn.uploaderIsHonest
-                                  ? Colors.green.shade300
-                                  : Colors.red.shade300,
-                              letterSpacing: 0.5,
+                              color: p.bandInk,
+                              letterSpacing: 0.4,
                             ),
                           ),
-                          const SizedBox(height: 4),
+                          const SizedBox(height: 2),
                           Text(
                             'Klaim: ${claim == UploaderClaim.fact ? "FAKTA" : "HOAKS"}',
-                            style: const TextStyle(
-                                color: Colors.white54, fontSize: 13),
+                            style: TextStyle(
+                              color: p.bandInk.withValues(alpha: 0.75),
+                              fontSize: 13,
+                            ),
                           ),
                         ],
                       ),
@@ -89,11 +71,9 @@ class RevealScreen extends ConsumerWidget {
                   ],
                 ),
               ),
-
-            // Cards list
             Expanded(
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.all(16),
                 itemCount: cards.length,
                 itemBuilder: (ctx, i) {
                   final card = cards[i];
@@ -112,31 +92,17 @@ class RevealScreen extends ConsumerWidget {
                 },
               ),
             ),
-
-            // Continue to scoring
             Padding(
               padding: const EdgeInsets.all(16),
               child: SizedBox(
                 width: double.infinity,
-                height: 52,
                 child: ElevatedButton.icon(
                   onPressed: () {
                     ref.read(sessionProvider.notifier).advanceToScoring();
                     context.go('/scoring');
                   },
-                  icon: const Icon(Icons.calculate_outlined),
-                  label: Text(
-                    'LIHAT SKOR',
-                    style: GoogleFonts.outfit(
-                        fontWeight: FontWeight.w800, letterSpacing: 1.5),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF162D93),
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                    elevation: 0,
-                  ),
+                  icon: const Icon(Icons.calculate_outlined, size: 19),
+                  label: const Text('LIHAT SKOR'),
                 ),
               ),
             ),

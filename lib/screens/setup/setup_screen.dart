@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../providers/session_provider.dart';
+import '../../theme/palette.dart';
+import '../../theme/app_theme.dart';
+import '../../widgets/broadcast/masthead.dart';
+import '../../widgets/broadcast/section_band.dart';
+import '../../widgets/broadcast/ruled_list.dart';
 
 class SetupScreen extends ConsumerStatefulWidget {
   const SetupScreen({super.key});
@@ -22,7 +26,6 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
   @override
   void initState() {
     super.initState();
-    // Start with 3 empty name fields
     for (int i = 0; i < _minPlayers; i++) {
       _controllers.add(TextEditingController());
     }
@@ -53,89 +56,44 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
     if (!_formKey.currentState!.validate()) return;
     final names = _controllers.map((c) => c.text.trim()).toList();
     setState(() => _loading = true);
-    ref.read(sessionProvider.notifier).startNewSession(names);
+    final mode = ref.read(pendingGameModeProvider);
+    ref.read(sessionProvider.notifier).startNewSession(names, mode);
     context.go('/table');
+  }
+
+  String get _modeLabel {
+    final mode = ref.watch(pendingGameModeProvider);
+    return mode.name[0].toUpperCase() + mode.name.substring(1);
   }
 
   @override
   Widget build(BuildContext context) {
+    final p = context.palette;
     return Scaffold(
-      backgroundColor: const Color(0xFF080516),
+      backgroundColor: p.canvas,
+      appBar: AppMasthead(
+        sectionTitle: 'Setup Sesi',
+        showBack: true,
+        onBack: () => context.go('/landing'),
+      ),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 48, 24, 0),
+                padding: const EdgeInsets.fromLTRB(20, 20, 20, 4),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Logo / Title
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF162D93),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Icon(Icons.wifi_tethering,
-                              color: Color(0xFFABD2FB), size: 28),
-                        ),
-                        const SizedBox(width: 14),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'VERIFACT',
-                              style: GoogleFonts.outfit(
-                                fontSize: 32,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFFFDF9F1),
-                                letterSpacing: -1,
-                              ),
-                            ),
-                            Text(
-                              'COMPANION APP',
-                              style: GoogleFonts.outfit(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(0xFFABD2FB),
-                                letterSpacing: 3,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 40),
-                    // Setup Card
+                    Text('Masukkan nama pemain', style: context.title),
+                    const SizedBox(height: 4),
                     Text(
-                      'SETUP SESI',
-                      style: GoogleFonts.outfit(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w700,
-                        color: const Color(0xFFABD2FB),
-                        letterSpacing: 3,
-                      ),
+                      '3–5 pemain • Mode $_modeLabel • Mulai dari 200 Followers',
+                      style: context.bodySoft.copyWith(fontSize: 13),
                     ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Masukkan nama pemain',
-                      style: GoogleFonts.outfit(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w800,
-                        color: const Color(0xFFFDF9F1),
-                      ),
-                    ),
-                    Text(
-                      '3–5 pemain • Mulai dari 200 Followers',
-                      style: GoogleFonts.outfit(
-                        fontSize: 14,
-                        color: Colors.white38,
-                      ),
-                    ),
-                    const SizedBox(height: 28),
+                    const SizedBox(height: 20),
+                    const SectionBand(label: 'Daftar pemain'),
+                    const SizedBox(height: 14),
                   ],
                 ),
               ),
@@ -144,124 +102,91 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
               child: Form(
                 key: _formKey,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
-                      ..._controllers.asMap().entries.map((entry) {
-                        final idx = entry.key;
-                        final ctrl = entry.value;
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 12),
-                          child: Row(
-                            children: [
-                              // Player number badge
-                              Container(
-                                width: 36,
-                                height: 36,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFF1A1953),
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                alignment: Alignment.center,
-                                child: Text(
-                                  '${idx + 1}',
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w900,
-                                    color: Color(0xFFABD2FB),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 10),
-                              Expanded(
-                                child: TextFormField(
-                                  controller: ctrl,
-                                  textCapitalization:
-                                      TextCapitalization.words,
-                                  style: GoogleFonts.outfit(
-                                    color: const Color(0xFFFDF9F1),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: 'Nama Pemain ${idx + 1}',
-                                    hintStyle: const TextStyle(
-                                        color: Colors.white30),
-                                    filled: true,
-                                    fillColor: const Color(0xFF1A1953),
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide.none,
+                      RuledPanel(
+                        children: _controllers.asMap().entries.map((entry) {
+                          final idx = entry.key;
+                          final ctrl = entry.value;
+                          return RuledRow(
+                            padding: const EdgeInsets.fromLTRB(10, 8, 6, 8),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 30,
+                                  height: 30,
+                                  color: p.surface2,
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    '${idx + 1}',
+                                    style: context.mono(
+                                      fontSize: 14,
+                                      color: p.brand,
                                     ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                          color: Color(0xFF162D93), width: 2),
-                                    ),
-                                    contentPadding:
-                                        const EdgeInsets.symmetric(
-                                            horizontal: 16, vertical: 14),
                                   ),
-                                  validator: (v) {
-                                    if (v == null || v.trim().isEmpty) {
-                                      return 'Nama tidak boleh kosong';
-                                    }
-                                    return null;
-                                  },
                                 ),
-                              ),
-                              if (_controllers.length > _minPlayers) ...[
-                                const SizedBox(width: 8),
-                                IconButton(
-                                  onPressed: () => _removePlayer(idx),
-                                  icon: const Icon(Icons.remove_circle_outline,
-                                      color: Colors.red),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: TextFormField(
+                                    controller: ctrl,
+                                    textCapitalization:
+                                        TextCapitalization.words,
+                                    style: context.body,
+                                    decoration: InputDecoration(
+                                      hintText: 'Nama Pemain ${idx + 1}',
+                                      isDense: true,
+                                      filled: false,
+                                      border: InputBorder.none,
+                                      enabledBorder: InputBorder.none,
+                                      focusedBorder: InputBorder.none,
+                                    ),
+                                    validator: (v) {
+                                      if (v == null || v.trim().isEmpty) {
+                                        return 'Nama tidak boleh kosong';
+                                      }
+                                      return null;
+                                    },
+                                  ),
                                 ),
+                                if (_controllers.length > _minPlayers)
+                                  IconButton(
+                                    onPressed: () => _removePlayer(idx),
+                                    icon: Icon(Icons.close,
+                                        size: 18, color: p.crimson),
+                                  ),
                               ],
-                            ],
-                          ),
-                        );
-                      }),
-                      // Add player button
+                            ),
+                          );
+                        }).toList(),
+                      ),
                       if (_controllers.length < _maxPlayers)
-                        TextButton.icon(
-                          onPressed: _addPlayer,
-                          icon: const Icon(Icons.add,
-                              color: Color(0xFFABD2FB)),
-                          label: Text(
-                            'Tambah Pemain',
-                            style: GoogleFonts.outfit(
-                              color: const Color(0xFFABD2FB),
-                              fontWeight: FontWeight.w600,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 12),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton.icon(
+                              onPressed: _addPlayer,
+                              icon: const Icon(Icons.add, size: 18),
+                              label: const Text('TAMBAH PEMAIN'),
                             ),
                           ),
                         ),
                       const SizedBox(height: 32),
-                      // Start button
                       SizedBox(
                         width: double.infinity,
-                        height: 56,
                         child: ElevatedButton(
                           onPressed: _loading ? null : _start,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF162D93),
-                            foregroundColor: const Color(0xFFFDF9F1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            elevation: 0,
-                          ),
                           child: _loading
-                              ? const CircularProgressIndicator(
-                                  color: Colors.white, strokeWidth: 2)
-                              : Text(
-                                  'MULAI PERMAINAN',
-                                  style: GoogleFonts.outfit(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w800,
-                                    letterSpacing: 2,
+                              ? SizedBox(
+                                  height: 18,
+                                  width: 18,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: p.bandInk,
                                   ),
-                                ),
+                                )
+                              : const Text('MULAI PERMAINAN'),
                         ),
                       ),
                       const SizedBox(height: 40),

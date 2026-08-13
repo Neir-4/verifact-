@@ -1,0 +1,386 @@
+[
+  {
+    "id": "R01",
+    "responder": "Dr. Naomi Reyes, rheumatologist (verified account)",
+    "content": "There is no solid clinical evidence linking this habit to long term joint damage. The sound people hear comes from gas bubbles, not bone wear.",
+    "stance": "reject",
+    "topic": "Health",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R02",
+    "responder": "Verified reply from Dr. Marcus Webb, family physician",
+    "content": "This cause and effect claim doesn't hold up under clinical scrutiny. Multiple controlled studies have failed to find the link being described.",
+    "stance": "reject",
+    "topic": "Health",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R03",
+    "responder": "Dr. Priya Anand, internal medicine (verified account)",
+    "content": "This lines up with what long term clinical research actually shows, and it's consistent with guidance most physicians already follow.",
+    "stance": "support",
+    "topic": "Health",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R04",
+    "responder": "Verified reply from Dr. Samuel Osei, public health researcher",
+    "content": "The mechanism described here matches peer reviewed findings, and it's one of the more well established links in preventive health advice.",
+    "stance": "support",
+    "topic": "Health",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R05",
+    "responder": "Clarification from PharmFacts.org",
+    "content": "Claims built on an unnamed insider or a friend of a friend can't be checked. Credible health information always comes with a name and an institution attached.",
+    "stance": "reject",
+    "topic": "Health",
+    "claimType": "Source"
+  },
+  {
+    "id": "R06",
+    "responder": "Verified reply from Nurse Practitioner Lena Ford",
+    "content": "I've worked in this field for over a decade, and this doesn't match how drug approval or hospital reporting actually works in practice.",
+    "stance": "reject",
+    "topic": "Health",
+    "claimType": "Source"
+  },
+  {
+    "id": "R07",
+    "responder": "Clarification from National Health Authority (official statement)",
+    "content": "This statement traces back to an official release from a recognized health authority, which makes it a source you can actually verify.",
+    "stance": "support",
+    "topic": "Health",
+    "claimType": "Source"
+  },
+  {
+    "id": "R08",
+    "responder": "Verified reply from Dr. Grace Kim, hospital chief of staff",
+    "content": "This is consistent with the clinical guidelines our hospital network already follows, and it comes from a source with real accountability behind it.",
+    "stance": "support",
+    "topic": "Health",
+    "claimType": "Source"
+  },
+  {
+    "id": "R09",
+    "responder": "Clarification from FactCheck Health Desk",
+    "content": "We looked for the original source of this number and came up empty. Figures this alarming would normally be documented somewhere official.",
+    "stance": "reject",
+    "topic": "Health",
+    "claimType": "Data"
+  },
+  {
+    "id": "R10",
+    "responder": "Verified reply from Dr. Tomas Alvarez, epidemiologist",
+    "content": "A statistic this large would be front page news across every major outlet if it were accurate. No public health agency has reported anything close to it.",
+    "stance": "reject",
+    "topic": "Health",
+    "claimType": "Data"
+  },
+  {
+    "id": "R11",
+    "responder": "Clarification from National Health Statistics Office",
+    "content": "This figure matches the numbers in our latest published survey, and the methodology behind it is publicly available for anyone to check.",
+    "stance": "support",
+    "topic": "Health",
+    "claimType": "Data"
+  },
+  {
+    "id": "R12",
+    "responder": "Verified reply from Dr. Wei Zhang, biostatistician",
+    "content": "The trend described here is consistent with tracking data collected over multiple years, not a one off or cherry picked figure.",
+    "stance": "support",
+    "topic": "Health",
+    "claimType": "Data"
+  },
+  {
+    "id": "R13",
+    "responder": "Clarification from IEEE Spectrum editorial team",
+    "content": "This explanation sounds convincing but doesn't match how the underlying hardware actually functions. Engineers have addressed this claim repeatedly.",
+    "stance": "reject",
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R14",
+    "responder": "Verified reply from CEO Daniel Ruiz, consumer electronics firm",
+    "content": "Our engineering team has tested this exact scenario, and the claim simply doesn't reflect how these devices are built to behave.",
+    "stance": "reject",
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R15",
+    "responder": "Clarification from Wired hardware desk",
+    "content": "This matches how the hardware is actually engineered to work, and it's a mechanism most manufacturers openly document.",
+    "stance": "support",
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R16",
+    "responder": "Verified reply from CEO Michelle Tran, cybersecurity firm",
+    "content": "This tracks with what our threat research team sees constantly. No platform or device is immune, no matter how it's marketed.",
+    "stance": "support",
+    "topic": "Technology",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R17",
+    "responder": "Clarification from CyberSense Research Lab",
+    "content": "An anonymous former employee is a classic setup for making a shaky claim sound credible. There's nothing here that can actually be verified.",
+    "stance": "reject",
+    "topic": "Technology",
+    "claimType": "Source"
+  },
+  {
+    "id": "R18",
+    "responder": "Verified reply from CTO Farah Haidari, telecom engineering lead",
+    "content": "A friend who supposedly works at a carrier isn't a source you can check. Reach out to the company's official channels instead.",
+    "stance": "reject",
+    "topic": "Technology",
+    "claimType": "Source"
+  },
+  {
+    "id": "R19",
+    "responder": "Clarification from Ars Technica security desk",
+    "content": "This traces back to an official company bulletin, which is about as verifiable as a tech claim can get.",
+    "stance": "support",
+    "topic": "Technology",
+    "claimType": "Source"
+  },
+  {
+    "id": "R20",
+    "responder": "Verified reply from CISO Robert Nakamura, national cyber agency",
+    "content": "This matches an advisory our agency actually issued. It's worth taking seriously precisely because the source is traceable.",
+    "stance": "support",
+    "topic": "Technology",
+    "claimType": "Source"
+  },
+  {
+    "id": "R21",
+    "responder": "Clarification from DataCheck Digital",
+    "content": "A number this dramatic should point to a named study, and this one doesn't. Treat figures like this as unverified until a source shows up.",
+    "stance": "reject",
+    "topic": "Technology",
+    "claimType": "Data"
+  },
+  {
+    "id": "R22",
+    "responder": "Verified reply from Dr. Ines Petrov, digital wellbeing researcher",
+    "content": "Statistics like this tend to spread because they're alarming, not because they're accurate. Our research doesn't support a number this high.",
+    "stance": "reject",
+    "topic": "Technology",
+    "claimType": "Data"
+  },
+  {
+    "id": "R23",
+    "responder": "Clarification from Statista research desk",
+    "content": "This figure lines up with manufacturer testing data that's publicly available, and it points to a much more mundane explanation than the viral version.",
+    "stance": "support",
+    "topic": "Technology",
+    "claimType": "Data"
+  },
+  {
+    "id": "R24",
+    "responder": "Verified reply from Analyst Kwame Osei, telecom research firm",
+    "content": "This tracks with multi year adoption data our firm has been monitoring, not a single cherry picked data point.",
+    "stance": "support",
+    "topic": "Technology",
+    "claimType": "Data"
+  },
+  {
+    "id": "R25",
+    "responder": "Clarification from Prof. Helena Ward, sociology department",
+    "content": "Social trends like this almost always have several contributing factors. Pinning it entirely on one cause oversimplifies what the research shows.",
+    "stance": "reject",
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R26",
+    "responder": "Verified reply from Dr. Omar Siddiqui, developmental psychologist",
+    "content": "Claiming zero exceptions is a red flag on its own. Human development doesn't work in absolutes like this.",
+    "stance": "reject",
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R27",
+    "responder": "Clarification from Prof. Ingrid Solberg, urban studies",
+    "content": "This is consistent with research on the topic, even though it's one contributing factor among several rather than the sole cause.",
+    "stance": "support",
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R28",
+    "responder": "Verified reply from Dr. Chidi Okonkwo, community sociologist",
+    "content": "This matches patterns documented across multiple studies on community engagement, which makes it a reasonably solid claim.",
+    "stance": "support",
+    "topic": "Social-Culture",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R29",
+    "responder": "Clarification from Prof. Amara Diallo, cultural historian",
+    "content": "A folklorist whose name nobody remembers isn't a source that can be checked. Claims about cultural history need a name attached to hold up.",
+    "stance": "reject",
+    "topic": "Social-Culture",
+    "claimType": "Source"
+  },
+  {
+    "id": "R30",
+    "responder": "Verified reply from Curator Beatrice Lund, national museum",
+    "content": "Our institution has never confirmed anything resembling this claim, and museum authentication records are a matter of public record.",
+    "stance": "reject",
+    "topic": "Social-Culture",
+    "claimType": "Source"
+  },
+  {
+    "id": "R31",
+    "responder": "Clarification from Regional Cultural Heritage Office (official statement)",
+    "content": "This traces back to documented records maintained by the regional heritage office, which makes it a source that holds up to scrutiny.",
+    "stance": "support",
+    "topic": "Social-Culture",
+    "claimType": "Source"
+  },
+  {
+    "id": "R32",
+    "responder": "Verified reply from Prof. Amara Diallo, cultural historian",
+    "content": "As someone who has studied this specific tradition directly, I can confirm the account here matches the documented record.",
+    "stance": "support",
+    "topic": "Social-Culture",
+    "claimType": "Source"
+  },
+  {
+    "id": "R33",
+    "responder": "Clarification from Census Fact Check Desk",
+    "content": "This figure doesn't match any official survey we could locate. Numbers this specific need a named source to be taken seriously.",
+    "stance": "reject",
+    "topic": "Social-Culture",
+    "claimType": "Data"
+  },
+  {
+    "id": "R34",
+    "responder": "Verified reply from Dr. Yuki Tanaka, demographic researcher",
+    "content": "A statistic spreading this fast with no attached source is usually a sign it was invented to sound shocking, not measured.",
+    "stance": "reject",
+    "topic": "Social-Culture",
+    "claimType": "Data"
+  },
+  {
+    "id": "R35",
+    "responder": "Clarification from National Census Bureau (official release)",
+    "content": "This matches figures published in our most recent official release, which anyone can look up directly.",
+    "stance": "support",
+    "topic": "Social-Culture",
+    "claimType": "Data"
+  },
+  {
+    "id": "R36",
+    "responder": "Verified reply from Prof. Diego Fernandez, applied demographics",
+    "content": "This tracks with longitudinal survey data collected over the past decade, not a single viral claim without backing.",
+    "stance": "support",
+    "topic": "Social-Culture",
+    "claimType": "Data"
+  },
+  {
+    "id": "R37",
+    "responder": "Clarification from Independent Economist Laila Haddad",
+    "content": "This cause and effect claim oversimplifies how spending behavior and banking systems actually work together.",
+    "stance": "reject",
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R38",
+    "responder": "Verified reply from Consumer Finance Analyst Peter Voss",
+    "content": "There's no mechanism by which checking a balance would trigger a fee increase. Account fees are set by policy, not app usage.",
+    "stance": "reject",
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R39",
+    "responder": "Clarification from Chief Economist Renata Sousa, financial research firm",
+    "content": "This matches a pattern regularly observed in supply chain and pricing data, which makes the underlying claim reasonably solid.",
+    "stance": "support",
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R40",
+    "responder": "Verified reply from Financial Counselor Aisha Bello",
+    "content": "This is a pattern our counseling team sees often. It's consistent with how untracked short term credit tends to affect household budgets.",
+    "stance": "support",
+    "topic": "Economy",
+    "claimType": "Cause-Effect"
+  },
+  {
+    "id": "R41",
+    "responder": "Clarification from National Financial Regulator",
+    "content": "An anonymous bank insider offering free money through a link is a textbook scam setup, not a legitimate financial source.",
+    "stance": "reject",
+    "topic": "Economy",
+    "claimType": "Source"
+  },
+  {
+    "id": "R42",
+    "responder": "Verified reply from Compliance Officer Nadia Rashid, securities regulator",
+    "content": "A self described former regulator with no name attached isn't a source we can verify, and it matches the pattern of common investment scams.",
+    "stance": "reject",
+    "topic": "Economy",
+    "claimType": "Source"
+  },
+  {
+    "id": "R43",
+    "responder": "Clarification from Central Bank Press Office (official statement)",
+    "content": "This lines up with the official statement released through proper channels, which makes it a verifiable source.",
+    "stance": "support",
+    "topic": "Economy",
+    "claimType": "Source"
+  },
+  {
+    "id": "R44",
+    "responder": "Verified reply from Director Hassan Al-Amin, financial oversight agency",
+    "content": "This matches action our agency actually took, and it's documented in our public enforcement records.",
+    "stance": "support",
+    "topic": "Economy",
+    "claimType": "Source"
+  },
+  {
+    "id": "R45",
+    "responder": "Clarification from Economic Fact Check Bureau",
+    "content": "This number doesn't correspond to any published lending or debt survey we could find. Treat it as unverified until a source appears.",
+    "stance": "reject",
+    "topic": "Economy",
+    "claimType": "Data"
+  },
+  {
+    "id": "R46",
+    "responder": "Verified reply from Small Business Economist Julia Marchetti",
+    "content": "Small business closure data doesn't come close to supporting a figure this high. This looks like a number designed to spread, not inform.",
+    "stance": "reject",
+    "topic": "Economy",
+    "claimType": "Data"
+  },
+  {
+    "id": "R47",
+    "responder": "Clarification from National Statistics Office (official release)",
+    "content": "This figure is consistent with our most recently published data release, which is available for public review.",
+    "stance": "support",
+    "topic": "Economy",
+    "claimType": "Data"
+  },
+  {
+    "id": "R48",
+    "responder": "Verified reply from Senior Analyst Thabo Nkosi, national treasury",
+    "content": "This matches the quarterly figures our department reported, based on standard revenue tracking methodology.",
+    "stance": "support",
+    "topic": "Economy",
+    "claimType": "Data"
+  }
+]

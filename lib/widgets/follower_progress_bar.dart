@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../theme/palette.dart';
+import '../theme/app_theme.dart';
 
 /// A tri-zone follower progress bar.
-/// 0–100 = red, 100–400 = yellow, 400–600 = green
+/// 0–100 = crimson, 100–400 = warning, 400–600 = success
 class FollowerProgressBar extends StatelessWidget {
   final int followers;
   final double height;
@@ -9,106 +11,70 @@ class FollowerProgressBar extends StatelessWidget {
   const FollowerProgressBar({
     super.key,
     required this.followers,
-    this.height = 10,
+    this.height = 8,
   });
 
   static const _max = 600.0;
 
-  Color _colorForFollowers(int followers) {
-    if (followers <= 100) return Colors.red.shade400;
-    if (followers <= 400) return Colors.amber.shade600;
-    return Colors.green.shade500;
+  Color _colorFor(BuildContext context, int followers) {
+    final p = context.palette;
+    if (followers <= 100) return p.crimson;
+    if (followers <= 400) return p.warning;
+    return p.success;
   }
 
   @override
   Widget build(BuildContext context) {
+    final p = context.palette;
     final progress = (followers / _max).clamp(0.0, 1.0);
+    final color = _colorFor(context, followers);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(height / 2),
-          child: SizedBox(
-            height: height,
-            child: Stack(
-              children: [
-                // Background track (tri-color gradient)
-                Row(
-                  children: [
-                    Flexible(
-                      flex: 100,
-                      child: Container(color: Colors.red.shade900.withValues(alpha: 0.3)),
-                    ),
-                    Flexible(
-                      flex: 300,
-                      child: Container(color: Colors.amber.shade900.withValues(alpha: 0.3)),
-                    ),
-                    Flexible(
-                      flex: 200,
-                      child: Container(color: Colors.green.shade900.withValues(alpha: 0.3)),
-                    ),
-                  ],
-                ),
-                // Fill
-                FractionallySizedBox(
-                  widthFactor: progress,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(height / 2),
-                      color: _colorForFollowers(followers),
+        SizedBox(
+          height: height,
+          child: Stack(
+            children: [
+              Row(
+                children: [
+                  Expanded(flex: 100, child: Container(color: p.crimson.withValues(alpha: 0.18))),
+                  Expanded(flex: 300, child: Container(color: p.warning.withValues(alpha: 0.18))),
+                  Expanded(flex: 200, child: Container(color: p.success.withValues(alpha: 0.18))),
+                ],
+              ),
+              FractionallySizedBox(
+                widthFactor: progress,
+                child: Container(color: color),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 100,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(width: 1, color: p.canvas),
                     ),
                   ),
-                ),
-                // Zone dividers
-                Row(
-                  children: [
-                    Flexible(
-                      flex: 100,
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          width: 1,
-                          color: Colors.white24,
-                        ),
-                      ),
+                  Expanded(
+                    flex: 300,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(width: 1, color: p.canvas),
                     ),
-                    Flexible(
-                      flex: 300,
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          width: 1,
-                          color: Colors.white24,
-                        ),
-                      ),
-                    ),
-                    const Flexible(flex: 200, child: SizedBox.shrink()),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  const Expanded(flex: 200, child: SizedBox.shrink()),
+                ],
+              ),
+            ],
           ),
         ),
         const SizedBox(height: 4),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              '$followers',
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.bold,
-                color: _colorForFollowers(followers),
-              ),
-            ),
-            const Text(
-              '600',
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.white38,
-              ),
-            ),
+            Text('$followers', style: context.mono(fontSize: 11, color: color)),
+            Text('600', style: context.mono(fontSize: 10, color: p.inkSoft)),
           ],
         ),
       ],

@@ -5,7 +5,7 @@ import 'package:verifact/models/session_model.dart';
 import 'package:verifact/services/score_calculator.dart';
 
 void main() {
-  group('ScoreCalculator - Repost/Report Rules', () {
+  group('ScoreCalculator - Claim + optional Repost/Report bonus bet', () {
     final players = [
       Player(id: 'p1', name: 'Alice', followers: 200),
       Player(id: 'p2', name: 'Bob', followers: 200),
@@ -38,68 +38,88 @@ void main() {
       sources: [],
     );
 
-    test('Uploader jujur (klaim Hoaks, kartu Hoaks), 0 report, 0 repost -> Uploader +10', () {
-      const turn = TurnState(
+    // Every turn scans exactly kCardsPerTurn (2) cards now.
+    final hoaxBlend = [hoaxCard, hoaxCard];
+    final factBlend = [factCard, factCard];
+
+    test('Klaim jujur (Hoaks, racikan Hoaks), tanpa taruhan -> +10/kartu, tidak ada delta untuk pemain lain', () {
+      final turn = TurnState(
         uploaderClaim: UploaderClaim.hoax,
-        cardCount: 1,
-        scannedCards: [hoaxCard],
-        echoChoices: {},
+        scannedCards: hoaxBlend,
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
-      expect(uploaderResult.followerDelta, 10);
+      final alice = result.results.firstWhere((r) => r.playerId == 'p1');
+      final bob = result.results.firstWhere((r) => r.playerId == 'p2');
+
+      expect(alice.followerDelta, ScoreCalculator.claimHonestBonus * kCardsPerTurn);
+      expect(bob.followerDelta, 0);
     });
 
-    test('Uploader bluff (klaim Hoaks, kartu Fakta), 0 report, 0 repost -> Uploader +20', () {
-      const turn = TurnState(
+    test('Klaim bohong (Hoaks, racikan ternyata Fakta), tanpa taruhan -> -20/kartu', () {
+      final turn = TurnState(
         uploaderClaim: UploaderClaim.hoax,
-        cardCount: 1,
-        scannedCards: [factCard],
-        echoChoices: {},
+        scannedCards: factBlend,
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
-      expect(uploaderResult.followerDelta, 20);
+      final alice = result.results.firstWhere((r) => r.playerId == 'p1');
+
+      expect(alice.followerDelta, ScoreCalculator.claimDishonestPenalty * kCardsPerTurn);
     });
 
-    test('Uploader jujur, 1 report (Bob), 1 repost (Charlie) -> Uploader +20, Bob -10, Charlie +10', () {
-      const turn = TurnState(
-        uploaderClaim: UploaderClaim.hoax,
-        cardCount: 1,
-        scannedCards: [hoaxCard],
-        echoChoices: {
-          'p2': EchoChoice.report,
-          'p3': EchoChoice.repost,
-        },
+    test('Taruhan Repost BENAR (racikan Fakta) -> bonus ditambahkan ke skor klaim', () {
+      final turn = TurnState(
+        uploaderClaim: UploaderClaim.fact,
+        uploaderReaction: EchoChoice.repost,
+        scannedCards: factBlend,
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
-      final bobResult = result.results.firstWhere((r) => r.playerId == 'p2');
-      final charlieResult = result.results.firstWhere((r) => r.playerId == 'p3');
+      final alice = result.results.firstWhere((r) => r.playerId == 'p1');
 
-      expect(uploaderResult.followerDelta, 20);
-      expect(bobResult.followerDelta, -10);
-      expect(charlieResult.followerDelta, 10);
+      const expected = ScoreCalculator.claimHonestBonus * kCardsPerTurn +
+          ScoreCalculator.repostFactBonus;
+      expect(alice.followerDelta, expected);
     });
 
-    test('Uploader bohong, 1 report (Bob), 1 repost (Charlie) -> Uploader -30, Bob +10, Charlie -10', () {
-      const turn = TurnState(
-        uploaderClaim: UploaderClaim.hoax,
-        cardCount: 1,
-        scannedCards: [factCard],
-        echoChoices: {
-          'p2': EchoChoice.report,
-          'p3': EchoChoice.repost,
-        },
+    test('Taruhan Repost SALAH (racikan Hoaks) -> penalti dikurangkan dari skor klaim', () {
+      final turn = TurnState(
+        uploaderClaim: UploaderClaim.fact,
+        uploaderReaction: EchoChoice.repost,
+        scannedCards: hoaxBlend,
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
-      final bobResult = result.results.firstWhere((r) => r.playerId == 'p2');
-      final charlieResult = result.results.firstWhere((r) => r.playerId == 'p3');
+      final alice = result.results.firstWhere((r) => r.playerId == 'p1');
 
-      expect(uploaderResult.followerDelta, -30);
-      expect(bobResult.followerDelta, 10);
-      expect(charlieResult.followerDelta, -10);
+      const expected = ScoreCalculator.claimDishonestPenalty * kCardsPerTurn +
+          ScoreCalculator.repostHoaxPenalty;
+      expect(alice.followerDelta, expected);
+    });
+
+    test('Taruhan Report BENAR (racikan Hoaks) -> bonus besar', () {
+      final turn = TurnState(
+        uploaderClaim: UploaderClaim.hoax,
+        uploaderReaction: EchoChoice.report,
+        scannedCards: hoaxBlend,
+      );
+      final result = ScoreCalculator.calculate(session, turn);
+      final alice = result.results.firstWhere((r) => r.playerId == 'p1');
+
+      const expected = ScoreCalculator.claimHonestBonus * kCardsPerTurn +
+          ScoreCalculator.reportHoaxBonus;
+      expect(alice.followerDelta, expected);
+    });
+
+    test('Taruhan Report SALAH (racikan Fakta) -> penalti besar', () {
+      final turn = TurnState(
+        uploaderClaim: UploaderClaim.hoax,
+        uploaderReaction: EchoChoice.report,
+        scannedCards: factBlend,
+      );
+      final result = ScoreCalculator.calculate(session, turn);
+      final alice = result.results.firstWhere((r) => r.playerId == 'p1');
+
+      const expected = ScoreCalculator.claimDishonestPenalty * kCardsPerTurn +
+          ScoreCalculator.reportFactPenalty;
+      expect(alice.followerDelta, expected);
     });
   });
 

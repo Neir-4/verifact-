@@ -23,7 +23,7 @@ class SessionNotifier extends StateNotifier<GameSession> {
 
   // ─── Setup ───────────────────────────────────────────────────────────────
 
-  void startNewSession(List<String> playerNames) {
+  void startNewSession(List<String> playerNames, GameMode mode) {
     final players = playerNames
         .map((name) => Player(id: _uuid.v4(), name: name, followers: 200))
         .toList();
@@ -31,6 +31,7 @@ class SessionNotifier extends StateNotifier<GameSession> {
       players: players,
       isStarted: true,
       currentTurn: const TurnState(),
+      gameMode: mode,
     );
     _save();
   }
@@ -43,36 +44,21 @@ class SessionNotifier extends StateNotifier<GameSession> {
     );
   }
 
-  void setCardCount(int count) {
-    state = state.copyWith(
-      currentTurn: state.currentTurn.copyWith(cardCount: count.clamp(1, 2)),
-    );
-  }
+  // ─── Optional Repost/Report bonus bet - belongs to the uploader alone,
+  // staked on top of their own claim, shown on the same page ──────────────
 
-  void advanceToEchoChamber() {
-    state = state.copyWith(
-      currentTurn: state.currentTurn.copyWith(phase: TurnPhase.echoChamber),
-    );
-  }
-
-  // ─── Echo Chamber Phase ──────────────────────────────────────────────────
-
-  void setEchoChoice(String playerId, EchoChoice choice) {
-    final updated =
-        Map<String, EchoChoice>.from(state.currentTurn.echoChoices);
-    updated[playerId] = choice;
-    state = state.copyWith(
-      currentTurn: state.currentTurn.copyWith(echoChoices: updated),
-    );
-  }
-
-  void removeEchoChoice(String playerId) {
-    final updated =
-        Map<String, EchoChoice>.from(state.currentTurn.echoChoices);
-    updated.remove(playerId);
-    state = state.copyWith(
-      currentTurn: state.currentTurn.copyWith(echoChoices: updated),
-    );
+  /// Tapping the same reaction again clears it (the bet is optional).
+  void toggleUploaderReaction(EchoChoice choice) {
+    if (state.currentTurn.uploaderReaction == choice) {
+      state = state.copyWith(
+        currentTurn:
+            state.currentTurn.copyWith(clearUploaderReaction: true),
+      );
+    } else {
+      state = state.copyWith(
+        currentTurn: state.currentTurn.copyWith(uploaderReaction: choice),
+      );
+    }
   }
 
   void advanceToScanning() {
@@ -89,6 +75,19 @@ class SessionNotifier extends StateNotifier<GameSession> {
     state = state.copyWith(
       currentTurn: state.currentTurn.copyWith(scannedCards: updated),
     );
+  }
+
+  /// Bail out of this turn entirely - no scan, no reveal, no score change.
+  /// Just rotates to the next player's turn.
+  void skipTurn() {
+    final nextUploaderIndex =
+        (state.currentUploaderIndex + 1) % state.players.length;
+    state = state.copyWith(
+      currentUploaderIndex: nextUploaderIndex,
+      currentTurn: const TurnState(),
+      turnCount: state.turnCount + 1,
+    );
+    _save();
   }
 
   void advanceToReveal() {
@@ -130,11 +129,18 @@ class SessionNotifier extends StateNotifier<GameSession> {
     final nextUploaderIndex =
         (state.currentUploaderIndex + 1) % state.players.length;
 
+    // Classic mode ends the instant anyone reaches the Jejak Digital Jujur
+    // threshold - Handless has no early exit, it plays until the deck runs
+    // out and is ended manually.
+    final classicWon = state.gameMode == GameMode.classic &&
+        updatedPlayers.any((p) => p.credibleCount >= kClassicWinThreshold);
+
     state = state.copyWith(
       players: updatedPlayers,
       currentUploaderIndex: nextUploaderIndex,
       currentTurn: const TurnState(),
       turnCount: state.turnCount + 1,
+      isFinished: classicWon ? true : state.isFinished,
     );
     _save();
   }
@@ -160,3 +166,7 @@ final sessionProvider =
     StateNotifierProvider<SessionNotifier, GameSession>((ref) {
   return SessionNotifier();
 });
+
+/// The mode picked on the landing screen, carried over to Setup when
+/// starting a new session.
+final pendingGameModeProvider = StateProvider<GameMode>((ref) => GameMode.classic);
