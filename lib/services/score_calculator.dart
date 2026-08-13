@@ -82,7 +82,7 @@ class ScoreCalculator {
     final uploader = session.currentUploader;
     final cardCount = turn.cardCount;
     final isHonest = turn.uploaderIsHonest;
-    final factCheckCalled = turn.factCheckCalled && turn.accuserId != null;
+    final hasReport = turn.echoChoices.values.contains(EchoChoice.report);
 
     final Map<String, int> deltas = {};
     final Map<String, int> credibleDeltas = {};
@@ -93,45 +93,42 @@ class ScoreCalculator {
       deltas[p.id] = 0;
     }
 
-    if (!factCheckCalled) {
-      // --- LOLOS (no Fact-Check) ---
-      if (isHonest) {
-        // +10 per card for uploader
-        deltas[uploader.id] = 10 * cardCount;
-      } else {
-        // +20 per card for uploader (bluff succeeded)
+    if (isHonest) {
+      // --- UPLOADER HONEST ---
+      if (hasReport) {
+        // Challenged (at least one player reported)
         deltas[uploader.id] = 20 * cardCount;
+      } else {
+        // Unchallenged (no one reported)
+        deltas[uploader.id] = 10 * cardCount;
+      }
+
+      // Echo chamber choices
+      for (final entry in turn.echoChoices.entries) {
+        if (entry.key == uploader.id) continue;
+        if (entry.value == EchoChoice.repost) {
+          deltas[entry.key] = (deltas[entry.key] ?? 0) + 10; // Repost: +10
+        } else if (entry.value == EchoChoice.report) {
+          deltas[entry.key] = (deltas[entry.key] ?? 0) + (-10); // Report: -10
+        }
       }
     } else {
-      // --- DITANTANG (Fact-Check was called) ---
-      final accuserId = turn.accuserId!;
-
-      if (isHonest) {
-        // Uploader was right, Penuduh was wrong
-        deltas[uploader.id] = 20 * cardCount; // +20/kartu
-        deltas[accuserId] = (deltas[accuserId] ?? 0) + (-10 * cardCount); // -10/kartu
-        // Echo chamber
-        for (final entry in turn.echoChoices.entries) {
-          if (entry.key == uploader.id || entry.key == accuserId) continue;
-          if (entry.value == EchoChoice.repost) {
-            deltas[entry.key] = (deltas[entry.key] ?? 0) + 10; // Repost: +10
-          } else {
-            deltas[entry.key] = (deltas[entry.key] ?? 0) + (-10); // Report: -10
-          }
-        }
+      // --- UPLOADER LYING ---
+      if (hasReport) {
+        // Challenged (at least one player reported)
+        deltas[uploader.id] = -30 * cardCount;
       } else {
-        // Uploader was lying, Penuduh was right
-        final uplPenalty = -30 * cardCount;
-        deltas[uploader.id] = uplPenalty; // -30/kartu
-        deltas[accuserId] = (deltas[accuserId] ?? 0) + (30 * cardCount + 5); // +30/kartu +5 bonus
-        // Echo chamber
-        for (final entry in turn.echoChoices.entries) {
-          if (entry.key == uploader.id || entry.key == accuserId) continue;
-          if (entry.value == EchoChoice.repost) {
-            deltas[entry.key] = (deltas[entry.key] ?? 0) + (-10); // Repost: -10 (backed the liar)
-          } else {
-            deltas[entry.key] = (deltas[entry.key] ?? 0) + 10; // Report: +10 (backed the accuser)
-          }
+        // Unchallenged (bluff succeeded)
+        deltas[uploader.id] = 20 * cardCount;
+      }
+
+      // Echo chamber choices
+      for (final entry in turn.echoChoices.entries) {
+        if (entry.key == uploader.id) continue;
+        if (entry.value == EchoChoice.repost) {
+          deltas[entry.key] = (deltas[entry.key] ?? 0) + (-10); // Repost: -10
+        } else if (entry.value == EchoChoice.report) {
+          deltas[entry.key] = (deltas[entry.key] ?? 0) + 10; // Report: +10
         }
       }
     }
@@ -167,7 +164,7 @@ class ScoreCalculator {
     return TurnScoreResult(
       results: results,
       uploaderWasHonest: isHonest,
-      factCheckWasCalled: factCheckCalled,
+      factCheckWasCalled: hasReport,
     );
   }
 

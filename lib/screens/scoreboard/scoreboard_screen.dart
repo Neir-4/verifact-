@@ -13,7 +13,6 @@ class ScoreboardScreen extends ConsumerWidget {
     final session = ref.watch(sessionProvider);
     final sorted = ScoreCalculator.sortByFollowers(session.players);
     final uploader = session.currentUploader;
-    final accuserId = session.currentTurn.accuserId;
 
     return Scaffold(
       backgroundColor: const Color(0xFF080516),
@@ -64,7 +63,6 @@ class ScoreboardScreen extends ConsumerWidget {
                       player: player,
                       rank: i + 1,
                       isUploader: player.id == uploader.id,
-                      isAccuser: player.id == accuserId,
                     ),
                   );
                 },

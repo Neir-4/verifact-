@@ -62,11 +62,11 @@ class _ScoringScreenState extends ConsumerState<ScoringScreen> {
                     child: Text(
                       _result.factCheckWasCalled
                           ? (_result.uploaderWasHonest
-                              ? 'Fact-Check: Uploader Jujur → Penuduh kehilangan poin'
-                              : 'Fact-Check: Uploader TERTANGKAP → Penuduh dapat bonus')
+                              ? 'Laporan salah! Uploader terbukti Jujur → Uploader mendapat poin tambahan, pelapor kehilangan poin.'
+                              : 'Laporan benar! Uploader TERTANGKAP bohong → Pelapor mendapat poin, uploader terkena penalti.')
                           : (_result.uploaderWasHonest
-                              ? 'Lolos tanpa Fact-Check, Uploader jujur'
-                              : 'Lolos tanpa Fact-Check, Uploader bluff berhasil'),
+                              ? 'Lolos tanpa Report! Uploader jujur.'
+                              : 'Lolos tanpa Report! Bluff Uploader berhasil.'),
                       style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 13,

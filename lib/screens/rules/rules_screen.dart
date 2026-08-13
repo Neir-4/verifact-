@@ -48,31 +48,29 @@ class _RulesScreenState extends State<RulesScreen> {
       content:
           '• Langkah 1: Unggah\n'
           '  Uploader menaruh 1-2 kartu tertutup di meja & mengklaim statusnya (Fakta/Hoaks).\n\n'
-          '• Langkah 2: Fact-Check\n'
-          '  Pemain lain punya 5 detik untuk curiga. Jika ada yang curiga, ia menepuk meja & berteriak "Fact-Check!" untuk menjadi Penuduh.\n\n'
-          '• Langkah 3: Echo Chamber\n'
-          '  (Jika ada Fact-Check) Pemain lain ikut memilih membela Uploader (REPOST) atau Penuduh (REPORT).\n\n'
-          '• Langkah 4: Cek Fakta\n'
+          '• Langkah 2: Repost / Report\n'
+          '  Pemain lain memilih sikap secara rahasia: REPOST (setuju klaim) atau REPORT (melaporkan klaim salah).\n\n'
+          '• Langkah 3: Cek Fakta\n'
           '  Pindai kode QR semua kartu di aplikasi. Jika semua kartu cocok dengan klaim, Uploader jujur. Jika ada 1 saja meleset, klaim dianggap bohong.\n\n'
-          '• Langkah 5: Ambil Kartu\n'
+          '• Langkah 4: Ambil Kartu\n'
           '  Uploader menarik kartu baru dari Deck hingga berjumlah 5 di tangan. Giliran berputar.',
     ),
     _RuleSection(
       icon: Icons.calculate_outlined,
       title: 'Perolehan Poin (Followers)',
       content:
-          'LOLOS (Tanpa Fact-Check):\n'
-          '• Uploader Jujur: +10 / kartu\n'
-          '• Uploader Bluffing (Bohong) Lolos: +20 / kartu\n\n'
-          'DITANTANG (Ada Fact-Check):\n'
-          '• Uploader Terbukti Jujur:\n'
-          '  - Uploader: +20 / kartu\n'
-          '  - Penuduh: -10 / kartu\n'
-          '  - Repost: +10 | Report: -10\n'
-          '• Uploader Terbukti Bohong (Tertangkap):\n'
-          '  - Uploader: -30 / kartu\n'
-          '  - Penuduh: +30 / kartu & bonus +5\n'
-          '  - Report: +10 | Repost: -10',
+          'UPLOADER JUJUR (Klaim cocok dengan kartu):\n'
+          '• Uploader:\n'
+          '  - Jika dilaporkan (minimal 1 Report): +20 / kartu\n'
+          '  - Jika tidak dilaporkan (0 Report): +10 / kartu\n'
+          '• Pemain Lain:\n'
+          '  - Repost (Setuju): +10 | Report (Laporkan): -10\n\n'
+          'UPLOADER BOHONG (Klaim tidak cocok):\n'
+          '• Uploader:\n'
+          '  - Jika dilaporkan (minimal 1 Report): -30 / kartu\n'
+          '  - Jika tidak dilaporkan (0 Report): +20 / kartu\n'
+          '• Pemain Lain:\n'
+          '  - Report (Laporkan): +10 | Repost (Setuju): -10',
     ),
     _RuleSection(
       icon: Icons.visibility_off_outlined,

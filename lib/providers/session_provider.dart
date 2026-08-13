@@ -49,30 +49,9 @@ class SessionNotifier extends StateNotifier<GameSession> {
     );
   }
 
-  void advanceToFactCheck() {
+  void advanceToEchoChamber() {
     state = state.copyWith(
-      currentTurn: state.currentTurn.copyWith(phase: TurnPhase.factCheck),
-    );
-  }
-
-  // ─── Fact-Check Phase ────────────────────────────────────────────────────
-
-  void callFactCheck(String accuserId) {
-    state = state.copyWith(
-      currentTurn: state.currentTurn.copyWith(
-        accuserId: accuserId,
-        factCheckCalled: true,
-        phase: TurnPhase.echoChamber,
-      ),
-    );
-  }
-
-  void skipFactCheck() {
-    state = state.copyWith(
-      currentTurn: state.currentTurn.copyWith(
-        factCheckCalled: false,
-        phase: TurnPhase.scanning,
-      ),
+      currentTurn: state.currentTurn.copyWith(phase: TurnPhase.echoChamber),
     );
   }
 

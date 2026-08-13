@@ -14,8 +14,6 @@ class TableScreen extends ConsumerStatefulWidget {
 }
 
 class _TableScreenState extends ConsumerState<TableScreen> {
-  String? _selectedAccuserId;
-
   @override
   Widget build(BuildContext context) {
     final session = ref.watch(sessionProvider);
@@ -163,12 +161,6 @@ class _TableScreenState extends ConsumerState<TableScreen> {
                 child: _buildUploadPhase(session, notifier),
               ),
 
-            // ── Phase: Fact-Check ─────────────────────────────────────────
-            if (turn.phase == TurnPhase.factCheck)
-              SliverToBoxAdapter(
-                child: _buildFactCheckPhase(session, notifier),
-              ),
-
             // ── Phase: Echo Chamber ───────────────────────────────────────
             if (turn.phase == TurnPhase.echoChamber)
               SliverToBoxAdapter(
@@ -253,11 +245,11 @@ class _TableScreenState extends ConsumerState<TableScreen> {
             height: 52,
             child: ElevatedButton.icon(
               onPressed: turn.uploaderClaim != null
-                  ? () => notifier.advanceToFactCheck()
+                  ? () => notifier.advanceToEchoChamber()
                   : null,
-              icon: const Icon(Icons.timer_outlined),
+              icon: const Icon(Icons.repeat_on_outlined),
               label: Text(
-                'MULAI FACT-CHECK TIMER',
+                'MULAI REPOST / REPORT',
                 style: GoogleFonts.outfit(
                     fontWeight: FontWeight.w800, letterSpacing: 1),
               ),
@@ -277,136 +269,13 @@ class _TableScreenState extends ConsumerState<TableScreen> {
     );
   }
 
-  // ── Fact-Check Phase ──────────────────────────────────────────────────────
-
-  Widget _buildFactCheckPhase(GameSession session, SessionNotifier notifier) {
-    final otherPlayers = session.players
-        .where((p) => p.id != session.currentUploader.id)
-        .toList();
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _sectionLabel('LANGKAH 2 — FACT-CHECK!'),
-          const SizedBox(height: 8),
-          const Text(
-            'Pemain lain punya 5 detik. Ketuk meja dan bilang "Fact-Check!" untuk curiga.',
-            style: TextStyle(color: Colors.white60, fontSize: 13, height: 1.5),
-          ),
-          const SizedBox(height: 24),
-          Center(
-            child: CountdownTimer(
-              key: const ValueKey('factcheck_timer'),
-              seconds: 5,
-              onExpire: () {
-                if (mounted) notifier.skipFactCheck();
-              },
-            ),
-          ),
-          const SizedBox(height: 28),
-          _sectionLabel('SIAPA PENUDUH? (jika ada)'),
-          const SizedBox(height: 12),
-          ...otherPlayers.map((p) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: ListTile(
-                  tileColor: _selectedAccuserId == p.id
-                      ? Colors.orange.shade900.withValues(alpha: 0.3)
-                      : const Color(0xFF1A1953),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  leading: Container(
-                    width: 38,
-                    height: 38,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF162D93),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      p.name.isNotEmpty ? p.name[0].toUpperCase() : '?',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w900,
-                        color: Color(0xFFABD2FB),
-                      ),
-                    ),
-                  ),
-                  title: Text(
-                    p.name,
-                    style: const TextStyle(
-                        color: Color(0xFFFDF9F1),
-                        fontWeight: FontWeight.bold),
-                  ),
-                  trailing: _selectedAccuserId == p.id
-                      ? const Icon(Icons.check_circle,
-                          color: Colors.orange)
-                      : const Icon(Icons.radio_button_unchecked,
-                          color: Colors.white30),
-                  onTap: () {
-                    setState(() {
-                      _selectedAccuserId =
-                          _selectedAccuserId == p.id ? null : p.id;
-                    });
-                  },
-                ),
-              )),
-          const SizedBox(height: 20),
-          Row(
-            children: [
-              Expanded(
-                child: OutlinedButton(
-                  onPressed: () => notifier.skipFactCheck(),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.white60,
-                    side: const BorderSide(color: Colors.white24),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                  child: const Text('Tidak ada Fact-Check'),
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: _selectedAccuserId != null
-                      ? () {
-                          notifier.callFactCheck(_selectedAccuserId!);
-                          setState(() => _selectedAccuserId = null);
-                        }
-                      : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange.shade800,
-                    foregroundColor: Colors.white,
-                    disabledBackgroundColor: Colors.white12,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    elevation: 0,
-                  ),
-                  child: const Text(
-                    'FACT-CHECK!',
-                    style: TextStyle(fontWeight: FontWeight.w800),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 24),
-        ],
-      ),
-    );
-  }
-
-  // ── Echo Chamber Phase ────────────────────────────────────────────────────
+  // ── Repost / Report Phase ─────────────────────────────────────────────────
 
   Widget _buildEchoChamberPhase(
       GameSession session, SessionNotifier notifier) {
     final uploader = session.currentUploader;
-    final accuserId = session.currentTurn.accuserId;
     final echoPlayers = session.players
-        .where((p) => p.id != uploader.id && p.id != accuserId)
+        .where((p) => p.id != uploader.id)
         .toList();
 
     return Padding(
@@ -414,10 +283,10 @@ class _TableScreenState extends ConsumerState<TableScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _sectionLabel('LANGKAH 3 — ECHO CHAMBER'),
+          _sectionLabel('LANGKAH 2 — REPOST / REPORT'),
           const SizedBox(height: 8),
           const Text(
-            'Pemain lain pilih sikap: Repost (bela Uploader) atau Report (bela Penuduh)',
+            'Pemain lain pilih sikap: Repost (setuju klaim Uploader) atau Report (laporkan klaim Uploader salah)',
             style: TextStyle(color: Colors.white60, fontSize: 13, height: 1.5),
           ),
           const SizedBox(height: 20),
@@ -429,7 +298,7 @@ class _TableScreenState extends ConsumerState<TableScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Text(
-                'Tidak ada pemain lain yang bisa ikut Echo Chamber.',
+                'Tidak ada pemain lain untuk melakukan Repost / Report.',
                 style: TextStyle(color: Colors.white54),
               ),
             ),

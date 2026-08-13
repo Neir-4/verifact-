@@ -5,7 +5,7 @@ import 'package:verifact/models/session_model.dart';
 import 'package:verifact/services/score_calculator.dart';
 
 void main() {
-  group('ScoreCalculator', () {
+  group('ScoreCalculator - Repost/Report Rules', () {
     final players = [
       Player(id: 'p1', name: 'Alice', followers: 200),
       Player(id: 'p2', name: 'Bob', followers: 200),
@@ -18,7 +18,7 @@ void main() {
       isStarted: true,
     );
 
-    const fakeCard = GameCard(
+    const hoaxCard = GameCard(
       id: 'S01',
       platform: 'test',
       originalStatement: 'test',
@@ -28,82 +28,78 @@ void main() {
       sources: [],
     );
 
-    test('Uploader lolos jujur (klaim Hoaks, kartu Hoaks) +10/kartu', () {
+    const factCard = GameCard(
+      id: 'S02',
+      platform: 'test',
+      originalStatement: 'test',
+      status: CardStatus.fact,
+      headline: 'test',
+      articleBody: 'test',
+      sources: [],
+    );
+
+    test('Uploader jujur (klaim Hoaks, kartu Hoaks), 0 report, 0 repost -> Uploader +10', () {
       const turn = TurnState(
         uploaderClaim: UploaderClaim.hoax,
         cardCount: 1,
-        scannedCards: [fakeCard],
-        factCheckCalled: false,
+        scannedCards: [hoaxCard],
+        echoChoices: {},
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult =
-          result.results.firstWhere((r) => r.playerId == 'p1');
+      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
       expect(uploaderResult.followerDelta, 10);
     });
 
-    test('Uploader lolos bluff (klaim Fakta, kartu Hoaks) +20/kartu', () {
-      const factCard = GameCard(
-        id: 'S02',
-        platform: 'test',
-        originalStatement: 'test',
-        status: CardStatus.fact,
-        headline: 'test',
-        articleBody: 'test',
-        sources: [],
-      );
+    test('Uploader bluff (klaim Hoaks, kartu Fakta), 0 report, 0 repost -> Uploader +20', () {
       const turn = TurnState(
         uploaderClaim: UploaderClaim.hoax,
         cardCount: 1,
-        scannedCards: [factCard], // fact card, but claimed hoax → mismatch
-        factCheckCalled: false,
+        scannedCards: [factCard],
+        echoChoices: {},
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult =
-          result.results.firstWhere((r) => r.playerId == 'p1');
+      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
       expect(uploaderResult.followerDelta, 20);
     });
 
-    test('Ditantang, uploader jujur: Uploader +20, Penuduh -10', () {
+    test('Uploader jujur, 1 report (Bob), 1 repost (Charlie) -> Uploader +20, Bob -10, Charlie +10', () {
       const turn = TurnState(
         uploaderClaim: UploaderClaim.hoax,
         cardCount: 1,
-        scannedCards: [fakeCard], // matches
-        factCheckCalled: true,
-        accuserId: 'p2',
+        scannedCards: [hoaxCard],
+        echoChoices: {
+          'p2': EchoChoice.report,
+          'p3': EchoChoice.repost,
+        },
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult =
-          result.results.firstWhere((r) => r.playerId == 'p1');
-      final accuserResult =
-          result.results.firstWhere((r) => r.playerId == 'p2');
+      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
+      final bobResult = result.results.firstWhere((r) => r.playerId == 'p2');
+      final charlieResult = result.results.firstWhere((r) => r.playerId == 'p3');
+
       expect(uploaderResult.followerDelta, 20);
-      expect(accuserResult.followerDelta, -10);
+      expect(bobResult.followerDelta, -10);
+      expect(charlieResult.followerDelta, 10);
     });
 
-    test('Ditantang, uploader tertangkap: Uploader -30, Penuduh +35', () {
-      const factCard = GameCard(
-        id: 'S03',
-        platform: 'test',
-        originalStatement: 'test',
-        status: CardStatus.fact,
-        headline: 'test',
-        articleBody: 'test',
-        sources: [],
-      );
+    test('Uploader bohong, 1 report (Bob), 1 repost (Charlie) -> Uploader -30, Bob +10, Charlie -10', () {
       const turn = TurnState(
         uploaderClaim: UploaderClaim.hoax,
         cardCount: 1,
-        scannedCards: [factCard], // mismatch → caught
-        factCheckCalled: true,
-        accuserId: 'p2',
+        scannedCards: [factCard],
+        echoChoices: {
+          'p2': EchoChoice.report,
+          'p3': EchoChoice.repost,
+        },
       );
       final result = ScoreCalculator.calculate(session, turn);
-      final uploaderResult =
-          result.results.firstWhere((r) => r.playerId == 'p1');
-      final accuserResult =
-          result.results.firstWhere((r) => r.playerId == 'p2');
+      final uploaderResult = result.results.firstWhere((r) => r.playerId == 'p1');
+      final bobResult = result.results.firstWhere((r) => r.playerId == 'p2');
+      final charlieResult = result.results.firstWhere((r) => r.playerId == 'p3');
+
       expect(uploaderResult.followerDelta, -30);
-      expect(accuserResult.followerDelta, 35); // 30 + 5 bonus
+      expect(bobResult.followerDelta, 10);
+      expect(charlieResult.followerDelta, -10);
     });
   });
 

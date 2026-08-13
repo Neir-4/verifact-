@@ -10,7 +10,6 @@ enum EchoChoice { repost, report }
 /// The phase of the current turn
 enum TurnPhase {
   upload,       // Uploader setting claim & card count
-  factCheck,    // 5-second timer / waiting for Fact-Check
   echoChamber,  // Other players choosing Repost/Report
   scanning,     // Scanning QR codes
   reveal,       // Showing card status & article
@@ -21,40 +20,31 @@ enum TurnPhase {
 class TurnState {
   final UploaderClaim? uploaderClaim;
   final int cardCount; // 1 or 2
-  final String? accuserId; // null if no Fact-Check was called
   final Map<String, EchoChoice> echoChoices; // playerId → choice
   final List<GameCard> scannedCards; // results from QR scanning
   final TurnPhase phase;
-  final bool factCheckCalled;
 
   const TurnState({
     this.uploaderClaim,
     this.cardCount = 1,
-    this.accuserId,
     this.echoChoices = const {},
     this.scannedCards = const [],
     this.phase = TurnPhase.upload,
-    this.factCheckCalled = false,
   });
 
   TurnState copyWith({
     UploaderClaim? uploaderClaim,
     int? cardCount,
-    String? accuserId,
     Map<String, EchoChoice>? echoChoices,
     List<GameCard>? scannedCards,
     TurnPhase? phase,
-    bool? factCheckCalled,
-    bool clearAccuser = false,
   }) {
     return TurnState(
       uploaderClaim: uploaderClaim ?? this.uploaderClaim,
       cardCount: cardCount ?? this.cardCount,
-      accuserId: clearAccuser ? null : (accuserId ?? this.accuserId),
       echoChoices: echoChoices ?? this.echoChoices,
       scannedCards: scannedCards ?? this.scannedCards,
       phase: phase ?? this.phase,
-      factCheckCalled: factCheckCalled ?? this.factCheckCalled,
     );
   }
 
